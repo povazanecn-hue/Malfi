@@ -35,9 +35,9 @@ export default function OrderSuccess() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="font-display text-4xl font-bold mb-4">Order Confirmed!</h1>
+          <h1 className="font-display text-4xl font-bold mb-4">Objednávka potvrdená!</h1>
           <p className="text-muted-foreground text-lg mb-8">
-            Thank you for your order. We're preparing your delicious meal now.
+            Ďakujeme za vašu objednávku. Pripravujeme vám chutné jedlo.
           </p>
         </motion.div>
 
@@ -50,11 +50,11 @@ export default function OrderSuccess() {
             <Card className="p-6 text-left mb-8">
               <div className="flex items-center justify-between mb-6 pb-4 border-b">
                 <div>
-                  <p className="text-sm text-muted-foreground">Order Number</p>
+                  <p className="text-sm text-muted-foreground">Číslo objednávky</p>
                   <p className="text-2xl font-bold font-mono">{order.order_number}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm text-muted-foreground">Total</p>
+                  <p className="text-sm text-muted-foreground">Celkom</p>
                   <p className="text-2xl font-bold text-primary">${order.total?.toFixed(2)}</p>
                 </div>
               </div>
@@ -70,21 +70,21 @@ export default function OrderSuccess() {
                   </div>
                   <div>
                     <p className="font-medium">
-                      {order.order_type === 'delivery' ? 'Delivery' : 'Pickup'}
+                      {order.order_type === 'delivery' ? 'Donáška' : 'Vyzdvihnutie'}
                     </p>
                     <p className="text-sm text-muted-foreground">
                       {order.order_type === 'delivery' 
                         ? order.delivery_address 
-                        : '123 Gourmet Avenue, NY'}
+                        : 'Hurbanovo námestie 1, Bratislava'}
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Est. {order.order_type === 'delivery' ? '30-45 min' : '20-30 min'}
+                      Odh. {order.order_type === 'delivery' ? '30–45 min' : '20–30 min'}
                     </p>
                   </div>
                 </div>
 
                 <div>
-                  <p className="font-medium mb-2">Order Items</p>
+                  <p className="font-medium mb-2">Objednané položky</p>
                   <div className="space-y-1">
                     {order.items?.map((item, idx) => (
                       <p key={idx} className="text-sm text-muted-foreground">
@@ -104,7 +104,7 @@ export default function OrderSuccess() {
           transition={{ delay: 0.4 }}
           className="bg-muted/50 rounded-xl p-6 mb-8"
         >
-          <h3 className="font-semibold mb-4">Questions about your order?</h3>
+          <h3 className="font-semibold mb-4">Otázky k objednávke?</h3>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="tel:5551234567" className="flex items-center justify-center gap-2 text-muted-foreground hover:text-foreground">
               <Phone className="h-4 w-4" />
@@ -120,12 +120,12 @@ export default function OrderSuccess() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/Order">
             <Button variant="outline" className="rounded-full px-8">
-              Order More
+              Objednať ešte
             </Button>
           </Link>
           <Link to="/Home">
             <Button className="rounded-full px-8">
-              Back to Home
+              Späť na domov
             </Button>
           </Link>
         </div>
