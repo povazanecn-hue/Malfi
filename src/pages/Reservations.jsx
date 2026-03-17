@@ -23,12 +23,12 @@ const TIME_SLOTS = [
 const PARTY_SIZES = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const OCCASIONS = [
-  { value: 'none', label: 'No special occasion' },
-  { value: 'birthday', label: 'Birthday' },
-  { value: 'anniversary', label: 'Anniversary' },
-  { value: 'business', label: 'Business Meal' },
-  { value: 'date', label: 'Date Night' },
-  { value: 'other', label: 'Other' },
+  { value: 'none', label: 'Žiadna príležitosť' },
+  { value: 'birthday', label: 'Narodeniny' },
+  { value: 'anniversary', label: 'Výročie' },
+  { value: 'business', label: 'Pracovný obed' },
+  { value: 'date', label: 'Rande' },
+  { value: 'other', label: 'Iné' },
 ];
 
 export default function Reservations() {
@@ -95,7 +95,7 @@ export default function Reservations() {
       setIsSubmitting(false);
     },
     onError: () => {
-      toast.error('Failed to create reservation. Please try again.');
+      toast.error('Nepodarilo sa vytvoriť rezerváciu. Skúste to znova.');
       setIsSubmitting(false);
     }
   });
@@ -142,7 +142,7 @@ export default function Reservations() {
               animate={{ opacity: 1, y: 0 }}
               className="font-display text-5xl md:text-6xl font-bold mb-4"
             >
-              Reserve Your Table
+              Rezervujte si stôl
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -150,7 +150,7 @@ export default function Reservations() {
               transition={{ delay: 0.1 }}
               className="text-lg text-white/80"
             >
-              Join us for an unforgettable dining experience
+              Pridajte sa k nám pre nezabudnuteľný gastronomický zážitok
             </motion.p>
           </div>
         </section>
@@ -158,14 +158,14 @@ export default function Reservations() {
         <section className="py-16">
           <div className="max-w-2xl mx-auto px-4">
             <Card className="p-8">
-              <h2 className="font-display text-2xl font-bold mb-6">Select Date & Time</h2>
+              <h2 className="font-display text-2xl font-bold mb-6">Vyberte dátum a čas</h2>
               
               <div className="space-y-6">
                 {/* Party Size */}
                 <div>
                   <Label className="flex items-center gap-2 mb-2">
                     <Users className="h-4 w-4" />
-                    Party Size
+                    Počet hostí
                   </Label>
                   <Select 
                     value={formData.party_size.toString()} 
@@ -177,13 +177,13 @@ export default function Reservations() {
                     <SelectContent>
                       {PARTY_SIZES.map((size) => (
                         <SelectItem key={size} value={size.toString()}>
-                          {size} {size === 1 ? 'Guest' : 'Guests'}
+                          {size} {size === 1 ? 'hosť' : 'hostia'}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                   <p className="text-sm text-muted-foreground mt-1">
-                    For parties larger than 8, please call us directly.
+                    Pre skupiny väčšie ako 8 osôb nás prosím kontaktujte telefonicky.
                   </p>
                 </div>
 
@@ -203,7 +203,7 @@ export default function Reservations() {
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4" />
-                        {formData.date ? format(formData.date, 'EEEE, MMMM d, yyyy') : 'Select a date'}
+                        {formData.date ? format(formData.date, 'EEEE, MMMM d, yyyy') : 'Vyberte dátum'}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0">
@@ -228,10 +228,10 @@ export default function Reservations() {
                     {availableSlots.length === 0 ? (
                       <div className="text-center py-8 bg-muted/50 rounded-xl">
                         <p className="text-muted-foreground">
-                          No available times for your party size on this date.
+                          Pre váš počet hostí nie sú dostupné žiadne časy v tento deň.
                         </p>
                         <p className="text-sm text-muted-foreground mt-1">
-                          Please try a different date or party size.
+                          Skúste iný dátum alebo počet hostí.
                         </p>
                       </div>
                     ) : (
@@ -261,7 +261,7 @@ export default function Reservations() {
                 disabled={!formData.date || !formData.time}
                 onClick={() => setStep(2)}
               >
-                Continue
+                Pokračovať
               </Button>
             </Card>
           </div>
@@ -283,14 +283,14 @@ export default function Reservations() {
           </button>
 
           <Card className="p-8">
-            <h2 className="font-display text-2xl font-bold mb-2">Your Details</h2>
+            <h2 className="font-display text-2xl font-bold mb-2">Vaše údaje</h2>
             <p className="text-muted-foreground mb-6">
               {format(formData.date, 'EEEE, MMMM d')} at {formData.time} · {formData.party_size} guests
             </p>
 
             <div className="space-y-4">
               <div>
-                <Label htmlFor="customer_name">Full Name *</Label>
+                <Label htmlFor="customer_name">Meno a priezvisko *</Label>
                 <Input
                   id="customer_name"
                   value={formData.customer_name}
@@ -313,7 +313,7 @@ export default function Reservations() {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="customer_phone">Phone *</Label>
+                  <Label htmlFor="customer_phone">Telefón *</Label>
                   <Input
                     id="customer_phone"
                     type="tel"
@@ -326,7 +326,7 @@ export default function Reservations() {
               </div>
 
               <div>
-                <Label>Occasion</Label>
+                <Label>Príležitosť</Label>
                 <Select 
                   value={formData.occasion} 
                   onValueChange={(v) => setFormData(prev => ({ ...prev, occasion: v }))}
@@ -345,12 +345,12 @@ export default function Reservations() {
               </div>
 
               <div>
-                <Label htmlFor="special_requests">Special Requests</Label>
+                <Label htmlFor="special_requests">Špeciálne požiadavky</Label>
                 <Textarea
                   id="special_requests"
                   value={formData.special_requests}
                   onChange={(e) => setFormData(prev => ({ ...prev, special_requests: e.target.value }))}
-                  placeholder="Any dietary restrictions, seating preferences, or special occasions..."
+                  placeholder="Alergie, preferencie sedenia, špeciálne príležitosti..."
                   className="mt-1"
                   rows={3}
                 />
@@ -365,10 +365,10 @@ export default function Reservations() {
               {isSubmitting ? (
                 <>
                   <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                  Confirming...
+                  Potvrdzujem...
                 </>
               ) : (
-                'Confirm Reservation'
+                'Potvrdiť rezerváciu'
               )}
             </Button>
           </Card>
@@ -395,9 +395,9 @@ export default function Reservations() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="font-display text-4xl font-bold mb-4">Reservation Confirmed!</h1>
+          <h1 className="font-display text-4xl font-bold mb-4">Rezervácia potvrdená!</h1>
           <p className="text-muted-foreground mb-8">
-            We've sent a confirmation to {formData.customer_email}
+            Potvrdenie sme zaslali na {formData.customer_email}
           </p>
         </motion.div>
 
@@ -408,7 +408,7 @@ export default function Reservations() {
         >
           <Card className="p-6 text-left mb-8">
             <div className="text-center mb-6 pb-4 border-b">
-              <p className="text-sm text-muted-foreground">Confirmation Number</p>
+              <p className="text-sm text-muted-foreground">Číslo rezervácie</p>
               <p className="text-2xl font-bold font-mono">{confirmedReservation?.reservation_number}</p>
             </div>
 
