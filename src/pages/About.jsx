@@ -24,7 +24,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-sm tracking-[0.3em] uppercase mb-4 text-white/80"
           >
-            Our Story
+            Náš príbeh
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function About() {
             transition={{ delay: 0.1 }}
             className="font-display text-5xl md:text-6xl font-bold mb-4"
           >
-            About La Maison
+            O nás
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/80 max-w-xl mx-auto"
           >
-            A passion for food. A commitment to excellence. A place to call home.
+            Vášeň pre jedlo. Záväzok k excelentnosti. Miesto, ktoré nazývate domovom.
           </motion.p>
         </div>
       </section>
@@ -55,23 +55,21 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="font-display text-4xl font-bold mb-6">
-                Where Every Dish Tells a Story
+                Kde každý tanier rozpráva príbeh
               </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2004 by Chef Antoine Laurent, La Maison was born from a 
-                  simple dream: to create a dining experience that feels like coming home — 
-                  to a home with a world-class kitchen.
+                  Založené s jedným snom: vytvoriť gastronomický zážitok, ktorý sa cíti ako
+                  návrat domov — do domova so svetovou kuchyňou.
                 </p>
                 <p>
-                  Our menu is a celebration of seasonal ingredients sourced from local farms 
-                  and artisan producers. Every dish is crafted with meticulous attention to 
-                  detail, blending classic French techniques with contemporary innovation.
+                  Naše menu je oslavou sezónnych surovín od lokálnych farmárov a remeselníkov.
+                  Každé jedlo je vytvorené s dôkladnou pozornosťou na detail, spájajúc klasické
+                  talianske techniky s modernou inováciou.
                 </p>
                 <p>
-                  Over the years, La Maison has become more than a restaurant — it's a 
-                  gathering place where memories are made, celebrations unfold, and the 
-                  art of fine dining comes alive.
+                  MALFI sa stalo viac ako reštauráciou — je to miesto, kde vznikajú spomienky,
+                  oslavy sa rozvíjajú a umenie fine diningu ožíva.
                 </p>
               </div>
             </motion.div>
@@ -94,24 +92,24 @@ export default function About() {
       <section className="py-20 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-display text-4xl font-bold">Our Values</h2>
+            <h2 className="font-display text-4xl font-bold">Naše hodnoty</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { 
                 icon: Leaf, 
-                title: 'Farm to Table', 
-                desc: 'We partner with local farmers and artisans to bring the freshest seasonal ingredients to your plate.' 
+                title: 'Od farmy na stôl', 
+                desc: 'Spolupracujeme s lokálnymi farmármi a remeselníkmi, aby sme vám priniesli tie najčerstvejšie sezónne suroviny.' 
               },
               { 
                 icon: Award, 
-                title: 'Culinary Excellence', 
-                desc: 'Our team of talented chefs brings decades of combined experience and an unwavering commitment to quality.' 
+                title: 'Kulinárska excelentnosť', 
+                desc: 'Náš tím talentovaných šéfkuchárov prináša desaťročia skúseností a neochvejný záväzok ku kvalite.' 
               },
               { 
                 icon: Heart, 
-                title: 'Warm Hospitality', 
-                desc: 'From the moment you walk in, our team creates an atmosphere of genuine warmth and impeccable service.' 
+                title: 'Vrelá pohostinnosť', 
+                desc: 'Od chvíle, keď vstúpite, náš tím vytvára atmosféru skutočnej vrúcnosti a bezchybnej obsluhy.' 
               },
             ].map((value, idx) => (
               <motion.div
@@ -137,14 +135,14 @@ export default function About() {
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-display text-4xl font-bold mb-6">Come Experience La Maison</h2>
+          <h2 className="font-display text-4xl font-bold mb-6">Príďte zažiť MALFI</h2>
           <p className="text-muted-foreground text-lg mb-10">
-            Whether it's a special celebration or a casual evening out, 
-            we'd love to welcome you to our table.
+            Či už ide o špeciálnu oslavu alebo pokojný večer vonku,
+            radi vás privítame pri našom stole.
           </p>
           <Link to="/Reservations">
             <Button size="lg" className="rounded-full px-8">
-              Make a Reservation
+              Rezervovať stôl
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

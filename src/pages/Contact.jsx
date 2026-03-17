@@ -28,7 +28,7 @@ export default function Contact() {
       body: `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     });
 
-    toast.success('Message sent! We\'ll get back to you soon.');
+    toast.success('Správa odoslaná! Ozveme sa vám čoskoro.');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSending(false);
   };
@@ -51,7 +51,7 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             className="font-display text-5xl md:text-6xl font-bold mb-4"
           >
-            Contact Us
+            Kontaktujte nás
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,7 @@ export default function Contact() {
             transition={{ delay: 0.1 }}
             className="text-lg text-white/80"
           >
-            We'd love to hear from you
+            Radi si vypočujeme váš názor
           </motion.p>
         </div>
       </section>
@@ -70,10 +70,10 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="font-display text-3xl font-bold mb-6">Get In Touch</h2>
+                <h2 className="font-display text-3xl font-bold mb-6">Spojte sa s nami</h2>
                 <p className="text-muted-foreground text-lg">
-                  Have a question, feedback, or want to plan a private event? 
-                  We're here to help.
+                  Máte otázku, spätnú väzbu alebo chcete naplánovať súkromnú udalosť?
+                  Sme tu pre vás.
                 </p>
               </div>
 
@@ -83,10 +83,10 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Address</h3>
+                    <h3 className="font-semibold mb-1">Adresa</h3>
                     <p className="text-muted-foreground">
-                      123 Gourmet Avenue<br />
-                      New York, NY 10001
+                      Hurbanovo námestie 1<br />
+                      811 03 Bratislava
                     </p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
+                    <h3 className="font-semibold mb-1">Telefón</h3>
                     <a href="tel:5551234567" className="text-muted-foreground hover:text-primary transition-colors">
                       (555) 123-4567
                     </a>
@@ -120,11 +120,11 @@ export default function Contact() {
                     <Clock className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Hours</h3>
+                    <h3 className="font-semibold mb-1">Otváracie hodiny</h3>
                     <div className="text-muted-foreground text-sm space-y-1">
-                      <p>Monday - Thursday: 5:00 PM - 10:00 PM</p>
-                      <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
-                      <p>Sunday: 4:00 PM - 9:00 PM</p>
+                      <p>Pondelok – Štvrtok: 11:00 – 22:00</p>
+                      <p>Piatok – Sobota: 11:00 – 23:00</p>
+                      <p>Nedeľa: 12:00 – 21:00</p>
                     </div>
                   </div>
                 </div>
@@ -134,17 +134,17 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <Card className="p-8">
-                <h2 className="font-display text-2xl font-bold mb-6">Send a Message</h2>
+                <h2 className="font-display text-2xl font-bold mb-6">Napíšte nám správu</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name">Name *</Label>
+                      <Label htmlFor="name">Meno *</Label>
                       <Input
                         id="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                        placeholder="Your name"
+                        placeholder="Vaše meno"
                         className="mt-1 h-12"
                       />
                     </div>
@@ -162,24 +162,24 @@ export default function Contact() {
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="subject">Subject *</Label>
+                    <Label htmlFor="subject">Predmet *</Label>
                     <Input
                       id="subject"
                       required
                       value={formData.subject}
                       onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
-                      placeholder="What is this about?"
+                      placeholder="O čom je vaša správa?"
                       className="mt-1 h-12"
                     />
                   </div>
                   <div>
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">Správa *</Label>
                     <Textarea
                       id="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                      placeholder="Tell us more..."
+                      placeholder="Povedzte nám viac..."
                       className="mt-1"
                       rows={6}
                     />
@@ -193,12 +193,12 @@ export default function Contact() {
                     {isSending ? (
                       <>
                         <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Sending...
+                        Odosielam...
                       </>
                     ) : (
                       <>
                         <Send className="h-4 w-4 mr-2" />
-                        Send Message
+                        Odoslať správu
                       </>
                     )}
                   </Button>
