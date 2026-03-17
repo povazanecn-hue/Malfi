@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,77 +6,39 @@
 
 @layer base {
   :root {
-    --background: 30 25% 98%;
-    --foreground: 20 15% 15%;
-    --card: 30 20% 99%;
-    --card-foreground: 20 15% 15%;
-    --popover: 30 20% 99%;
-    --popover-foreground: 20 15% 15%;
-    --primary: 350 45% 35%;
-    --primary-foreground: 30 25% 98%;
-    --secondary: 30 15% 93%;
-    --secondary-foreground: 20 15% 25%;
-    --muted: 30 10% 94%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 35 60% 50%;
-    --accent-foreground: 20 15% 15%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 350 45% 35%;
-    --chart-1: 350 45% 35%;
-    --chart-2: 35 60% 50%;
-    --chart-3: 150 40% 40%;
-    --chart-4: 200 50% 45%;
-    --chart-5: 280 40% 50%;
-    --radius: 0.75rem;
-    --sidebar-background: 30 20% 97%;
-    --sidebar-foreground: 20 15% 25%;
-    --sidebar-primary: 350 45% 35%;
-    --sidebar-primary-foreground: 30 25% 98%;
-    --sidebar-accent: 30 15% 93%;
-    --sidebar-accent-foreground: 20 15% 25%;
-    --sidebar-border: 30 15% 88%;
-    --sidebar-ring: 350 45% 35%;
-    
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
-  }
+    --background: 20 13% 6%;
+    --foreground: 40 25% 97%;
+    --card: 20 12% 8%;
+    --card-foreground: 40 25% 97%;
+    --popover: 20 12% 9%;
+    --popover-foreground: 40 25% 97%;
+    --primary: 30 38% 59%;
+    --primary-foreground: 20 13% 6%;
+    --secondary: 20 10% 14%;
+    --secondary-foreground: 40 20% 85%;
+    --muted: 20 8% 15%;
+    --muted-foreground: 30 8% 60%;
+    --accent: 25 35% 55%;
+    --accent-foreground: 20 13% 6%;
+    --destructive: 4 58% 47%;
+    --destructive-foreground: 40 25% 97%;
+    --border: 30 25% 20%;
+    --input: 20 10% 14%;
+    --ring: 30 38% 59%;
+    --radius: 0.875rem;
 
-  .dark {
-    --background: 20 15% 10%;
-    --foreground: 30 15% 95%;
-    --card: 20 15% 12%;
-    --card-foreground: 30 15% 95%;
-    --popover: 20 15% 12%;
-    --popover-foreground: 30 15% 95%;
-    --primary: 350 50% 55%;
-    --primary-foreground: 20 15% 10%;
-    --secondary: 20 10% 20%;
-    --secondary-foreground: 30 15% 90%;
-    --muted: 20 10% 18%;
-    --muted-foreground: 30 10% 60%;
-    --accent: 35 60% 55%;
-    --accent-foreground: 20 15% 10%;
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 20 10% 20%;
-    --input: 20 10% 20%;
-    --ring: 350 50% 55%;
-    --chart-1: 350 50% 55%;
-    --chart-2: 35 60% 55%;
-    --chart-3: 150 45% 50%;
-    --chart-4: 200 55% 55%;
-    --chart-5: 280 45% 60%;
-    --sidebar-background: 20 15% 12%;
-    --sidebar-foreground: 30 15% 90%;
-    --sidebar-primary: 350 50% 55%;
-    --sidebar-primary-foreground: 20 15% 10%;
-    --sidebar-accent: 20 10% 18%;
-    --sidebar-accent-foreground: 30 15% 90%;
-    --sidebar-border: 20 10% 20%;
-    --sidebar-ring: 350 50% 55%;
+    /* MALFI Custom */
+    --gold: #C2956B;
+    --gold-dark: #8B6B47;
+    --gold-light: #D4A97A;
+    --bg-primary: #0C0A09;
+    --bg-secondary: #171412;
+    --bg-tertiary: #1C1917;
+    --text-primary: #FAF7F2;
+    --text-muted: #A8A29E;
+    --olive: #6B7C5E;
+    --terracotta: #C07A5B;
+    --border-gold: rgba(194,149,107,0.15);
   }
 }
 
@@ -85,22 +47,123 @@
     @apply border-border outline-ring/50;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-body);
+  html {
+    scroll-behavior: smooth;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h6 {
+    font-family: 'DM Sans', sans-serif;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-display);
+    font-family: 'Playfair Display', serif;
   }
-  
   .font-body {
-    font-family: var(--font-body);
+    font-family: 'DM Sans', sans-serif;
   }
+  .text-gold {
+    color: var(--gold);
+  }
+  .text-gold-light {
+    color: var(--gold-light);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .bg-bg-primary {
+    background-color: var(--bg-primary);
+  }
+  .bg-bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  .bg-bg-tertiary {
+    background-color: var(--bg-tertiary);
+  }
+  .border-gold {
+    border-color: var(--border-gold);
+  }
+  .label-caps {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: var(--bg-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 100px;
+    transition: all 0.25s ease;
+  }
+  .btn-gold:hover {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(194,149,107,0.35);
+  }
+  .btn-outline-gold {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 100px;
+    background: transparent;
+    transition: all 0.25s ease;
+  }
+  .btn-outline-gold:hover {
+    background: var(--gold);
+    color: var(--bg-primary);
+  }
+  .card-dark {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-gold);
+    border-radius: 24px;
+  }
+  .section-pad {
+    padding: 80px 0;
+  }
+  .container-malfi {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  @media (max-width: 768px) {
+    .container-malfi {
+      padding: 0 20px;
+    }
+    .section-pad {
+      padding: 60px 0;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* Radix Select override for dark theme */
+[data-radix-select-viewport] {
+  background-color: var(--bg-tertiary) !important;
 }
