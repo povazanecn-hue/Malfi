@@ -51,7 +51,7 @@ export default function Menu() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80)',
+            backgroundImage: 'url(/__generating__/img_7c9945899b64.png)',
           }}
         >
           <div className="absolute inset-0 bg-black/60" />
