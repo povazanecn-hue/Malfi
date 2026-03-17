@@ -34,7 +34,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-sm tracking-[0.3em] uppercase mb-6 text-white/80"
           >
-            Fine Dining Experience
+            Zážitok z fine dining
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
@@ -50,8 +50,8 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto"
           >
-            Where culinary artistry meets warm hospitality. 
-            Experience unforgettable flavors crafted with passion.
+            Kde sa kulinárske umenie stretáva s vrelou pohostinnosťou.
+            Zažite nezabudnuteľné chute vytvorené s vášňou.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -62,13 +62,13 @@ export default function Home() {
             <Link to="/Reservations">
               <Button size="lg" className="rounded-full px-8 h-14 text-base">
                 <Calendar className="mr-2 h-5 w-5" />
-                Reserve a Table
+                Rezervovať stôl
               </Button>
             </Link>
             <Link to="/Order">
               <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base bg-white/10 border-white/30 text-white hover:bg-white/20">
                 <Utensils className="mr-2 h-5 w-5" />
-                Order Online
+                Objednať online
               </Button>
             </Link>
           </motion.div>
@@ -98,18 +98,18 @@ export default function Home() {
             {[
               { 
                 icon: Utensils, 
-                title: 'Exquisite Cuisine', 
-                desc: 'Locally sourced ingredients transformed into culinary masterpieces' 
+                title: 'Výnimočná kuchyňa', 
+                desc: 'Lokálne suroviny pretvorené na kulinárske majstrovské diela' 
               },
               { 
                 icon: Clock, 
-                title: 'Quick Delivery', 
-                desc: 'Fresh dishes delivered to your door within 30-45 minutes' 
+                title: 'Rýchle doručenie', 
+                desc: 'Čerstvé jedlá doručené k vašim dverám do 30–45 minút' 
               },
               { 
                 icon: Calendar, 
-                title: 'Easy Reservations', 
-                desc: 'Book your table online in seconds for a seamless experience' 
+                title: 'Ľahká rezervácia', 
+                desc: 'Zarezervujte si stôl online za pár sekúnd' 
               },
             ].map((feature, idx) => (
               <motion.div
@@ -137,8 +137,8 @@ export default function Home() {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">From Our Kitchen</p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold">Featured Dishes</h2>
+              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">Z našej kuchyne</p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold">Odporúčané jedlá</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {featuredItems.map((item, idx) => (
@@ -156,7 +156,7 @@ export default function Home() {
             <div className="text-center mt-12">
               <Link to="/Menu">
                 <Button variant="outline" size="lg" className="rounded-full">
-                  View Full Menu
+                  Zobraziť celé menu
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -174,18 +174,18 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">Our Story</p>
+              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">Náš príbeh</p>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                A Legacy of Culinary Excellence
+                Dedičstvo kulinárskej excelentnosti
               </h2>
               <p className="text-background/70 text-lg leading-relaxed mb-6">
-                For over two decades, La Maison has been the heartbeat of fine dining 
-                in our community. Our chef-driven menu celebrates seasonal ingredients, 
-                classic techniques, and innovative flavors that tell a story with every bite.
+                Už viac ako dve dekády je La Maison srdcom fine diningu v našej komunite.
+                Naše menu riadené šéfkuchármi oslavuje sezónne suroviny, klasické techniky
+                a inovatívne chute, ktoré rozprávajú príbeh pri každom súste.
               </p>
               <Link to="/About">
                 <Button variant="outline" className="rounded-full border-background/30 text-background hover:bg-background/10">
-                  Learn Our Story
+                  Náš príbeh
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -206,7 +206,7 @@ export default function Home() {
                   <Star className="h-5 w-5 fill-current" />
                   <span className="text-2xl font-bold">4.9</span>
                 </div>
-                <p className="text-sm text-primary-foreground/80">500+ Reviews</p>
+                <p className="text-sm text-primary-foreground/80">500+ hodnotení</p>
               </div>
             </motion.div>
           </div>
@@ -217,21 +217,21 @@ export default function Home() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Ready for an Unforgettable Experience?
+            Pripravení na nezabudnuteľný zážitok?
           </h2>
           <p className="text-muted-foreground text-lg mb-10">
-            Whether you join us in person or enjoy our cuisine at home, 
-            we can't wait to serve you.
+            Či už nás navštívite osobne alebo si vychutnáte naše jedlá doma,
+            tešíme sa na vás.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/Reservations">
               <Button size="lg" className="rounded-full px-8 h-14 text-base">
-                Make a Reservation
+                Rezervovať stôl
               </Button>
             </Link>
             <Link to="/Order">
               <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base">
-                Order for Pickup/Delivery
+                Objednať / Donáška
               </Button>
             </Link>
           </div>
@@ -243,21 +243,21 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">Visit Us</p>
-              <h2 className="font-display text-4xl font-bold mb-6">Find Us Here</h2>
+              <p className="text-sm tracking-[0.2em] uppercase text-primary mb-3">Navštívte nás</p>
+              <h2 className="font-display text-4xl font-bold mb-6">Kde nás nájdete</h2>
               <div className="space-y-4 text-lg">
                 <p className="flex items-start gap-3">
                   <MapPin className="h-6 w-6 text-primary shrink-0 mt-1" />
-                  <span>123 Gourmet Avenue<br />New York, NY 10001</span>
+                  <span>Hurbanovo námestie 1<br />811 03 Bratislava</span>
                 </p>
                 <p className="flex items-center gap-3">
                   <Clock className="h-6 w-6 text-primary shrink-0" />
-                  <span>Mon-Sat: 5PM-11PM | Sun: 4PM-9PM</span>
+                  <span>Po–Pia: 11:00–22:00 | So–Ne: 12:00–23:00</span>
                 </p>
               </div>
               <Link to="/Contact">
                 <Button className="mt-8 rounded-full">
-                  Get Directions
+                  Navigovať
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
