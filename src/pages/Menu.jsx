@@ -51,7 +51,7 @@ export default function Menu() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/__generating__/img_7c9945899b64.png)',
+            backgroundImage: 'url(https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/26d5b7e53_generated_627554c5.png)',
           }}
         >
           <div className="absolute inset-0 bg-black/60" />

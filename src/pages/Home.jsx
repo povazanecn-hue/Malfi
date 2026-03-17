@@ -21,7 +21,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/__generating__/img_a9fd77d6e588.png)',
+            backgroundImage: 'url(https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/265931e1e_generated_af6b630e.png)',
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
