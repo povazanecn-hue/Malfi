@@ -1,0 +1,46 @@
+import { motion } from 'framer-motion';
+
+const GALLERY = [
+  { url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80', alt: 'Interiér' },
+  { url: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&q=80', alt: 'Jedlo' },
+  { url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', alt: 'Atmosféra' },
+  { url: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80', alt: 'Pinsa' },
+  { url: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80', alt: 'Risotto' },
+  { url: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=80', alt: 'Dezert' },
+  { url: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80', alt: 'Tanier' },
+  { url: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&q=80', alt: 'Bar' },
+];
+
+export default function GallerySection() {
+  return (
+    <section className="section-pad bg-bg-secondary">
+      <div className="container-malfi">
+        <div className="text-center mb-12">
+          <div className="label-caps text-gold mb-3">Galéria</div>
+          <h2 className="font-display text-4xl text-text-primary">Atmosféra MALFI</h2>
+        </div>
+
+        {/* Masonry-style grid */}
+        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+          {GALLERY.map((img, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.06 }}
+              className="break-inside-avoid overflow-hidden rounded-2xl group cursor-pointer"
+              style={{ marginBottom: '16px' }}
+            >
+              <img
+                src={img.url}
+                alt={img.alt}
+                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
