@@ -34,7 +34,7 @@ export default function Menu() {
 
   const getCategoryName = (categoryId) => {
     const cat = categories.find(c => c.id === categoryId);
-    return cat?.name || 'Uncategorized';
+    return cat?.name || 'Nezaradené';
   };
 
   const groupedItems = filteredItems.reduce((acc, item) => {
@@ -62,7 +62,7 @@ export default function Menu() {
             animate={{ opacity: 1, y: 0 }}
             className="text-sm tracking-[0.3em] uppercase mb-4 text-white/80"
           >
-            Discover
+            Objavujte
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export default function Menu() {
             transition={{ delay: 0.1 }}
             className="font-display text-5xl md:text-6xl font-bold mb-4"
           >
-            Our Menu
+            Naše Menu
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Menu() {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/80 max-w-xl mx-auto"
           >
-            Seasonal ingredients, timeless techniques, unforgettable flavors
+            Sezónne suroviny, nadčasové techniky, nezabudnuteľné chute
           </motion.p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function Menu() {
               <Tabs value={selectedCategory} onValueChange={setSelectedCategory}>
                 <TabsList className="inline-flex h-12 bg-muted p-1 rounded-xl">
                   <TabsTrigger value="all" className="rounded-lg px-6">
-                    All
+                    Všetky
                   </TabsTrigger>
                   {categories.map((cat) => (
                     <TabsTrigger key={cat.id} value={cat.id} className="rounded-lg px-6">
@@ -167,7 +167,7 @@ export default function Menu() {
           {!loadingItems && filteredItems.length === 0 && (
             <div className="text-center py-20">
               <p className="text-muted-foreground text-lg">
-                No items available in this category
+                V tejto kategórii nie sú dostupné žiadne položky
               </p>
             </div>
           )}

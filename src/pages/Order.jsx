@@ -61,7 +61,7 @@ export default function Order() {
                 )}
               >
                 <Store className="h-4 w-4" />
-                Pickup
+                Vyzdvihnutie
               </button>
               <button
                 onClick={() => setOrderType('delivery')}
@@ -73,7 +73,7 @@ export default function Order() {
                 )}
               >
                 <Truck className="h-4 w-4" />
-                Delivery
+                Donáška
               </button>
             </div>
 
@@ -81,7 +81,7 @@ export default function Order() {
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search menu..."
+                placeholder="Hľadať v menu..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10 rounded-xl"
@@ -94,7 +94,7 @@ export default function Order() {
               onClick={() => setIsCartOpen(true)}
             >
               <ShoppingBag className="h-4 w-4 mr-2" />
-              View Cart ({itemCount})
+              Zobraziť košík ({itemCount})
             </Button>
           </div>
 
@@ -107,7 +107,7 @@ export default function Order() {
                     value="all" 
                     className="rounded-full px-4 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                   >
-                    All
+                    Všetky
                   </TabsTrigger>
                   {categories.map((cat) => (
                     <TabsTrigger 
@@ -137,7 +137,7 @@ export default function Order() {
           ) : filteredItems.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-muted-foreground text-lg">
-                {searchQuery ? 'No items match your search' : 'No items available'}
+                {searchQuery ? 'Žiadne položky nevyhovujú vášmu hľadaniu' : 'Žiadne položky nie sú dostupné'}
               </p>
             </div>
           ) : (
@@ -170,7 +170,7 @@ export default function Order() {
             onClick={() => setIsCartOpen(true)}
           >
             <ShoppingBag className="h-5 w-5 mr-2" />
-            View Cart ({itemCount})
+            Zobraziť košík ({itemCount})
           </Button>
         </div>
       )}
