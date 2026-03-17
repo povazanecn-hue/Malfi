@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { base44 } from '@/api/base44Client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -205,7 +205,7 @@ function CategoryDialog({ open, onOpenChange, category, onSave, onDelete }) {
   const [name, setName] = useState('');
   const [sortOrder, setSortOrder] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (category) {
       setName(category.name || '');
       setSortOrder(category.sort_order || 0);
@@ -249,7 +249,7 @@ function CategoryDialog({ open, onOpenChange, category, onSave, onDelete }) {
 function ItemDialog({ open, onOpenChange, item, categories, onSave }) {
   const [form, setForm] = useState({});
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (item) {
       setForm(item);
     } else {
