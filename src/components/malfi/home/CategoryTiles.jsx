@@ -12,11 +12,11 @@ const CATEGORIES = [
 
 export default function CategoryTiles() {
   return (
-    <section className="section-pad bg-bg-secondary">
+    <section className="section-pad bg-white">
       <div className="container-malfi">
         <div className="text-center mb-12">
-          <div className="label-caps text-gold mb-3">Naše špeciality</div>
-          <h2 className="font-display text-4xl text-text-primary">Preskúmajte menu</h2>
+          <div className="label-caps text-olive mb-3">Naše špeciality</div>
+          <h2 className="font-display text-4xl text-text-dark">Preskúmajte menu</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
