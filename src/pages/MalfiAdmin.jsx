@@ -50,8 +50,8 @@ export default function MalfiAdmin() {
   return (
     <div className="p-6 lg:p-8">
       <div className="mb-8">
-        <div className="label-caps text-gold mb-1">Admin panel</div>
-        <h1 className="font-display text-3xl text-text-primary">Dashboard</h1>
+        <div className="label-caps text-olive mb-1">Admin panel</div>
+        <h1 className="font-display text-3xl text-text-dark">Dashboard</h1>
         <p className="text-text-muted text-sm mt-1">{new Date().toLocaleDateString('sk-SK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
       </div>
 
@@ -65,16 +65,16 @@ export default function MalfiAdmin() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
-              className="card-dark p-5"
+              className="bg-white border border-olive/10 rounded-2xl p-5 shadow-sm"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="w-9 h-9 rounded-xl bg-bg-tertiary flex items-center justify-center">
                   <Icon className="w-4 h-4 text-gold" />
                 </div>
               </div>
-              <div className="font-display text-2xl text-text-primary font-bold">{stat.value}</div>
-              <div className="label-caps text-text-muted text-[10px] mt-1">{stat.label}</div>
-              <div className="text-text-muted text-xs mt-0.5">{stat.sub}</div>
+              <div className="font-display text-2xl text-text-dark font-bold">{stat.value}</div>
+              <div className="label-caps text-text-light text-[10px] mt-1">{stat.label}</div>
+              <div className="text-text-light text-xs mt-0.5">{stat.sub}</div>
             </motion.div>
           );
         })}
@@ -82,22 +82,22 @@ export default function MalfiAdmin() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent orders */}
-        <div className="card-dark p-6">
+        <div className="bg-white border border-olive/10 rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="font-display text-xl text-text-primary">Posledné objednávky</h2>
-            <Link to="/MalfiAdminOrders" className="label-caps text-gold text-[10px] hover:text-gold-light flex items-center gap-1">
+            <h2 className="font-display text-xl text-text-dark">Posledné objednávky</h2>
+            <Link to="/MalfiAdminOrders" className="label-caps text-olive text-[10px] hover:text-olive-dark flex items-center gap-1">
               Všetky <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
           <div className="space-y-3">
             {orders.slice(0, 6).map(order => (
-              <div key={order.id} className="flex items-center justify-between p-3 bg-bg-tertiary rounded-xl">
+              <div key={order.id} className="flex items-center justify-between p-3 bg-cream rounded-xl">
                 <div>
-                  <div className="text-text-primary text-sm font-semibold">{order.customer_name}</div>
-                  <div className="text-text-muted text-xs">{order.order_number || order.id.slice(-6)}</div>
+                  <div className="text-text-dark text-sm font-semibold">{order.customer_name}</div>
+                  <div className="text-text-light text-xs">{order.order_number || order.id.slice(-6)}</div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-gold font-bold text-sm">€{order.total?.toFixed(2)}</span>
+                  <span className="text-rosso font-bold text-sm">€{order.total?.toFixed(2)}</span>
                   <span className={`label-caps text-[9px] px-2 py-1 rounded-full ${STATUS_COLORS[order.status] || 'text-text-muted bg-bg-tertiary'}`}>
                     {STATUS_LABELS[order.status] || order.status}
                   </span>
@@ -109,19 +109,19 @@ export default function MalfiAdmin() {
         </div>
 
         {/* Reservations */}
-        <div className="card-dark p-6">
+        <div className="bg-white border border-olive/10 rounded-2xl p-6 shadow-sm">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="font-display text-xl text-text-primary">Nadchádzajúce rezervácie</h2>
-            <Link to="/MalfiAdminReservations" className="label-caps text-gold text-[10px] hover:text-gold-light flex items-center gap-1">
+            <h2 className="font-display text-xl text-text-dark">Nadchádzajúce rezervácie</h2>
+            <Link to="/MalfiAdminReservations" className="label-caps text-olive text-[10px] hover:text-olive-dark flex items-center gap-1">
               Všetky <ArrowRight className="w-3 h-3" />
             </Link>
           </div>
           <div className="space-y-3">
             {reservations.slice(0, 6).map(res => (
-              <div key={res.id} className="flex items-center justify-between p-3 bg-bg-tertiary rounded-xl">
+              <div key={res.id} className="flex items-center justify-between p-3 bg-cream rounded-xl">
                 <div>
-                  <div className="text-text-primary text-sm font-semibold">{res.customer_name}</div>
-                  <div className="text-text-muted text-xs">{res.date} · {res.time} · {res.party_size} osôb</div>
+                  <div className="text-text-dark text-sm font-semibold">{res.customer_name}</div>
+                  <div className="text-text-light text-xs">{res.date} · {res.time} · {res.party_size} osôb</div>
                 </div>
                 <span className={`label-caps text-[9px] px-2 py-1 rounded-full ${STATUS_COLORS[res.status] || 'text-text-muted bg-bg-tertiary'}`}>
                   {res.status}
