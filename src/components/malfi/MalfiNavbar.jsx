@@ -32,11 +32,13 @@ export default function MalfiNavbar() {
         <div className="container-malfi">
           <div className="flex items-center justify-between h-18 py-4">
             {/* Logo */}
-            <Link to="/MalfiHome" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-full border-2 border-gold flex items-center justify-center">
-                <span className="font-display text-gold font-bold text-sm">M</span>
-              </div>
-              <span className="font-display text-text-primary font-bold text-xl tracking-tight">MALFI</span>
+            <Link to="/MalfiHome" className="flex items-center group">
+              <img 
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/2d7f1c5d7_generated_image.png"
+                alt="MALFI il cuore italiano"
+                className="h-14 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </Link>
 
             {/* Desktop Nav */}

@@ -8,11 +8,13 @@ export default function MalfiFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full border-2 border-gold flex items-center justify-center">
-                <span className="font-display text-gold font-bold text-sm">M</span>
-              </div>
-              <span className="font-display text-text-primary font-bold text-xl">MALFI</span>
+            <div>
+              <img 
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/2d7f1c5d7_generated_image.png"
+                alt="MALFI il cuore italiano"
+                className="h-16 w-auto object-contain"
+                style={{ filter: 'brightness(0) invert(1)' }}
+              />
             </div>
             <p className="text-text-muted text-sm leading-relaxed">
               Moderné talianske bistro v srdci Bratislavy. Autentická chuť Talianska, lokálne suroviny.
