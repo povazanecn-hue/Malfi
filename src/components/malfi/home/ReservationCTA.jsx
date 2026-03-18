@@ -13,11 +13,7 @@ export default function ReservationCTA() {
   };
 
   return (
-    <section className="section-pad" style={{
-      background: 'linear-gradient(135deg, rgba(194,149,107,0.12) 0%, rgba(107,124,94,0.08) 100%)',
-      borderTop: '1px solid rgba(194,149,107,0.15)',
-      borderBottom: '1px solid rgba(194,149,107,0.15)',
-    }}>
+    <section className="section-pad bg-rosso-pale" style={{ borderTop: '1px solid rgba(192,57,43,0.1)', borderBottom: '1px solid rgba(192,57,43,0.1)' }}>
       <div className="container-malfi text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,11 +21,11 @@ export default function ReservationCTA() {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto"
         >
-          <div className="label-caps text-gold mb-4">Rezervácia stola</div>
-          <h2 className="font-display text-4xl md:text-5xl text-text-primary mb-4">
+          <div className="label-caps text-rosso mb-4">Rezervácia stola</div>
+          <h2 className="font-display text-4xl md:text-5xl text-text-dark mb-4">
             Zarezervujte si stôl
           </h2>
-          <p className="text-text-muted mb-10">
+          <p className="text-text-medium mb-10">
             Ideálne miesto pre romantické večere, firemné obedy aj rodinné oslavy.
           </p>
 
@@ -37,7 +33,7 @@ export default function ReservationCTA() {
             <select
               value={guests}
               onChange={e => setGuests(e.target.value)}
-              className="bg-bg-secondary border border-[rgba(194,149,107,0.3)] text-text-primary rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-gold"
+              className="bg-white border border-olive/20 text-text-dark rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-olive"
             >
               {[1,2,3,4,5,6,7,8,9,10].map(n => (
                 <option key={n} value={n}>{n} {n === 1 ? 'hosť' : n < 5 ? 'hostia' : 'hostí'}</option>
@@ -48,9 +44,9 @@ export default function ReservationCTA() {
               value={date}
               onChange={e => setDate(e.target.value)}
               min={new Date().toISOString().split('T')[0]}
-              className="bg-bg-secondary border border-[rgba(194,149,107,0.3)] text-text-primary rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-gold"
+              className="bg-white border border-olive/20 text-text-dark rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-olive"
             />
-            <button type="submit" className="btn-gold px-8 py-3 font-semibold">
+            <button type="submit" className="btn-primary px-8 py-3 font-semibold">
               Pokračovať
             </button>
           </form>
