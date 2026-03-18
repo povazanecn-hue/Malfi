@@ -15,17 +15,17 @@ export default function MalfiAdminLayout() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-bg-primary flex">
+    <div className="min-h-screen bg-cream flex">
       {/* Sidebar */}
-      <aside className="hidden lg:flex w-64 bg-bg-secondary border-r border-[rgba(194,149,107,0.15)] flex-col">
-        <div className="p-6 border-b border-[rgba(194,149,107,0.15)]">
+      <aside className="hidden lg:flex w-64 bg-white border-r border-olive/10 flex-col shadow-sm">
+        <div className="p-6 border-b border-olive/10">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full border-2 border-gold flex items-center justify-center">
-              <span className="font-display text-gold font-bold text-xs">M</span>
+            <div className="w-8 h-8 rounded-full border-2 border-olive flex items-center justify-center">
+              <span className="font-display text-olive font-bold text-xs">M</span>
             </div>
             <div>
-              <div className="font-display text-text-primary font-bold">MALFI</div>
-              <div className="label-caps text-text-muted text-[10px]">Admin panel</div>
+              <div className="font-display text-text-dark font-bold">MALFI</div>
+              <div className="label-caps text-text-light text-[10px]">Admin panel</div>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function MalfiAdminLayout() {
                 key={item.path}
                 to={item.path}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                  active ? 'bg-gold/15 text-gold' : 'text-text-muted hover:text-gold hover:bg-bg-tertiary'
+                  active ? 'bg-olive text-white' : 'text-text-medium hover:text-olive hover:bg-olive/8'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -49,8 +49,8 @@ export default function MalfiAdminLayout() {
           })}
         </nav>
 
-        <div className="p-4 border-t border-[rgba(194,149,107,0.15)]">
-          <Link to="/MalfiHome" className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-text-muted hover:text-gold hover:bg-bg-tertiary transition-all">
+        <div className="p-4 border-t border-olive/10">
+          <Link to="/MalfiHome" className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-text-light hover:text-olive hover:bg-olive/8 transition-all">
             <LogOut className="w-4 h-4" />
             Späť na web
           </Link>
@@ -58,7 +58,7 @@ export default function MalfiAdminLayout() {
       </aside>
 
       {/* Mobile top nav */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-bg-secondary border-b border-[rgba(194,149,107,0.15)]">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-olive/10 shadow-sm">
         <div className="flex overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           {NAV.map(item => {
             const Icon = item.icon;
@@ -66,7 +66,7 @@ export default function MalfiAdminLayout() {
             return (
               <Link key={item.path} to={item.path}
                 className={`shrink-0 flex flex-col items-center gap-1 px-4 py-3 text-[10px] font-semibold transition-all ${
-                  active ? 'text-gold border-b-2 border-gold' : 'text-text-muted'
+                  active ? 'text-olive border-b-2 border-olive' : 'text-text-light'
                 }`}
               >
                 <Icon className="w-4 h-4" />
