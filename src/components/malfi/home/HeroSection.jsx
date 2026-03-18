@@ -1,50 +1,52 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Phone, Star } from 'lucide-react';
+import { MapPin, Clock, Star, Leaf } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen pt-20 flex items-center relative overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 bg-bg-primary">
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: `radial-gradient(ellipse at 70% 50%, rgba(194,149,107,0.15) 0%, transparent 60%)`
+    <section className="min-h-screen flex items-center relative overflow-hidden bg-cream">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 opacity-40" style={{
+          backgroundImage: `radial-gradient(ellipse at 80% 20%, rgba(107,124,94,0.1) 0%, transparent 50%),
+                            radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.06) 0%, transparent 50%)`
         }} />
       </div>
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-16">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-24 pt-32">
+
           {/* Left Content */}
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 border border-[rgba(194,149,107,0.3)] rounded-full px-4 py-2"
+              className="inline-flex items-center gap-2 bg-olive/10 border border-olive/20 rounded-full px-4 py-2"
             >
-              <MapPin className="w-3.5 h-3.5 text-gold" />
-              <span className="label-caps text-gold">Hurbanovo námestie 1 · Bratislava</span>
+              <MapPin className="w-3.5 h-3.5 text-olive" />
+              <span className="label-caps text-olive text-[10px]">Hurbanovo námestie 1 · Bratislava</span>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-text-primary leading-[1.05]"
             >
-              Moderné<br />
-              <span className="text-gold italic">talianske</span><br />
-              bistro
-            </motion.h1>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark leading-[1.05]">
+                Il cuore<br />
+                <span className="text-rosso italic">italiano</span><br />
+                <span className="text-olive-dark">di Bratislava</span>
+              </h1>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-text-muted text-lg leading-relaxed max-w-md"
+              className="text-text-medium text-lg leading-relaxed max-w-md"
             >
-              Autentické talianské recepty, lokálne suroviny a vášeň pre každý tanier. 
+              Autentické talianske recepty, lokálne suroviny a vášeň pre každý tanier.
               Vitajte v MALFI.
             </motion.p>
 
@@ -54,33 +56,33 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/MalfiReservation" className="btn-gold px-8 py-4 text-center font-semibold">
+              <Link to="/MalfiReservation" className="btn-primary px-8 py-4 font-semibold text-base">
                 Rezervovať stôl
               </Link>
-              <Link to="/MalfiOrder" className="btn-outline-gold px-8 py-4 text-center font-semibold">
+              <Link to="/MalfiOrder" className="btn-outline px-8 py-4 font-semibold text-base">
                 Objednať online
               </Link>
             </motion.div>
 
-            {/* Info pills */}
+            {/* Info row */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap gap-4 pt-2"
+              className="flex flex-wrap gap-5 pt-2"
             >
-              <div className="flex items-center gap-2 text-text-muted text-sm">
-                <Clock className="w-4 h-4 text-gold" />
+              <div className="flex items-center gap-2 text-text-light text-sm">
+                <Clock className="w-4 h-4 text-olive" />
                 <span>Po–Pi 11:00–22:00</span>
               </div>
-              <div className="flex items-center gap-2 text-text-muted text-sm">
-                <Phone className="w-4 h-4 text-gold" />
-                <a href="tel:+421900000000" className="hover:text-gold transition-colors">+421 900 000 000</a>
+              <div className="flex items-center gap-2 text-text-light text-sm">
+                <Leaf className="w-4 h-4 text-olive" />
+                <span>Čerstvé suroviny denne</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Right: Image + floating cards */}
+          {/* Right: Image composition */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -88,41 +90,41 @@ export default function HeroSection() {
             className="relative"
           >
             {/* Main hero image */}
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80"
+                src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=85"
                 alt="MALFI Italian Bistro"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
-            {/* Floating review badge */}
+            {/* Rating badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -bottom-4 -left-4 bg-bg-secondary border border-[rgba(194,149,107,0.3)] rounded-2xl p-4 shadow-2xl"
+              className="absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)]"
             >
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-1.5 mb-1">
                 {[1,2,3,4,5].map(i => (
                   <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
                 ))}
               </div>
-              <div className="text-text-primary font-bold text-2xl font-display">4.8</div>
-              <div className="text-text-muted text-xs">z 340 hodnotení</div>
+              <div className="text-text-dark font-bold text-2xl font-display">4.8</div>
+              <div className="text-text-light text-xs">z 340 hodnotení</div>
             </motion.div>
 
-            {/* Floating pinsa card */}
+            {/* Bestseller badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.0 }}
-              className="absolute -top-4 -right-4 bg-bg-secondary border border-[rgba(194,149,107,0.3)] rounded-2xl p-4 shadow-2xl max-w-[160px]"
+              className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)] max-w-[160px]"
             >
-              <div className="text-xs text-gold label-caps mb-1">Bestseller</div>
-              <div className="text-text-primary font-semibold text-sm font-display">Pinsa Classica</div>
-              <div className="text-gold text-sm font-bold mt-1">€12.90</div>
+              <div className="label-caps text-rosso text-[9px] mb-1">Bestseller</div>
+              <div className="text-text-dark font-semibold text-sm font-display">Pinsa Classica</div>
+              <div className="text-olive font-bold text-sm mt-1">€12.90</div>
             </motion.div>
           </motion.div>
         </div>

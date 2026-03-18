@@ -27,17 +27,21 @@ export default function MalfiNavbar() {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-bg-primary/95 backdrop-blur-md border-b border-[rgba(194,149,107,0.15)]' : 'bg-transparent'
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md border-b border-[rgba(107,124,94,0.15)] shadow-sm'
+          : 'bg-transparent'
       }`}>
         <div className="container-malfi">
           <div className="flex items-center justify-between h-18 py-4">
             {/* Logo */}
-            <Link to="/MalfiHome" className="flex items-center group">
-              <img 
-                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/484f68c86_generated_image.png"
-                alt="MALFI il cuore italiano"
-                className="h-12 w-auto object-contain"
-              />
+            <Link to="/MalfiHome" className="flex items-center gap-3 group">
+              <div className="w-9 h-9 rounded-full border-2 border-olive flex items-center justify-center">
+                <span className="font-display text-olive font-bold text-sm">M</span>
+              </div>
+              <div>
+                <span className="font-display text-text-dark font-bold text-xl tracking-tight">MALFI</span>
+                <div className="label-caps text-text-light text-[9px] tracking-[0.2em] -mt-0.5">Italian Bistro</div>
+              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -48,8 +52,8 @@ export default function MalfiNavbar() {
                   to={link.path}
                   className={`label-caps transition-colors duration-200 ${
                     location.pathname === link.path
-                      ? 'text-gold'
-                      : 'text-text-muted hover:text-text-primary'
+                      ? 'text-rosso'
+                      : 'text-text-medium hover:text-olive'
                   }`}
                 >
                   {link.label}
@@ -58,33 +62,36 @@ export default function MalfiNavbar() {
             </div>
 
             {/* CTA */}
-            <div className="hidden md:flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-4">
               <Link to="/MalfiOrder" className="relative">
-                <ShoppingBag className="w-5 h-5 text-text-muted hover:text-gold transition-colors" />
+                <ShoppingBag className="w-5 h-5 text-text-medium hover:text-olive transition-colors" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-gold text-bg-primary text-[10px] font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
               </Link>
-              <Link to="/MalfiOrder" className="btn-gold px-5 py-2.5 text-sm">
-                Objednať online
+              <Link to="/MalfiReservation" className="btn-outline px-5 py-2.5 text-sm">
+                Rezervovať
+              </Link>
+              <Link to="/MalfiOrder" className="btn-primary px-5 py-2.5 text-sm">
+                Objednať
               </Link>
             </div>
 
             {/* Mobile */}
             <div className="flex md:hidden items-center gap-3">
               <Link to="/MalfiOrder" className="relative">
-                <ShoppingBag className="w-5 h-5 text-text-muted" />
+                <ShoppingBag className="w-5 h-5 text-text-medium" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-gold text-bg-primary text-[10px] font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
                     {cartCount}
                   </span>
                 )}
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="w-9 h-9 flex items-center justify-center text-text-primary"
+                className="w-9 h-9 flex items-center justify-center text-text-dark"
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -94,33 +101,38 @@ export default function MalfiNavbar() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-bg-secondary border-t border-[rgba(194,149,107,0.15)]">
+          <div className="md:hidden bg-white border-t border-[rgba(107,124,94,0.15)]">
             <div className="container-malfi py-6 flex flex-col gap-4">
               {navLinks.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="label-caps text-text-muted hover:text-gold transition-colors py-2"
+                  className="label-caps text-text-medium hover:text-olive transition-colors py-2"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link to="/MalfiOrder" className="btn-gold px-5 py-3 text-center mt-2">
-                Objednať online
-              </Link>
+              <div className="flex gap-3 mt-2">
+                <Link to="/MalfiReservation" className="btn-outline flex-1 py-3 text-center text-sm">
+                  Rezervovať
+                </Link>
+                <Link to="/MalfiOrder" className="btn-primary flex-1 py-3 text-center text-sm">
+                  Objednať
+                </Link>
+              </div>
             </div>
           </div>
         )}
       </nav>
 
       {/* Mobile Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-bg-secondary border-t border-[rgba(194,149,107,0.15)] safe-area-bottom">
-        <div className="grid grid-cols-2 divide-x divide-[rgba(194,149,107,0.15)]">
-          <Link to="/MalfiReservation" className="flex items-center justify-center py-4 text-gold label-caps">
-            Rezervovať
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-[rgba(107,124,94,0.15)] shadow-lg">
+        <div className="grid grid-cols-2 divide-x divide-[rgba(107,124,94,0.15)]">
+          <Link to="/MalfiReservation" className="flex items-center justify-center py-4 text-olive label-caps text-xs">
+            Rezervovať stôl
           </Link>
-          <Link to="/MalfiOrder" className="flex items-center justify-center py-4 btn-gold rounded-none text-sm font-bold">
-            Objednať
+          <Link to="/MalfiOrder" className="flex items-center justify-center py-4 btn-primary rounded-none text-sm font-bold">
+            Objednať online
           </Link>
         </div>
       </div>
