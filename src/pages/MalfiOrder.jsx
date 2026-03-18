@@ -46,11 +46,11 @@ export default function MalfiOrder() {
   const getAddons = (itemId) => addons.filter(a => a.item_id === itemId);
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-20 pb-24">
+    <div className="min-h-screen bg-cream pt-20 pb-24">
       <div className="container-malfi py-10">
         <div className="mb-8">
-          <div className="label-caps text-gold mb-2">Online objednávka</div>
-          <h1 className="font-display text-4xl text-text-primary">Objednajte online</h1>
+          <div className="label-caps text-olive mb-2">Online objednávka</div>
+          <h1 className="font-display text-4xl text-text-dark">Objednajte online</h1>
         </div>
 
         {/* Mode selector */}
@@ -62,7 +62,7 @@ export default function MalfiOrder() {
                 key={m.id}
                 onClick={() => setMode(m.id)}
                 className={`flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold transition-all ${
-                  mode === m.id ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted hover:border-gold hover:text-gold'
+                  mode === m.id ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white hover:border-olive hover:text-olive'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -79,7 +79,7 @@ export default function MalfiOrder() {
               <button
                 onClick={() => setActiveCategory('all')}
                 className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                  activeCategory === 'all' ? 'bg-gold/15 text-gold' : 'text-text-muted hover:text-gold hover:bg-bg-secondary'
+                  activeCategory === 'all' ? 'bg-olive/15 text-olive-dark' : 'text-text-medium hover:text-olive hover:bg-cream-dark'
                 }`}
               >
                 Všetko
@@ -89,7 +89,7 @@ export default function MalfiOrder() {
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
                   className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
-                    activeCategory === cat.id ? 'bg-gold/15 text-gold' : 'text-text-muted hover:text-gold hover:bg-bg-secondary'
+                    activeCategory === cat.id ? 'bg-olive/15 text-olive-dark' : 'text-text-medium hover:text-olive hover:bg-cream-dark'
                   }`}
                 >
                   {cat.name}
@@ -103,7 +103,7 @@ export default function MalfiOrder() {
             <button
               onClick={() => setActiveCategory('all')}
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                activeCategory === 'all' ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted'
+                activeCategory === 'all' ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white'
               }`}
             >Všetko</button>
             {categories.map(cat => (
@@ -111,7 +111,7 @@ export default function MalfiOrder() {
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-                  activeCategory === cat.id ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted'
+                  activeCategory === cat.id ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white'
                 }`}
               >{cat.name}</button>
             ))}
