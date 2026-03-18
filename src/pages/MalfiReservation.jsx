@@ -55,7 +55,7 @@ export default function MalfiReservation() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-bg-primary pt-20 flex items-center justify-center pb-24">
+      <div className="min-h-screen bg-cream pt-20 flex items-center justify-center pb-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -64,8 +64,8 @@ export default function MalfiReservation() {
           <div className="w-20 h-20 rounded-full bg-olive/20 border border-olive/40 flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-olive" />
           </div>
-          <div className="label-caps text-gold mb-3">Ďakujeme!</div>
-          <h1 className="font-display text-4xl text-text-primary mb-4">
+          <div className="label-caps text-olive mb-3">Ďakujeme!</div>
+          <h1 className="font-display text-4xl text-text-dark mb-4">
             {submitted.status === 'confirmed' ? 'Rezervácia potvrdená' : 'Rezervácia prijatá'}
           </h1>
           <div className="card-dark p-6 text-left mb-6 space-y-3">
@@ -89,17 +89,17 @@ export default function MalfiReservation() {
           {submitted.status === 'pending' && (
             <p className="text-text-muted text-sm mb-6">Pre väčšie skupiny potvrdíme rezerváciu do 24 hodín.</p>
           )}
-          <a href="/MalfiHome" className="btn-gold px-8 py-3 inline-block">Späť na domov</a>
+          <a href="/MalfiHome" className="btn-primary px-8 py-3 inline-block">Späť na domov</a>
         </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-20 pb-24">
+    <div className="min-h-screen bg-cream pt-20 pb-24">
       <div className="container-malfi max-w-2xl mx-auto py-10">
-        <div className="label-caps text-gold mb-2">Rezervácia stola</div>
-        <h1 className="font-display text-4xl text-text-primary mb-8">Zarezervujte si stôl</h1>
+        <div className="label-caps text-olive mb-2">Rezervácia stola</div>
+        <h1 className="font-display text-4xl text-text-dark mb-8">Zarezervujte si stôl</h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Guests */}
@@ -115,7 +115,7 @@ export default function MalfiReservation() {
                   type="button"
                   onClick={() => update('guests', n)}
                   className={`w-11 h-11 rounded-xl text-sm font-semibold transition-all ${
-                    form.guests === n ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted hover:border-gold hover:text-gold'
+                    form.guests === n ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white hover:border-olive hover:text-olive'
                   }`}
                 >
                   {n}
@@ -150,7 +150,7 @@ export default function MalfiReservation() {
                     type="button"
                     onClick={() => update('time', slot)}
                     className={`py-2 rounded-xl text-xs font-semibold transition-all ${
-                      form.time === slot ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted hover:border-gold hover:text-gold'
+                      form.time === slot ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white hover:border-olive hover:text-olive'
                     }`}
                   >
                     {slot}
@@ -177,7 +177,7 @@ export default function MalfiReservation() {
                   type="button"
                   onClick={() => update('seating', opt.id)}
                   className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                    form.seating === opt.id ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted hover:border-gold hover:text-gold'
+                    form.seating === opt.id ? 'bg-olive text-white' : 'border border-olive/25 text-text-medium bg-white hover:border-olive hover:text-olive'
                   }`}
                 >
                   {opt.label}
@@ -196,7 +196,7 @@ export default function MalfiReservation() {
                   type="button"
                   onClick={() => update('occasion', occ.id)}
                   className={`px-4 py-2 rounded-full text-sm transition-all ${
-                    form.occasion === occ.id ? 'btn-gold' : 'border border-[rgba(194,149,107,0.3)] text-text-muted hover:border-gold hover:text-gold'
+                    form.occasion === occ.id ? 'bg-rosso text-white' : 'border border-olive/25 text-text-medium bg-white hover:border-rosso hover:text-rosso'
                   }`}
                 >
                   {occ.label}
@@ -221,7 +221,7 @@ export default function MalfiReservation() {
                     value={form[field.key]}
                     onChange={e => update(field.key, e.target.value)}
                     required={field.required}
-                    className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-gold"
+                    className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light focus:outline-none focus:border-olive"
                   />
                 </div>
               ))}
@@ -232,7 +232,7 @@ export default function MalfiReservation() {
                   onChange={e => update('requests', e.target.value)}
                   rows={3}
                   placeholder="Alergie, špeciálne nastavenie stola, detská stolička..."
-                  className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted resize-none focus:outline-none focus:border-gold"
+                  className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light resize-none focus:outline-none focus:border-olive"
                 />
               </div>
             </div>
@@ -241,7 +241,7 @@ export default function MalfiReservation() {
           <button
             type="submit"
             disabled={!form.date || !form.time || !form.name || !form.email || mutation.isPending}
-            className="btn-gold w-full py-4 font-semibold text-base disabled:opacity-60 disabled:cursor-not-allowed"
+            className="btn-primary w-full py-4 font-semibold text-base disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {mutation.isPending ? 'Spracovávam...' : 'Potvrdiť rezerváciu'}
           </button>
