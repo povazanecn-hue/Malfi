@@ -63,14 +63,14 @@ export default function MalfiCheckout() {
   const update = (key, val) => setForm(f => ({ ...f, [key]: val }));
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-20 pb-24">
+    <div className="min-h-screen bg-cream pt-20 pb-24">
       <div className="container-malfi py-10 max-w-4xl mx-auto">
         <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-text-muted hover:text-gold transition-colors mb-8">
           <ArrowLeft className="w-4 h-4" /> Späť
         </button>
 
-        <div className="label-caps text-gold mb-2">Pokladňa</div>
-        <h1 className="font-display text-4xl text-text-primary mb-8">Dokončiť objednávku</h1>
+        <div className="label-caps text-olive mb-2">Pokladňa</div>
+        <h1 className="font-display text-4xl text-text-dark mb-8">Dokončiť objednávku</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
@@ -94,7 +94,7 @@ export default function MalfiCheckout() {
                         value={form[field.key]}
                         onChange={e => update(field.key, e.target.value)}
                         required={field.required}
-                        className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-gold transition-colors"
+                        className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light focus:outline-none focus:border-olive transition-colors"
                       />
                     </div>
                   ))}
@@ -116,7 +116,7 @@ export default function MalfiCheckout() {
                       onChange={e => update('address', e.target.value)}
                       required
                       placeholder="Ulica, číslo domu, PSČ"
-                      className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted focus:outline-none focus:border-gold"
+                      className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light focus:outline-none focus:border-olive"
                     />
                   </div>
                 )}
@@ -128,7 +128,7 @@ export default function MalfiCheckout() {
                     type="time"
                     value={form.time}
                     onChange={e => update('time', e.target.value)}
-                    className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm focus:outline-none focus:border-gold"
+                    className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm focus:outline-none focus:border-olive"
                   />
                 </div>
                 <div className="mt-4">
@@ -138,7 +138,7 @@ export default function MalfiCheckout() {
                     onChange={e => update('notes', e.target.value)}
                     rows={2}
                     placeholder="Špeciálne pokyny, alergie..."
-                    className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted resize-none focus:outline-none focus:border-gold"
+                    className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light resize-none focus:outline-none focus:border-olive"
                   />
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function MalfiCheckout() {
                 <button
                   type="submit"
                   disabled={submitting || cart.length === 0}
-                  className="btn-gold w-full py-4 mt-6 font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn-primary w-full py-4 mt-6 font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'Spracovávam...' : 'Potvrdiť objednávku'}
                 </button>
