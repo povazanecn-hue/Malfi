@@ -38,7 +38,7 @@ export default function MalfiNavbar() {
               <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
                 alt="Malfi Logo"
-                className="h-20 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             </Link>
 
