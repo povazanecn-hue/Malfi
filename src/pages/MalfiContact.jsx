@@ -154,14 +154,55 @@ export default function MalfiContact() {
           </div>
         </div>
 
-        {/* Map */}
-        <div className="rounded-3xl overflow-hidden border border-[rgba(194,149,107,0.15)] h-80">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.0!2d17.1057!3d48.1441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c89530cb0b1f7%3A0x1b1b1b1b1b1b1b1b!2sHurbanovo+n%C3%A1mestie+1%2C+Bratislava!5e0!3m2!1ssk!2ssk!4v1000000000000"
-            width="100%" height="100%"
-            style={{ border: 0, filter: 'grayscale(50%) invert(90%) contrast(80%)' }}
-            allowFullScreen loading="lazy" title="MALFI mapa"
-          />
+        {/* Interactive Map */}
+        <div className="mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+            <div>
+              <div className="label-caps text-olive mb-1">Kde nás nájdete</div>
+              <p className="text-text-medium text-sm">{ADDRESS}</p>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${RESTAURANT_LAT},${RESTAURANT_LNG}`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-olive px-4 py-2.5 text-sm flex items-center gap-2"
+              >
+                <Navigation className="w-4 h-4" />
+                Google Maps
+              </a>
+              <a
+                href={`https://waze.com/ul?ll=${RESTAURANT_LAT},${RESTAURANT_LNG}&navigate=yes`}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-outline px-4 py-2.5 text-sm flex items-center gap-2"
+              >
+                <Navigation className="w-4 h-4" />
+                Waze
+              </a>
+            </div>
+          </div>
+          <div className="rounded-3xl overflow-hidden border border-olive/15 h-96 shadow-sm">
+            <MapContainer
+              center={[RESTAURANT_LAT, RESTAURANT_LNG]}
+              zoom={16}
+              style={{ width: '100%', height: '100%' }}
+              scrollWheelZoom={false}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[RESTAURANT_LAT, RESTAURANT_LNG]}>
+                <Popup>
+                  <div className="text-center">
+                    <strong>MALFI Italian Bistro</strong><br />
+                    {ADDRESS}
+                  </div>
+                </Popup>
+              </Marker>
+            </MapContainer>
+          </div>
         </div>
       </div>
     </div>
