@@ -34,14 +34,12 @@ export default function MalfiNavbar() {
         <div className="container-malfi">
           <div className="flex items-center justify-between h-18 py-4">
             {/* Logo */}
-            <Link to="/MalfiHome" className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-full border-2 border-olive flex items-center justify-center">
-                <span className="font-display text-olive font-bold text-sm">M</span>
-              </div>
-              <div>
-                <span className="font-display text-text-dark font-bold text-xl tracking-tight">MALFI</span>
-                <div className="label-caps text-text-light text-[9px] tracking-[0.2em] -mt-0.5">Italian Bistro</div>
-              </div>
+            <Link to="/MalfiHome" className="flex items-center group">
+              <img
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
+                alt="Malfi Logo"
+                className="h-14 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Nav */}
