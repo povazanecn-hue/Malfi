@@ -59,16 +59,16 @@ export default function MalfiReservation() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="container-malfi max-w-md text-center py-16"
+          className="c-container max-w-md text-center py-16"
         >
           <div className="w-20 h-20 rounded-full bg-olive/20 border border-olive/40 flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-10 h-10 text-olive" />
           </div>
           <div className="label-caps text-olive mb-3">Ďakujeme!</div>
-          <h1 className="font-display text-4xl text-text-dark mb-4">
+          <h1 className="c-heading is-h1 text-text-dark mb-4">
             {submitted.status === 'confirmed' ? 'Rezervácia potvrdená' : 'Rezervácia prijatá'}
           </h1>
-          <div className="card-dark p-6 text-left mb-6 space-y-3">
+          <div className="c-card text-left mb-6 space-y-3">
             <div className="flex justify-between text-sm">
               <span className="text-text-muted">Meno</span>
               <span className="text-text-primary">{submitted.customer_name}</span>
@@ -97,13 +97,13 @@ export default function MalfiReservation() {
 
   return (
     <div className="min-h-screen bg-cream pt-20 pb-24">
-      <div className="container-malfi max-w-2xl py-10">
+      <div className="c-container max-w-2xl py-10">
         <div className="label-caps text-olive mb-2">Rezervácia stola</div>
-        <h1 className="font-display text-4xl text-text-dark mb-8">Zarezervujte si stôl</h1>
+        <h1 className="c-heading is-h2 text-text-dark mb-8">Zarezervujte si stôl</h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Guests */}
-          <div className="card-dark p-6 border-l-4 border-l-olive">
+          <div className="c-card is-bordered border-l-olive">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-olive/15 flex items-center justify-center">
                 <Users className="w-5 h-5 text-olive-dark" />
@@ -127,7 +127,7 @@ export default function MalfiReservation() {
           </div>
 
           {/* Date & Time */}
-          <div className="card-dark p-6 border-l-4 border-l-rosso">
+          <div className="c-card is-bordered border-l-rosso">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-rosso/10 flex items-center justify-center">
                 <Calendar className="w-5 h-5 text-rosso" />
@@ -135,18 +135,18 @@ export default function MalfiReservation() {
               <h3 className="font-display text-lg text-text-primary">Dátum a čas</h3>
             </div>
             <div className="mb-5">
-              <label className="label-caps text-text-muted text-[10px] mb-1.5 block">Dátum</label>
+              <label className="c-label">Dátum</label>
               <input
                 type="date"
                 value={form.date}
                 onChange={e => update('date', e.target.value)}
                 min={new Date().toISOString().split('T')[0]}
                 required
-                className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-primary text-sm focus:outline-none focus:border-olive placeholder:text-text-light"
+                className="c-input"
               />
             </div>
             <div>
-              <label className="label-caps text-text-muted text-[10px] mb-2 block">Čas</label>
+              <label className="c-label">Čas</label>
               <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                 {TIME_SLOTS.map(slot => (
                   <button
@@ -165,7 +165,7 @@ export default function MalfiReservation() {
           </div>
 
           {/* Seating preference */}
-          <div className="card-dark p-6 border-l-4 border-l-terracotta">
+          <div className="c-card is-bordered border-l-terracotta">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 rounded-lg bg-terracotta/15 flex items-center justify-center">
                 <Home className="w-5 h-5 text-terracotta" />
@@ -193,7 +193,7 @@ export default function MalfiReservation() {
           </div>
 
           {/* Occasion */}
-          <div className="card-dark p-6 border-l-4 border-l-rosso-light">
+          <div className="c-card is-bordered border-l-rosso-light">
             <h3 className="font-display text-lg text-text-primary mb-5">✨ Príležitosť</h3>
             <div className="flex flex-wrap gap-2">
               {OCCASIONS.map(occ => (
@@ -212,7 +212,7 @@ export default function MalfiReservation() {
           </div>
 
           {/* Contact */}
-          <div className="card-dark p-6 border-l-4 border-l-olive-light">
+          <div className="c-card is-bordered border-l-olive-light">
             <h3 className="font-display text-lg text-text-primary mb-5">👤 Vaše údaje</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
@@ -221,24 +221,24 @@ export default function MalfiReservation() {
                 { key: 'phone', label: 'Telefón', type: 'tel', required: true },
               ].map(field => (
                 <div key={field.key} className={field.full ? 'sm:col-span-2' : ''}>
-                  <label className="label-caps text-text-muted text-[10px] mb-1.5 block">{field.label}</label>
+                  <label className="c-label">{field.label}</label>
                   <input
                     type={field.type}
                     value={form[field.key]}
                     onChange={e => update(field.key, e.target.value)}
                     required={field.required}
-                    className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light focus:outline-none focus:border-olive"
+                    className="c-input"
                   />
                 </div>
               ))}
               <div className="sm:col-span-2">
-                <label className="label-caps text-text-muted text-[10px] mb-1.5 block">Špeciálne požiadavky</label>
+                <label className="c-label">Špeciálne požiadavky</label>
                 <textarea
                   value={form.requests}
                   onChange={e => update('requests', e.target.value)}
                   rows={3}
                   placeholder="Alergie, špeciálne nastavenie stola, detská stolička..."
-                  className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light resize-none focus:outline-none focus:border-olive"
+                  className="c-input resize-none"
                 />
               </div>
             </div>
