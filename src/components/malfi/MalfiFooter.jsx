@@ -14,11 +14,11 @@ export default function MalfiFooter() {
               </div>
               <div>
                 <div className="font-display text-white font-bold text-xl">MALFI</div>
-                <div className="label-caps text-white/50 text-[9px]">Italian Bistro</div>
+                <div className="label-caps text-white/50 text-[9px]">Talianska Reštaurácia</div>
               </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed">
-              Moderné talianske bistro v srdci Bratislavy. Autentická chuť Talianska, lokálne suroviny.
+              Moderná talianska reštaurácia v srdci Bratislavy. Autentická chuť Talianska, lokálne suroviny.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a href="https://instagram.com" target="_blank" rel="noreferrer"
@@ -91,7 +91,7 @@ export default function MalfiFooter() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">© 2024 MALFI Italian Bistro. Všetky práva vyhradené.</p>
+          <p className="text-white/40 text-xs">© 2024 MALFI Talianska Reštaurácia. Všetky práva vyhradené.</p>
           <p className="text-white/40 text-xs">Hurbanovo námestie 1, Bratislava · <a href="tel:+421900000000" className="hover:text-white/70">+421 900 000 000</a></p>
         </div>
       </div>
