@@ -13,6 +13,7 @@ export default function HeroSection() {
                             radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.06) 0%, transparent 50%)`
         }} />
       </div>
+      <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-24 pt-32">
