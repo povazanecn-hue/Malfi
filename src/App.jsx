@@ -10,6 +10,8 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 // Layout imports
 import MainLayout from '@/components/layout/MainLayout';
 import AdminLayout from '@/components/layout/AdminLayout';
+import MalfiLayout from '@/components/malfi/MalfiLayout';
+import MalfiAdminLayout from '@/components/malfi/admin/MalfiAdminLayout';
 
 // Page imports
 import Home from '@/pages/Home';
@@ -25,6 +27,17 @@ import AdminOrders from '@/pages/AdminOrders';
 import AdminReservations from '@/pages/AdminReservations';
 import AdminMenu from '@/pages/AdminMenu';
 import AdminProducts from '@/pages/AdminProducts';
+
+// MALFI pages
+import MalfiHome from '@/pages/MalfiHome';
+import MalfiMenu from '@/pages/MalfiMenu';
+import MalfiOrder from '@/pages/MalfiOrder';
+import MalfiCheckout from '@/pages/MalfiCheckout';
+import MalfiOrderSuccess from '@/pages/MalfiOrderSuccess';
+import MalfiReservation from '@/pages/MalfiReservation';
+import MalfiAbout from '@/pages/MalfiAbout';
+import MalfiContact from '@/pages/MalfiContact';
+import MalfiAdmin from '@/pages/MalfiAdmin';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -72,6 +85,23 @@ const AuthenticatedApp = () => {
         <Route path="/AdminReservations" element={<AdminReservations />} />
         <Route path="/AdminMenu" element={<AdminMenu />} />
         <Route path="/AdminProducts" element={<AdminProducts />} />
+      </Route>
+
+      {/* MALFI routes */}
+      <Route element={<MalfiLayout />}>
+        <Route path="/MalfiHome" element={<MalfiHome />} />
+        <Route path="/MalfiMenu" element={<MalfiMenu />} />
+        <Route path="/MalfiOrder" element={<MalfiOrder />} />
+        <Route path="/MalfiCheckout" element={<MalfiCheckout />} />
+        <Route path="/MalfiOrderSuccess" element={<MalfiOrderSuccess />} />
+        <Route path="/MalfiReservation" element={<MalfiReservation />} />
+        <Route path="/MalfiAbout" element={<MalfiAbout />} />
+        <Route path="/MalfiContact" element={<MalfiContact />} />
+      </Route>
+
+      {/* MALFI Admin routes */}
+      <Route element={<MalfiAdminLayout />}>
+        <Route path="/MalfiAdmin" element={<MalfiAdmin />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />
