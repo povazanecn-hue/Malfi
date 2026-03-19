@@ -8,12 +8,36 @@ import { CheckCircle, Clock, Star } from 'lucide-react';
 export default function MalfiOrderSuccess() {
   const params = new URLSearchParams(window.location.search);
   const orderId = params.get('id');
+  const [showReviewForm, setShowReviewForm] = useState(false);
+  const [rating, setRating] = useState(5);
+  const [comment, setComment] = useState('');
 
   const { data: order } = useQuery({
     queryKey: ['malfi-order', orderId],
     queryFn: () => base44.entities.Order.filter({ id: orderId }).then(r => r[0]),
     enabled: !!orderId,
   });
+
+  const reviewMutation = useMutation({
+    mutationFn: (reviewData) => base44.entities.Review.create(reviewData),
+    onSuccess: () => {
+      setShowReviewForm(false);
+      setRating(5);
+      setComment('');
+    },
+  });
+
+  const handleSubmitReview = async (e) => {
+    e.preventDefault();
+    await reviewMutation.mutate({
+      order_id: orderId,
+      customer_name: order?.customer_name,
+      customer_email: order?.customer_email,
+      rating,
+      comment,
+      is_approved: true,
+    });
+  };
 
   return (
     <div className="min-h-screen bg-bg-primary pt-20 flex items-center justify-center pb-24">
