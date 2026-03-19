@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Plus, Minus, X, ShoppingBag } from 'lucide-react';
+import { Plus, Minus, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 
 export default function MalfiItemModal({ item, addons, open, onClose }) {
@@ -38,7 +38,7 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
 
   return (
     <Dialog open={open} onOpenChange={() => onClose()}>
-      <DialogContent className="bg-bg-secondary border border-[rgba(194,149,107,0.2)] rounded-3xl p-0 max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-white border border-olive/15 rounded-3xl p-0 max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto">
         {/* Image */}
         {item.image_url && (
           <div className="aspect-[16/9] overflow-hidden">
@@ -48,39 +48,39 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
 
         <div className="p-6 space-y-5">
           <div>
-            <h2 className="font-display text-2xl text-text-primary">{item.name}</h2>
+            <h2 className="font-display text-2xl text-text-dark">{item.name}</h2>
             {item.description && (
-              <p className="text-text-muted text-sm mt-2 leading-relaxed">{item.description}</p>
+              <p className="text-text-medium text-sm mt-2 leading-relaxed">{item.description}</p>
             )}
           </div>
 
           {/* Addons */}
           {addons.length > 0 && (
             <div>
-              <div className="label-caps text-gold mb-3">Extras</div>
+              <div className="label-caps text-olive mb-3">Extras</div>
               <div className="space-y-2">
                 {addons.map(addon => (
                   <label
                     key={addon.id}
                     className={`flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-all ${
                       selectedAddons.find(a => a.id === addon.id)
-                        ? 'border-gold bg-gold/5'
-                        : 'border-[rgba(194,149,107,0.2)] hover:border-gold/50'
+                        ? 'border-olive bg-olive/5'
+                        : 'border-olive/15 hover:border-olive/35'
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <div className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-all ${
-                        selectedAddons.find(a => a.id === addon.id) ? 'border-gold bg-gold' : 'border-[rgba(194,149,107,0.4)]'
+                        selectedAddons.find(a => a.id === addon.id) ? 'border-olive bg-olive' : 'border-olive/30'
                       }`}>
                         {selectedAddons.find(a => a.id === addon.id) && (
-                          <svg className="w-2.5 h-2.5 text-bg-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         )}
                       </div>
-                      <span className="text-text-primary text-sm">{addon.name}</span>
+                      <span className="text-text-dark text-sm">{addon.name}</span>
                     </div>
-                    <span className="text-gold text-sm font-semibold">+€{addon.price.toFixed(2)}</span>
+                    <span className="text-olive text-sm font-semibold">+€{addon.price.toFixed(2)}</span>
                     <input type="checkbox" className="hidden" checked={!!selectedAddons.find(a => a.id === addon.id)} onChange={() => toggleAddon(addon)} />
                   </label>
                 ))}
@@ -90,30 +90,30 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
 
           {/* Note */}
           <div>
-            <div className="label-caps text-gold mb-2">Poznámka (voliteľné)</div>
+            <div className="label-caps text-text-light mb-2">Poznámka (voliteľné)</div>
             <textarea
               value={note}
               onChange={e => setNote(e.target.value)}
               placeholder="Špeciálne požiadavky, alergie..."
-              className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm placeholder:text-text-muted resize-none focus:outline-none focus:border-gold"
+              className="w-full bg-cream border border-olive/15 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light resize-none focus:outline-none focus:border-olive"
               rows={2}
             />
           </div>
 
           {/* Qty + Add */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 border border-[rgba(194,149,107,0.3)] rounded-full px-2 py-1">
+            <div className="flex items-center gap-3 border border-olive/20 rounded-full px-2 py-1 bg-cream">
               <button onClick={() => setQty(Math.max(1, qty - 1))}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-text-muted hover:text-gold transition-colors">
+                className="w-7 h-7 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
                 <Minus className="w-3.5 h-3.5" />
               </button>
-              <span className="text-text-primary font-semibold w-6 text-center">{qty}</span>
+              <span className="text-text-dark font-semibold w-6 text-center">{qty}</span>
               <button onClick={() => setQty(qty + 1)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-text-muted hover:text-gold transition-colors">
+                className="w-7 h-7 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
                 <Plus className="w-3.5 h-3.5" />
               </button>
             </div>
-            <button onClick={handleAdd} className="btn-gold flex-1 py-3 flex items-center justify-center gap-2 font-semibold">
+            <button onClick={handleAdd} className="btn-primary flex-1 py-3 flex items-center justify-center gap-2 font-semibold">
               <ShoppingBag className="w-4 h-4" />
               Pridať do košíka · €{total.toFixed(2)}
             </button>

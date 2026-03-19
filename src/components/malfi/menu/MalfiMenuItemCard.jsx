@@ -2,12 +2,12 @@ import { Plus } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 
 const TAG_CONFIG = {
-  bestseller: { label: 'Bestseller', class: 'bg-gold/20 text-gold' },
-  vegetarian: { label: 'Vegetarián', class: 'bg-olive/20 text-olive' },
-  vegan: { label: 'Vegán', class: 'bg-olive/25 text-olive' },
-  spicy: { label: 'Pálivé', class: 'bg-terracotta/20 text-terracotta' },
-  'gluten-free': { label: 'Bez lepku', class: 'bg-[rgba(194,149,107,0.15)] text-gold-light' },
-  seasonal: { label: 'Sezónne', class: 'bg-[rgba(107,124,94,0.2)] text-olive' },
+  bestseller: { label: 'Bestseller', class: 'bg-rosso/10 text-rosso' },
+  vegetarian: { label: 'Vegetarián', class: 'bg-olive/15 text-olive-dark' },
+  vegan: { label: 'Vegán', class: 'bg-olive/20 text-olive-dark' },
+  spicy: { label: 'Pálivé', class: 'bg-terracotta/15 text-terracotta' },
+  'gluten-free': { label: 'Bez lepku', class: 'bg-amber-50 text-amber-700' },
+  seasonal: { label: 'Sezónne', class: 'bg-olive/15 text-olive-dark' },
 };
 
 export default function MalfiMenuItemCard({ item, onClick }) {
@@ -27,7 +27,7 @@ export default function MalfiMenuItemCard({ item, onClick }) {
   return (
     <div
       onClick={() => onClick(item)}
-      className="card-dark overflow-hidden group cursor-pointer hover:border-[rgba(194,149,107,0.35)] transition-all duration-300"
+      className="bg-white border border-olive/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-olive/30 hover:shadow-md transition-all duration-300"
     >
       {/* Image */}
       <div className="aspect-[4/3] overflow-hidden relative">
@@ -38,8 +38,8 @@ export default function MalfiMenuItemCard({ item, onClick }) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full bg-bg-tertiary flex items-center justify-center">
-            <span className="font-display text-4xl text-text-muted/30">M</span>
+          <div className="w-full h-full bg-cream-dark flex items-center justify-center">
+            <span className="font-display text-4xl text-text-light/30">M</span>
           </div>
         )}
         {/* Tags */}
@@ -49,7 +49,7 @@ export default function MalfiMenuItemCard({ item, onClick }) {
               const config = TAG_CONFIG[tag];
               if (!config) return null;
               return (
-                <span key={tag} className={`label-caps text-[9px] px-2 py-1 rounded-full ${config.class}`}>
+                <span key={tag} className={`label-caps text-[9px] px-2 py-1 rounded-full backdrop-blur-sm ${config.class}`}>
                   {config.label}
                 </span>
               );
@@ -57,28 +57,24 @@ export default function MalfiMenuItemCard({ item, onClick }) {
           </div>
         )}
         {!item.is_available && (
-          <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <span className="label-caps text-text-muted">Nedostupné</span>
+          <div className="absolute inset-0 bg-white/70 flex items-center justify-center">
+            <span className="label-caps text-text-light">Nedostupné</span>
           </div>
         )}
       </div>
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="font-display text-lg text-text-primary mb-1">{item.name}</h3>
+        <h3 className="font-display text-lg text-text-dark mb-1">{item.name}</h3>
         {item.description && (
-          <p className="text-text-muted text-sm line-clamp-2 mb-4">{item.description}</p>
-        )}
-        {/* Allergens */}
-        {item.dietary_tags && item.dietary_tags.includes('allergens') && (
-          <div className="text-text-muted text-xs mb-3">Alergény: {item.dietary_tags.join(', ')}</div>
+          <p className="text-text-light text-sm line-clamp-2 mb-4">{item.description}</p>
         )}
         <div className="flex items-center justify-between">
-          <span className="font-display text-xl text-gold font-bold">€{item.price?.toFixed(2)}</span>
+          <span className="font-display text-xl text-text-dark font-bold">€{item.price?.toFixed(2)}</span>
           <button
             onClick={handleAdd}
             disabled={!item.is_available}
-            className="w-9 h-9 rounded-full btn-gold flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-9 h-9 rounded-full bg-rosso text-white flex items-center justify-center hover:bg-[#A93226] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Plus className="w-4 h-4" />
           </button>
