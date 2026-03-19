@@ -1,0 +1,8 @@
+{
+  "description": "Send email notification when customer submits a review",
+  "automation_type": "entity",
+  "entity_name": "Review",
+  "event_types": ["create"],
+  "function_name": "sendReviewNotification",
+  "is_active": true
+}
