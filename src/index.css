@@ -78,6 +78,85 @@
   }
 }
 
+@layer components {
+  /* ClientFirst Component Classes */
+  .c-container {
+    @apply max-w-7xl mx-auto px-5 md:px-10;
+  }
+
+  .c-section {
+    @apply py-16 md:py-24;
+  }
+
+  .c-card {
+    @apply bg-white border border-olive/10 rounded-2xl p-5 md:p-6;
+  }
+
+  .c-card.is-bordered {
+    @apply border-l-4;
+  }
+
+  .c-icon-box {
+    @apply w-10 h-10 rounded-lg flex items-center justify-center;
+  }
+
+  .c-btn {
+    @apply inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300;
+  }
+
+  .c-btn.is-primary {
+    @apply bg-rosso text-white hover:shadow-lg hover:shadow-rosso/40 px-6 py-3 hover:scale-105;
+  }
+
+  .c-btn.is-outline {
+    @apply border-2 border-olive text-olive bg-white hover:bg-olive hover:text-white px-6 py-3;
+  }
+
+  .c-input {
+    @apply w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light focus:outline-none focus:border-olive transition-colors;
+  }
+
+  .c-label {
+    @apply label-caps text-text-muted text-[10px] mb-1.5 block;
+  }
+
+  .c-grid {
+    @apply grid gap-4;
+  }
+
+  .c-grid.is-cols-2 {
+    @apply grid-cols-1 sm:grid-cols-2;
+  }
+
+  .c-grid.is-cols-3 {
+    @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .c-grid.is-cols-4 {
+    @apply grid-cols-2 sm:grid-cols-4;
+  }
+
+  .c-badge {
+    @apply label-caps text-[9px] px-2 py-1 rounded-full backdrop-blur-sm;
+  }
+
+  .c-heading {
+    @apply font-display font-bold;
+  }
+
+  .c-heading.is-h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  .c-heading.is-h2 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  .c-heading.is-h3 {
+    @apply text-lg md:text-xl;
+  }
+}
+
 @layer utilities {
   .font-display {
     font-family: 'Cormorant Garamond', serif;
@@ -85,6 +164,8 @@
   .font-body {
     font-family: 'Outfit', sans-serif;
   }
+
+  /* Color utilities */
   .text-olive { color: var(--olive); }
   .text-olive-dark { color: var(--olive-dark); }
   .text-rosso { color: var(--rosso); }
@@ -203,35 +284,19 @@
   }
 
   .card-light {
-    background-color: white;
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
+    @apply c-card;
   }
 
-  /* Legacy card - now light */
   .card-dark {
-    background-color: white;
-    border: 1px solid var(--border-light);
-    border-radius: 20px;
+    @apply c-card;
   }
 
   .section-pad {
-    padding: 90px 0;
+    @apply c-section;
   }
 
   .container-malfi {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  @media (max-width: 768px) {
-    .container-malfi {
-      padding: 0 20px;
-    }
-    .section-pad {
-      padding: 60px 0;
-    }
+    @apply c-container;
   }
 }
 
