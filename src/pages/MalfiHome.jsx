@@ -32,6 +32,7 @@ export default function MalfiHome() {
       <ReservationCTA />
       <GallerySection />
       <AppDownloadSection />
+      <ReviewsSection />
       <LocationHours />
       <InstagramStrip />
     </div>
