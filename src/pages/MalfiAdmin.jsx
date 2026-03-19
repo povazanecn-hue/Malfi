@@ -51,7 +51,7 @@ export default function MalfiAdmin() {
     <div className="p-6 lg:p-8">
       <div className="mb-8">
         <div className="label-caps text-olive mb-1">Admin panel</div>
-        <h1 className="font-display text-3xl text-text-dark">Dashboard</h1>
+        <h1 className="font-display text-3xl text-text-dark">Prehľad</h1>
         <p className="text-text-muted text-sm mt-1">{new Date().toLocaleDateString('sk-SK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
       </div>
 
@@ -124,7 +124,7 @@ export default function MalfiAdmin() {
                   <div className="text-text-light text-xs">{res.date} · {res.time} · {res.party_size} osôb</div>
                 </div>
                 <span className={`label-caps text-[9px] px-2 py-1 rounded-full ${STATUS_COLORS[res.status] || 'text-text-muted bg-bg-tertiary'}`}>
-                  {res.status}
+                  {({'pending':'Čakajúca','confirmed':'Potvrdená','seated':'Sedí','completed':'Dokončená','cancelled':'Zrušená','no_show':'Nedostavil sa'})[res.status] || res.status}
                 </span>
               </div>
             ))}

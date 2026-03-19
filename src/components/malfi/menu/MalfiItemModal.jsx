@@ -57,7 +57,7 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
           {/* Addons */}
           {addons.length > 0 && (
             <div>
-              <div className="label-caps text-olive mb-3">Extras</div>
+              <div className="label-caps text-olive mb-3">Prílohy / doplnky</div>
               <div className="space-y-2">
                 {addons.map(addon => (
                   <label

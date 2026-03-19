@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 const ORDER_MODES = [
   { id: 'delivery', label: 'Rozvoz', icon: Truck },
   { id: 'pickup', label: 'Osobný odber', icon: ShoppingBag },
-  { id: 'dine_in', label: 'Dine-in', icon: Users },
+  { id: 'dine_in', label: 'V reštaurácii', icon: Users },
 ];
 
 export default function MalfiOrder() {
