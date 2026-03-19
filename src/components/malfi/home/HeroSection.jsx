@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Star, Leaf } from 'lucide-react';
+import { ItalianCornerDecor } from '@/components/malfi/decorative/ItalianDividers';
 
 export default function HeroSection() {
   return (
