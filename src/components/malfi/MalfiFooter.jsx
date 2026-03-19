@@ -6,21 +6,20 @@ export default function MalfiFooter() {
     <footer className="bg-olive-dark text-white">
       <div className="container-malfi py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full border-2 border-white/40 flex items-center justify-center">
-                <span className="font-display text-white font-bold text-base">M</span>
-              </div>
-              <div>
-                <div className="font-display text-white font-bold text-xl">MALFI</div>
-                <div className="label-caps text-white/50 text-[9px]">Talianska Reštaurácia</div>
-              </div>
-            </div>
+          <div className="space-y-5">
+            <Link to="/MalfiHome" className="inline-block">
+              <img
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
+                alt="MALFI Logo"
+                className="h-16 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
             <p className="text-white/60 text-sm leading-relaxed">
               Moderná talianska reštaurácia v srdci Bratislavy. Autentická chuť Talianska, lokálne suroviny.
             </p>
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noreferrer"
                 className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
                 <Instagram className="w-4 h-4" />
@@ -42,6 +41,7 @@ export default function MalfiFooter() {
                 { label: 'Objednávka', path: '/MalfiOrder' },
                 { label: 'Rezervácia', path: '/MalfiReservation' },
                 { label: 'O nás', path: '/MalfiAbout' },
+                { label: 'Kontakt', path: '/MalfiContact' },
               ].map(item => (
                 <li key={item.path}>
                   <Link to={item.path} className="text-white/60 hover:text-white transition-colors text-sm">
@@ -56,7 +56,6 @@ export default function MalfiFooter() {
           <div>
             <h6 className="label-caps text-white/40 mb-5">Informácie</h6>
             <ul className="space-y-3 text-white/60 text-sm">
-              <li><Link to="/MalfiContact" className="hover:text-white transition-colors">Kontakt</Link></li>
               <li><a href="#" className="hover:text-white transition-colors">Alergény</a></li>
               <li><a href="#" className="hover:text-white transition-colors">GDPR & Súkromie</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Obchodné podmienky</a></li>
@@ -91,7 +90,7 @@ export default function MalfiFooter() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-xs">© 2024 MALFI Talianska Reštaurácia. Všetky práva vyhradené.</p>
+          <p className="text-white/40 text-xs">© 2026 MALFI Talianska Reštaurácia. Všetky práva vyhradené.</p>
           <p className="text-white/40 text-xs">Hurbanovo námestie 1, Bratislava · <a href="tel:+421900000000" className="hover:text-white/70">+421 900 000 000</a></p>
         </div>
       </div>
