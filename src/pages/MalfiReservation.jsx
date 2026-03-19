@@ -97,7 +97,7 @@ export default function MalfiReservation() {
 
   return (
     <div className="min-h-screen bg-cream pt-20 pb-24">
-      <div className="container-malfi max-w-2xl mx-auto py-10">
+      <div className="container-malfi max-w-2xl py-10">
         <div className="label-caps text-olive mb-2">Rezervácia stola</div>
         <h1 className="font-display text-4xl text-text-dark mb-8">Zarezervujte si stôl</h1>
 
