@@ -8,6 +8,7 @@ import OrderingCTA from '@/components/malfi/home/OrderingCTA';
 import LocationHours from '@/components/malfi/home/LocationHours';
 import InstagramStrip from '@/components/malfi/home/InstagramStrip';
 import AppDownloadSection from '@/components/malfi/home/AppDownloadSection';
+import ReviewsSection from '@/components/malfi/home/ReviewsSection';
 import {
   OliveBranchDivider,
   WaveDivider,
