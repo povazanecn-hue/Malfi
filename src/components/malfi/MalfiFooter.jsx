@@ -99,7 +99,7 @@ export default function MalfiFooter() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col items-center gap-2 text-center">
           <p className="text-white/40 text-xs">© 2026 MALFI Talianska Reštaurácia. Všetky práva vyhradené.</p>
           <p className="text-white/40 text-xs">Hurbanovo námestie 1, Bratislava · <a href="tel:+421900000000" className="hover:text-white/70">+421 900 000 000</a></p>
         </div>
