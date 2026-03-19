@@ -103,9 +103,11 @@ export default function MalfiReservation() {
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Guests */}
-          <div className="card-dark p-6">
-            <div className="flex items-center gap-2 mb-5">
-              <Users className="w-4 h-4 text-gold" />
+          <div className="card-dark p-6 border-l-4 border-l-olive">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-lg bg-olive/15 flex items-center justify-center">
+                <Users className="w-5 h-5 text-olive-dark" />
+              </div>
               <h3 className="font-display text-lg text-text-primary">Počet hostí</h3>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -125,9 +127,11 @@ export default function MalfiReservation() {
           </div>
 
           {/* Date & Time */}
-          <div className="card-dark p-6">
-            <div className="flex items-center gap-2 mb-5">
-              <Calendar className="w-4 h-4 text-gold" />
+          <div className="card-dark p-6 border-l-4 border-l-rosso">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-lg bg-rosso/10 flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-rosso" />
+              </div>
               <h3 className="font-display text-lg text-text-primary">Dátum a čas</h3>
             </div>
             <div className="mb-5">
@@ -161,9 +165,11 @@ export default function MalfiReservation() {
           </div>
 
           {/* Seating preference */}
-          <div className="card-dark p-6">
-            <div className="flex items-center gap-2 mb-5">
-              <Home className="w-4 h-4 text-gold" />
+          <div className="card-dark p-6 border-l-4 border-l-terracotta">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-lg bg-terracotta/15 flex items-center justify-center">
+                <Home className="w-5 h-5 text-terracotta" />
+              </div>
               <h3 className="font-display text-lg text-text-primary">Sedenie</h3>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -187,8 +193,8 @@ export default function MalfiReservation() {
           </div>
 
           {/* Occasion */}
-          <div className="card-dark p-6">
-            <h3 className="font-display text-lg text-text-primary mb-5">Príležitosť</h3>
+          <div className="card-dark p-6 border-l-4 border-l-rosso-light">
+            <h3 className="font-display text-lg text-text-primary mb-5">✨ Príležitosť</h3>
             <div className="flex flex-wrap gap-2">
               {OCCASIONS.map(occ => (
                 <button
@@ -206,8 +212,8 @@ export default function MalfiReservation() {
           </div>
 
           {/* Contact */}
-          <div className="card-dark p-6">
-            <h3 className="font-display text-lg text-text-primary mb-5">Vaše údaje</h3>
+          <div className="card-dark p-6 border-l-4 border-l-olive-light">
+            <h3 className="font-display text-lg text-text-primary mb-5">👤 Vaše údaje</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { key: 'name', label: 'Meno a priezvisko', type: 'text', full: true, required: true },
