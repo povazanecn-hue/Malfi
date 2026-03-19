@@ -61,17 +61,25 @@ export function SectionLabel({ children }) {
 export function ItalianCornerDecor() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {/* Top-left */}
-      <svg className="absolute top-6 left-6 w-16 h-16 text-olive/8" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="1">
-        <path d="M5,5 L30,5 M5,5 L5,30" />
-        <circle cx="5" cy="5" r="2" fill="currentColor" />
-        <path d="M15,15 Q25,10 35,20 Q45,30 40,40" strokeDasharray="3,3" />
+      {/* Top-left olive branch */}
+      <svg className="absolute top-6 left-6 w-20 h-20 text-olive/15" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+        <path d="M20,80 Q30,60 35,40 Q38,20 40,10" strokeLinecap="round" />
+        <circle cx="35" cy="30" r="2" fill="currentColor" />
+        <circle cx="38" cy="50" r="2" fill="currentColor" />
+        <circle cx="40" cy="70" r="2" fill="currentColor" />
+        <path d="M35,30 L28,25 M35,30 L42,28" strokeLinecap="round" />
+        <path d="M38,50 L32,46 M38,50 L44,48" strokeLinecap="round" />
+        <path d="M40,70 L34,66 M40,70 L46,68" strokeLinecap="round" />
       </svg>
-      {/* Top-right */}
-      <svg className="absolute top-6 right-6 w-16 h-16 text-olive/8" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="1" style={{transform:'scaleX(-1)'}}>
-        <path d="M5,5 L30,5 M5,5 L5,30" />
-        <circle cx="5" cy="5" r="2" fill="currentColor" />
-        <path d="M15,15 Q25,10 35,20 Q45,30 40,40" strokeDasharray="3,3" />
+      {/* Top-right olive branch */}
+      <svg className="absolute top-6 right-6 w-20 h-20 text-olive/15" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2" style={{transform:'scaleX(-1)'}}>
+        <path d="M20,80 Q30,60 35,40 Q38,20 40,10" strokeLinecap="round" />
+        <circle cx="35" cy="30" r="2" fill="currentColor" />
+        <circle cx="38" cy="50" r="2" fill="currentColor" />
+        <circle cx="40" cy="70" r="2" fill="currentColor" />
+        <path d="M35,30 L28,25 M35,30 L42,28" strokeLinecap="round" />
+        <path d="M38,50 L32,46 M38,50 L44,48" strokeLinecap="round" />
+        <path d="M40,70 L34,66 M40,70 L46,68" strokeLinecap="round" />
       </svg>
     </div>
   );
