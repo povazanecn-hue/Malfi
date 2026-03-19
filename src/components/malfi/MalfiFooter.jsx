@@ -19,7 +19,7 @@ export default function MalfiFooter() {
               <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
                 alt="MALFI Logo"
-                className="h-24 w-auto object-contain brightness-0 invert"
+                className="h-36 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
