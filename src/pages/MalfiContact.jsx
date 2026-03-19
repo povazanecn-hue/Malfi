@@ -48,11 +48,10 @@ export default function MalfiContact() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-primary pt-20 pb-24">
+    <div className="min-h-screen bg-bg-primary pt-32 pb-24">
       {/* Hero */}
-      <section className="py-20 container-malfi text-center">
+      <section className="pb-12 container-malfi text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <div className="label-caps text-gold mb-4">Kontakt</div>
           <h1 className="font-display text-5xl text-text-primary font-bold">Spojte sa s nami</h1>
         </motion.div>
       </section>
