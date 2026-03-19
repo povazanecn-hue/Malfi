@@ -138,7 +138,7 @@ export default function MalfiReservation() {
                 onChange={e => update('date', e.target.value)}
                 min={new Date().toISOString().split('T')[0]}
                 required
-                className="w-full bg-bg-tertiary border border-[rgba(194,149,107,0.2)] rounded-xl px-4 py-3 text-text-primary text-sm focus:outline-none focus:border-gold"
+                className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-primary text-sm focus:outline-none focus:border-olive placeholder:text-text-light"
               />
             </div>
             <div>
