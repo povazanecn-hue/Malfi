@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { base44 } from '@/api/base44Client';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Truck, ShoppingBag, Users, X, Plus, Minus, ShoppingCart, Tag, ArrowRight } from 'lucide-react';
+import { ShoppingBag, ShoppingCart } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 import MalfiMenuItemCard from '@/components/malfi/menu/MalfiMenuItemCard';
 import MalfiItemModal from '@/components/malfi/menu/MalfiItemModal';
