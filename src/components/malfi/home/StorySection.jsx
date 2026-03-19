@@ -38,11 +38,19 @@ export default function StorySection() {
             transition={{ duration: 0.6 }}
             className="space-y-6 order-1 lg:order-2"
           >
-            <div className="label-caps text-rosso">Náš príbeh</div>
+            <div className="flex items-center gap-2">
+              <span className="text-rosso/50 text-xs">✦</span>
+              <span className="label-caps text-rosso">Náš príbeh</span>
+              <span className="text-rosso/50 text-xs">✦</span>
+            </div>
             <h2 className="font-display text-4xl md:text-5xl text-text-dark leading-tight">
               Príbeh <span className="italic text-olive">MALFI</span>
             </h2>
-            <div className="w-12 h-0.5 bg-rosso" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-px bg-rosso/50" />
+              <span className="text-rosso/40 text-[8px]">✦</span>
+              <div className="w-4 h-px bg-rosso/25" />
+            </div>
             <p className="text-text-medium text-base leading-relaxed">
               MALFI vzniklo zo sna — preniesť ducha talianskej reštaurácie priamo do srdca Bratislavy.
               Každý recept, každá surovina, každý detail v interiéri odráža našu vášeň pre autentickú
