@@ -19,7 +19,7 @@ export default function MalfiFooter() {
               <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
                 alt="MALFI Logo"
-                className="h-16 w-auto object-contain brightness-0 invert"
+                className="h-24 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
@@ -27,12 +27,16 @@ export default function MalfiFooter() {
             </p>
             <div className="flex items-center gap-3">
               <a href="https://instagram.com" target="_blank" rel="noreferrer"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
-                <Instagram className="w-4 h-4" />
+                className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                <Instagram className="w-5 h-5" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noreferrer"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
-                <Facebook className="w-4 h-4" />
+                className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noreferrer"
+                className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                <TikTokIcon />
               </a>
             </div>
           </div>
