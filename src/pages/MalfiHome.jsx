@@ -30,6 +30,7 @@ export default function MalfiHome() {
       <OliveBranchDivider />
       <ReservationCTA />
       <GallerySection />
+      <AppDownloadSection />
       <LocationHours />
       <InstagramStrip />
     </div>
