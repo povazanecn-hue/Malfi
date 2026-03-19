@@ -7,17 +7,28 @@ import ReservationCTA from '@/components/malfi/home/ReservationCTA';
 import OrderingCTA from '@/components/malfi/home/OrderingCTA';
 import LocationHours from '@/components/malfi/home/LocationHours';
 import InstagramStrip from '@/components/malfi/home/InstagramStrip';
+import {
+  OliveBranchDivider,
+  WaveDivider,
+  WaveDividerReverse,
+  ItalianQuote,
+} from '@/components/malfi/decorative/ItalianDividers';
 
 export default function MalfiHome() {
   return (
-    <div>
+    <div className="bg-cream">
       <HeroSection />
+      <OliveBranchDivider />
       <FeaturedDishes />
+      <WaveDivider />
       <CategoryTiles />
+      <WaveDividerReverse />
       <StorySection />
-      <GallerySection />
-      <ReservationCTA />
+      <ItalianQuote text="La dolce vita" />
       <OrderingCTA />
+      <OliveBranchDivider />
+      <ReservationCTA />
+      <GallerySection />
       <LocationHours />
       <InstagramStrip />
     </div>
