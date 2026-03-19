@@ -78,10 +78,66 @@ export default function MalfiOrderSuccess() {
             <span>Odhadovaný čas: 25–35 minút</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link to="/MalfiMenu" className="btn-outline-gold px-8 py-3">Späť na menu</Link>
-            <Link to="/MalfiHome" className="btn-gold px-8 py-3">Domov</Link>
-          </div>
+          {!showReviewForm ? (
+            <>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link to="/MalfiMenu" className="btn-outline-gold px-8 py-3">Späť na menu</Link>
+                <Link to="/MalfiHome" className="btn-gold px-8 py-3">Domov</Link>
+              </div>
+              <button
+                onClick={() => setShowReviewForm(true)}
+                className="mt-6 text-gold hover:text-rosso transition-colors text-sm font-semibold"
+              >
+                Zanechať recenziu
+              </button>
+            </>
+          ) : (
+            <form onSubmit={handleSubmitReview} className="card-dark p-6 text-left mt-8">
+              <h3 className="font-display text-lg text-text-primary mb-4">Vaše hodnotenie</h3>
+              <div className="mb-4">
+                <label className="label-caps text-text-muted text-[10px] mb-2 block">Hodnotenie</label>
+                <div className="flex gap-2">
+                  {[1, 2, 3, 4, 5].map(n => (
+                    <button
+                      key={n}
+                      type="button"
+                      onClick={() => setRating(n)}
+                      className="transition-transform hover:scale-110"
+                    >
+                      <Star className={`w-6 h-6 ${n <= rating ? 'fill-gold text-gold' : 'text-gold/25'}`} />
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="mb-4">
+                <label className="label-caps text-text-muted text-[10px] mb-2 block">Komentár</label>
+                <textarea
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  placeholder="Vaše skúsenosti s nami..."
+                  className="w-full bg-white border border-olive/20 rounded-xl px-4 py-3 text-text-dark text-sm placeholder:text-text-light resize-none focus:outline-none focus:border-olive"
+                  rows={3}
+                  required
+                />
+              </div>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowReviewForm(false)}
+                  className="btn-outline-gold flex-1 py-2 text-sm"
+                >
+                  Zrušiť
+                </button>
+                <button
+                  type="submit"
+                  disabled={reviewMutation.isPending}
+                  className="btn-gold flex-1 py-2 text-sm disabled:opacity-60"
+                >
+                  {reviewMutation.isPending ? 'Posielam...' : 'Odoslať'}
+                </button>
+              </div>
+            </form>
+          )}
 
           <div className="mt-8 text-text-muted text-sm">
             Otázky? <a href="tel:+421900000000" className="text-gold hover:underline">+421 900 000 000</a>
