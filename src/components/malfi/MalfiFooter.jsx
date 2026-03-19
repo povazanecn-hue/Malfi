@@ -14,7 +14,7 @@ export default function MalfiFooter() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
 
           {/* Brand */}
-          <div className="space-y-5">
+          <div className="space-y-5 sm:col-span-2 md:col-span-1">
             <Link to="/MalfiHome" className="inline-block">
               <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
