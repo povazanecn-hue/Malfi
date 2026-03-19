@@ -1,9 +1,13 @@
 export function OliveBranchDivider() {
   return (
-    <div className="flex items-center justify-center py-6 px-8 gap-4">
-      <div className="flex-1 h-px bg-gradient-to-r from-transparent to-olive/25" />
-      <span className="text-olive/50 text-xl select-none">🫒</span>
-      <div className="flex-1 h-px bg-gradient-to-l from-transparent to-olive/25" />
+    <div className="flex items-center justify-center py-8 px-8 gap-5">
+      <div className="flex-1 h-px bg-gradient-to-r from-transparent to-olive/30" />
+      <div className="flex items-center gap-2 text-olive/40 select-none">
+        <span className="text-sm">✦</span>
+        <span className="text-lg">🫒</span>
+        <span className="text-sm">✦</span>
+      </div>
+      <div className="flex-1 h-px bg-gradient-to-l from-transparent to-olive/30" />
     </div>
   );
 }
@@ -30,10 +34,45 @@ export function WaveDividerReverse() {
 
 export function ItalianQuote({ text = "La dolce vita" }) {
   return (
-    <div className="flex items-center justify-center py-10 px-8 gap-5">
-      <div className="flex-1 h-px bg-olive/15" />
-      <p className="font-display text-2xl italic text-olive/60 tracking-wide">{text}</p>
-      <div className="flex-1 h-px bg-olive/15" />
+    <div className="flex items-center justify-center py-12 px-8 gap-6">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-px bg-olive/25" />
+        <span className="text-olive/30 text-xs">✦</span>
+      </div>
+      <p className="font-display text-3xl italic text-olive/55 tracking-wide">{text}</p>
+      <div className="flex items-center gap-3">
+        <span className="text-olive/30 text-xs">✦</span>
+        <div className="w-8 h-px bg-olive/25" />
+      </div>
+    </div>
+  );
+}
+
+export function SectionLabel({ children }) {
+  return (
+    <div className="flex items-center gap-3 mb-3">
+      <span className="text-rosso/60 text-xs">✦</span>
+      <span className="label-caps text-rosso">{children}</span>
+      <span className="text-rosso/60 text-xs">✦</span>
+    </div>
+  );
+}
+
+export function ItalianCornerDecor() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Top-left */}
+      <svg className="absolute top-6 left-6 w-16 h-16 text-olive/8" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="1">
+        <path d="M5,5 L30,5 M5,5 L5,30" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" />
+        <path d="M15,15 Q25,10 35,20 Q45,30 40,40" strokeDasharray="3,3" />
+      </svg>
+      {/* Top-right */}
+      <svg className="absolute top-6 right-6 w-16 h-16 text-olive/8" viewBox="0 0 80 80" fill="none" stroke="currentColor" strokeWidth="1" style={{transform:'scaleX(-1)'}}>
+        <path d="M5,5 L30,5 M5,5 L5,30" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" />
+        <path d="M15,15 Q25,10 35,20 Q45,30 40,40" strokeDasharray="3,3" />
+      </svg>
     </div>
   );
 }
