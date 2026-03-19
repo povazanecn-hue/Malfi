@@ -93,7 +93,7 @@ export default function HeroSection() {
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=85"
-                alt="MALFI Italian Bistro"
+                alt="MALFI Talianska Reštaurácia"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

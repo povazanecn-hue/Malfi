@@ -44,7 +44,7 @@ export default function StorySection() {
             </h2>
             <div className="w-12 h-0.5 bg-rosso" />
             <p className="text-text-medium text-base leading-relaxed">
-              MALFI vzniklo zo sna — preniesť ducha talianskeho bistra priamo do srdca Bratislavy.
+              MALFI vzniklo zo sna — preniesť ducha talianskej reštaurácie priamo do srdca Bratislavy.
               Každý recept, každá surovina, každý detail v interiéri odráža našu vášeň pre autentickú
               taliansku gastronómiu.
             </p>

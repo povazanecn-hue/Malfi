@@ -21,7 +21,7 @@ export default function MalfiAbout() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <div className="label-caps text-gold mb-4">Náš príbeh</div>
             <h1 className="font-display text-5xl md:text-6xl text-text-primary font-bold mb-4">O nás</h1>
-            <p className="text-text-muted max-w-xl mx-auto">Moderné talianske bistro v srdci Bratislavy</p>
+            <p className="text-text-muted max-w-xl mx-auto">Moderná talianska reštaurácia v srdci Bratislavy</p>
           </motion.div>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function MalfiAbout() {
                 MALFI vzniklo z lásky k talianskej gastronómii a snu o mieste, kde sa moderná estetika stretáva s autentickými chuťami. Naši zakladatelia strávili roky v talianskych kuchyniach — od Ríma po Neapol, od Milána po Sicíliu.
               </p>
               <p className="text-text-muted leading-relaxed">
-                Výsledkom je bistro, kde každý tanier odráža túto cestu. Pinsy pečieme na dlhom kvasení, cestoviny robíme denne čerstvé, omáčky varíme pomaly, s trpezlivosťou a láskou.
+                Výsledkom je reštaurácia, kde každý tanier odráža túto cestu. Pinsy pečieme na dlhom kvasení, cestoviny robíme denne čerstvé, omáčky varíme pomaly, s trpezlivosťou a láskou.
               </p>
               <p className="text-text-muted leading-relaxed">
                 Hurbanovo námestie v Bratislave nám dalo domov — a my chceme, aby sa každý hosť cítil ako doma.
