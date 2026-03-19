@@ -10,25 +10,23 @@ import InstagramStrip from '@/components/malfi/home/InstagramStrip';
 import AppDownloadSection from '@/components/malfi/home/AppDownloadSection';
 import ReviewsSection from '@/components/malfi/home/ReviewsSection';
 import {
-  OliveBranchDivider,
-  WaveDivider,
-  WaveDividerReverse,
   ItalianQuote,
 } from '@/components/malfi/decorative/ItalianDividers';
+import { ItalianTricolorStripe } from '@/components/malfi/decorative/ItalianTricolorStripe';
 
 export default function MalfiHome() {
   return (
     <div className="bg-cream">
       <HeroSection />
-      <OliveBranchDivider />
+      <ItalianTricolorStripe />
       <FeaturedDishes />
-      <WaveDivider />
+      <ItalianTricolorStripe />
       <CategoryTiles />
-      <WaveDividerReverse />
+      <ItalianTricolorStripe />
       <StorySection />
       <ItalianQuote text="La dolce vita" />
       <OrderingCTA />
-      <OliveBranchDivider />
+      <ItalianTricolorStripe />
       <ReservationCTA />
       <GallerySection />
       <AppDownloadSection />
