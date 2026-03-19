@@ -1,7 +1,22 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Instagram, Navigation } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix default leaflet marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+});
+
+const RESTAURANT_LAT = 48.1441;
+const RESTAURANT_LNG = 17.1057;
+const ADDRESS = 'Hurbanovo námestie 1, 811 03 Bratislava';
 
 const HOURS = [
   { day: 'Pondelok', time: '11:00 – 22:00' },
