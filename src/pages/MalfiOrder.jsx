@@ -11,9 +11,7 @@ import MalfiCartDrawer from '@/components/malfi/order/MalfiCartDrawer';
 import { useNavigate } from 'react-router-dom';
 
 const ORDER_MODES = [
-  { id: 'delivery', label: 'Rozvoz', icon: Truck },
-  { id: 'pickup', label: 'Osobný odber', icon: ShoppingBag },
-  { id: 'dine_in', label: 'V reštaurácii', icon: Users },
+  { id: 'pickup', label: 'Vyzdvihnutie na prevádzke', icon: ShoppingBag },
 ];
 
 export default function MalfiOrder() {
