@@ -27,7 +27,7 @@ export default function MalfiMenuItemCard({ item, onClick }) {
   return (
     <div
       onClick={() => onClick(item)}
-      className="bg-white border border-olive/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-olive/30 hover:shadow-md transition-all duration-300"
+      className="bg-white border border-olive/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-olive/30 hover:shadow-lg hover:shadow-olive/20 transition-all duration-300"
     >
       {/* Image */}
       <div className="aspect-[4/3] overflow-hidden relative">
@@ -74,9 +74,9 @@ export default function MalfiMenuItemCard({ item, onClick }) {
           <button
             onClick={handleAdd}
             disabled={!item.is_available}
-            className="w-9 h-9 rounded-full bg-rosso text-white flex items-center justify-center hover:bg-[#A93226] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-10 h-10 rounded-full bg-gradient-to-br from-rosso to-[#A93226] text-white flex items-center justify-center hover:shadow-lg hover:shadow-rosso/40 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed transform hover:scale-110"
           >
-            <Plus className="w-4 h-4" />
+            <Plus className="w-5 h-5 font-bold" />
           </button>
         </div>
       </div>
