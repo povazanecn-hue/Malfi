@@ -54,7 +54,7 @@ const AuthenticatedApp = () => {
     <Routes>
       {/* Main site routes */}
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Navigate to="/Home" replace />} />
+        <Route path="/" element={<Navigate to="/MalfiHome" replace />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Order" element={<Order />} />
