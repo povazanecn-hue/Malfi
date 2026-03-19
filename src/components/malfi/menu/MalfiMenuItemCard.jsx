@@ -27,10 +27,10 @@ export default function MalfiMenuItemCard({ item, onClick }) {
   return (
     <div
       onClick={() => onClick(item)}
-      className="bg-white border border-olive/10 rounded-2xl overflow-hidden group cursor-pointer hover:border-olive/30 hover:shadow-lg hover:shadow-olive/20 transition-all duration-300"
+      className="c-card group cursor-pointer hover:border-olive/30 hover:shadow-lg hover:shadow-olive/20"
     >
       {/* Image */}
-      <div className="aspect-[4/3] overflow-hidden relative">
+      <div className="aspect-[4/3] overflow-hidden relative -m-5 mb-5">
         {item.image_url ? (
           <img
             src={item.image_url}
@@ -49,7 +49,7 @@ export default function MalfiMenuItemCard({ item, onClick }) {
               const config = TAG_CONFIG[tag];
               if (!config) return null;
               return (
-                <span key={tag} className={`label-caps text-[9px] px-2 py-1 rounded-full backdrop-blur-sm ${config.class}`}>
+                <span key={tag} className={`c-badge ${config.class}`}>
                   {config.label}
                 </span>
               );
@@ -64,8 +64,8 @@ export default function MalfiMenuItemCard({ item, onClick }) {
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <h3 className="font-display text-lg text-text-dark mb-1">{item.name}</h3>
+      <div>
+        <h3 className="c-heading is-h3 text-text-dark mb-1">{item.name}</h3>
         {item.description && (
           <p className="text-text-light text-sm line-clamp-2 mb-4">{item.description}</p>
         )}
