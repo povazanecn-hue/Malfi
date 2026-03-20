@@ -4,11 +4,11 @@ import { Menu, X, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 
 const navLinks = [
-  { label: 'Menu', path: '/Menu' },
-  { label: 'Rezervácia', path: '/Reservation' },
-  { label: 'O nás', path: '/About' },
-  { label: 'Kontakt', path: '/Contact' },
-];
+{ label: 'Menu', path: '/Menu' },
+{ label: 'Rezervácia', path: '/Reservation' },
+{ label: 'O nás', path: '/About' },
+{ label: 'Kontakt', path: '/Contact' }];
+
 
 export default function MalfiNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,42 +28,42 @@ export default function MalfiNavbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/40 backdrop-blur-xl border-b border-[rgba(107,124,94,0.1)] shadow-md shadow-olive/5 transition-all duration-300">
         <div className="container-malfi">
-           <div className="flex items-center justify-between h-auto py-2 md:py-2.5">
+           <div className="py-3 opacity-100 rounded-sm flex items-center justify-between h-auto md:py-4">
             {/* Logo */}
             <Link to="/MalfiHome" className="flex items-center group">
              <img
-               src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
-               alt="Malfi Logo"
-               className="h-11 md:h-14 lg:h-20 w-auto object-contain"
-             />
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
+                alt="Malfi Logo"
+                className="h-11 md:h-14 lg:h-20 w-auto object-contain" />
+              
             </Link>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
-              {navLinks.map(link => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`label-caps transition-colors duration-200 ${
-                    location.pathname === link.path
-                      ? 'text-rosso'
-                      : 'text-text-medium hover:text-olive'
-                  }`}
-                >
+              {navLinks.map((link) =>
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`label-caps transition-colors duration-200 ${
+                location.pathname === link.path ?
+                'text-rosso' :
+                'text-text-medium hover:text-olive'}`
+                }>
+                
                   {link.label}
                 </Link>
-              ))}
+              )}
             </div>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
               <Link to="/Order" className="relative">
                 <ShoppingBag className="w-5 h-5 text-text-medium hover:text-olive transition-colors" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
+                {cartCount > 0 &&
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
                     {cartCount}
                   </span>
-                )}
+                }
               </Link>
               <Link to="/Reservation" className="btn-outline px-5 py-2.5 text-sm">
                 Rezervovať
@@ -77,16 +77,16 @@ export default function MalfiNavbar() {
             <div className="flex md:hidden items-center gap-3">
               <Link to="/Order" className="relative">
                 <ShoppingBag className="w-5 h-5 text-text-medium" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
+                {cartCount > 0 &&
+                <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
                     {cartCount}
                   </span>
-                )}
+                }
               </Link>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="w-9 h-9 flex items-center justify-center text-text-dark"
-              >
+                className="w-9 h-9 flex items-center justify-center text-text-dark">
+                
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
@@ -94,18 +94,18 @@ export default function MalfiNavbar() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileOpen && (
-          <div className="md:hidden bg-white border-t border-[rgba(107,124,94,0.15)]">
+        {mobileOpen &&
+        <div className="md:hidden bg-white border-t border-[rgba(107,124,94,0.15)]">
             <div className="container-malfi py-6 flex flex-col gap-4">
-              {navLinks.map(link => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="label-caps text-text-medium hover:text-olive transition-colors py-2"
-                >
+              {navLinks.map((link) =>
+            <Link
+              key={link.path}
+              to={link.path}
+              className="label-caps text-text-medium hover:text-olive transition-colors py-2">
+              
                   {link.label}
                 </Link>
-              ))}
+            )}
               <div className="flex gap-3 mt-2">
                 <Link to="/Reservation" className="btn-outline flex-1 py-3 text-center text-sm">
                   Rezervovať
@@ -116,10 +116,10 @@ export default function MalfiNavbar() {
               </div>
             </div>
           </div>
-        )}
+        }
       </nav>
 
 
-    </>
-  );
+    </>);
+
 }
