@@ -42,7 +42,7 @@ export default function FeaturedDishes() {
       <div className="container-malfi">
         <div className="flex flex-col items-center justify-center mb-12">
           <div>
-            <div className="label-caps text-olive mb-3">Šéfkuchárove tipy</div>
+            <div className="label-caps text-olive mb-3 text-center">Šéfkuchárove tipy</div>
             <h2 className="font-display text-4xl md:text-5xl text-text-dark">Malfi bestsellery</h2>
           </div>
           <div className="hidden md:flex items-center gap-2">
