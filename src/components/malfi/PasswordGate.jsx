@@ -12,9 +12,10 @@ export default function PasswordGate({ children }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError(false);
     if (input === CORRECT_PASSWORD) {
       localStorage.setItem('malfi_unlocked', '1');
-      setUnlocked(true);
+      setTimeout(() => setUnlocked(true), 0);
     } else {
       setError(true);
       setInput('');
