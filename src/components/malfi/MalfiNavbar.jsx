@@ -32,14 +32,14 @@ export default function MalfiNavbar() {
           : 'bg-transparent'
       }`}>
         <div className="container-malfi">
-          <div className="flex items-center justify-between h-18 py-4">
+           <div className="flex items-center justify-between h-auto py-3 md:py-4">
             {/* Logo */}
             <Link to="/MalfiHome" className="flex items-center group">
-              <img
-                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
-                alt="Malfi Logo"
-                className="h-28 w-auto object-contain"
-              />
+             <img
+               src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
+               alt="Malfi Logo"
+               className="h-12 md:h-16 lg:h-28 w-auto object-contain"
+             />
             </Link>
 
             {/* Desktop Nav */}

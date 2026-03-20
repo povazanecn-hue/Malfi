@@ -16,7 +16,7 @@ export default function HeroSection() {
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center py-24 pt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center py-12 md:py-20 lg:py-24 pt-20 md:pt-28 lg:pt-32">
 
           {/* Left Content */}
           <div className="space-y-8">
@@ -35,7 +35,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark leading-[1.05]">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark leading-[1.05]">
                 Il cuore<br />
                 <span className="text-rosso italic">italiano</span><br />
                 <span className="text-olive-dark">di Bratislava</span>
@@ -46,7 +46,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-text-medium text-lg leading-relaxed max-w-md"
+              className="text-text-medium text-base sm:text-lg leading-relaxed max-w-md"
             >
               Autentické talianske recepty, lokálne suroviny a vášeň pre každý tanier.
               Vitajte v MALFI.
@@ -86,10 +86,10 @@ export default function HeroSection() {
 
           {/* Right: Image composition */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+           initial={{ opacity: 0, x: 40 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           className="relative hidden lg:block"
           >
             {/* Main hero image */}
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
