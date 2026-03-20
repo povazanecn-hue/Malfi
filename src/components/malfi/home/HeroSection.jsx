@@ -14,15 +14,6 @@ export default function HeroSection() {
         }} />
       </div>
 
-      {/* Mobile full-width background */}
-      <div className="absolute inset-0 md:hidden opacity-20 -z-10">
-        <img
-          src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
