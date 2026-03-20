@@ -47,11 +47,11 @@ export default function MalfiFooter() {
             <ul className="space-y-3">
               {[
                 { label: 'Domov', path: '/MalfiHome' },
-                { label: 'Menu', path: '/MalfiMenu' },
-                { label: 'Objednávka', path: '/MalfiOrder' },
-                { label: 'Rezervácia', path: '/MalfiReservation' },
-                { label: 'O nás', path: '/MalfiAbout' },
-                { label: 'Kontakt', path: '/MalfiContact' },
+                { label: 'Menu', path: '/Menu' },
+                { label: 'Objednávka', path: '/Order' },
+                { label: 'Rezervácia', path: '/Reservation' },
+                { label: 'O nás', path: '/About' },
+                { label: 'Kontakt', path: '/Contact' },
               ].map(item => (
                 <li key={item.path}>
                   <Link to={item.path} className="text-white/60 hover:text-white transition-colors text-sm">
