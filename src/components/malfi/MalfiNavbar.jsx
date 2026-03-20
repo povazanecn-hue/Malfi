@@ -61,7 +61,7 @@ export default function MalfiNavbar() {
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <Link to="/MalfiOrder" className="relative">
+              <Link to="/Order" className="relative">
                 <ShoppingBag className="w-5 h-5 text-text-medium hover:text-olive transition-colors" />
                 {cartCount > 0 && (
                   <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
@@ -69,10 +69,10 @@ export default function MalfiNavbar() {
                   </span>
                 )}
               </Link>
-              <Link to="/MalfiReservation" className="btn-outline px-5 py-2.5 text-sm">
+              <Link to="/Reservation" className="btn-outline px-5 py-2.5 text-sm">
                 Rezervovať
               </Link>
-              <Link to="/MalfiOrder" className="btn-primary px-5 py-2.5 text-sm">
+              <Link to="/Order" className="btn-primary px-5 py-2.5 text-sm">
                 Objednať
               </Link>
             </div>
