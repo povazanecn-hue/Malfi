@@ -5,9 +5,9 @@ import MobileBottomNav from './MobileBottomNav';
 
 export default function MalfiLayout() {
   return (
-    <div className="min-h-screen bg-bg-primary" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+    <div className="min-h-screen bg-bg-primary">
       <MalfiNavbar />
-      <main>
+      <main style={{ paddingTop: 'env(safe-area-inset-top, 110px)' }}>
         <Outlet />
       </main>
       <MalfiFooter />
