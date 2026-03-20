@@ -16,10 +16,18 @@ export default function HeroSection() {
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-8 md:py-20 lg:py-24 pt-20 md:pt-36 lg:pt-40">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-8 md:py-20 lg:py-24 pt-20 md:pt-36 lg:pt-40">
+          {/* Mobile background image */}
+          <div className="absolute inset-0 md:hidden opacity-20 rounded-2xl overflow-hidden -z-10">
+            <img
+              src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
+              alt="Background"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 relative z-10">
             <Link
               to="/Contact"
               className="inline-flex items-center gap-2 bg-olive/10 border border-olive/20 rounded-full px-4 py-2 hover:bg-olive/15 hover:border-olive/35 transition-all duration-300"
