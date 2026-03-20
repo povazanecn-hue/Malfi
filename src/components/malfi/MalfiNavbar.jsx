@@ -79,7 +79,7 @@ export default function MalfiNavbar() {
 
             {/* Mobile */}
             <div className="flex md:hidden items-center gap-3">
-              <Link to="/MalfiOrder" className="relative">
+              <Link to="/Order" className="relative">
                 <ShoppingBag className="w-5 h-5 text-text-medium" />
                 {cartCount > 0 && (
                   <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-rosso text-white text-[10px] font-bold flex items-center justify-center">
