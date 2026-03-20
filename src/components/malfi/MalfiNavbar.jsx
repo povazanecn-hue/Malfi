@@ -28,7 +28,7 @@ export default function MalfiNavbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/40 backdrop-blur-xl border-b border-[rgba(107,124,94,0.1)] shadow-md shadow-olive/5 transition-all duration-300">
         <div className="container-malfi">
-           <div className="flex items-center justify-between h-auto py-3 md:py-4">
+           <div className="flex items-center justify-between h-auto py-2 md:py-2.5">
             {/* Logo */}
             <Link to="/MalfiHome" className="flex items-center group">
              <img
