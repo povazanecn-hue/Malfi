@@ -1,6 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Plus, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Plus } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 import { Link } from 'react-router-dom';
 
@@ -32,10 +32,36 @@ const FEATURED = [
 export default function FeaturedDishes() {
   const scrollRef = useRef(null);
   const { addToCart } = useCart();
+  const [paused, setPaused] = useState(false);
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const scroll = (dir) => {
     if (scrollRef.current) scrollRef.current.scrollBy({ left: dir * 320, behavior: 'smooth' });
   };
+
+  // Auto-scroll on mobile
+  useEffect(() => {
+    if (!isMobile) return;
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let raf;
+    const speed = 0.5; // px per frame
+
+    const step = () => {
+      if (!paused && el) {
+        el.scrollLeft += speed;
+        // Loop back when reaching the end
+        if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 2) {
+          el.scrollLeft = 0;
+        }
+      }
+      raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(raf);
+  }, [paused, isMobile]);
 
   return (
     <section className="py-12 sm:py-16 md:py-24 lg:py-28" style={{ background: 'var(--cream-dark)' }}>
@@ -59,6 +85,8 @@ export default function FeaturedDishes() {
 
         <div
           ref={scrollRef}
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
           className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
           style={{ scrollbarWidth: 'none' }}>
           
@@ -103,7 +131,7 @@ export default function FeaturedDishes() {
             </motion.div>
           )}
 
-          <div className="snap-start shrink-0 w-[260px] sm:w-[290px] bg-gradient-to-br from-olive/8 to-cream border border-olive/15 rounded-3xl flex flex-col items-center justify-center p-6 sm:p-10 text-center">
+          <div className="snap-start shrink-0 w-[260px] sm:w-[290px] bg-gradient-to-br from-olive/8 to-cream border border-olive/15 rounded-3xl hidden md:flex flex-col items-center justify-center p-6 sm:p-10 text-center">
             <div className="w-14 h-14 rounded-full border border-olive/25 flex items-center justify-center mb-5">
               <ArrowRight className="w-5 h-5 text-olive" />
             </div>
@@ -113,6 +141,14 @@ export default function FeaturedDishes() {
               Pozrieť menu
             </Link>
           </div>
+        </div>
+
+        {/* Mobile CTA button */}
+        <div className="mt-6 text-center md:hidden">
+          <Link to="/Menu" className="btn-outline px-8 py-3 text-sm font-semibold min-h-[48px] inline-flex items-center gap-2">
+            Pozrieť celé menu
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>);
