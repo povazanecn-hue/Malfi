@@ -1,75 +1,83 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Truck, ShoppingBag, Calendar } from 'lucide-react';
+import { ShoppingBag, Calendar, ExternalLink } from 'lucide-react';
 
-const MODES = [
-  {
-    icon: Truck,
-    title: 'Rozvoz',
-    description: 'Doručíme až k vašim dverám. Minimálna objednávka €15, rozvoz do 30 min.',
-    badge: 'od €1.99',
-    type: 'delivery',
-  },
-  {
-    icon: ShoppingBag,
-    title: 'Osobný odber',
-    description: 'Objednajte online a vyzdvihnite si osobne. Bez čakania, hotové presne načas.',
-    badge: 'Zadarmo',
-    type: 'pickup',
-    featured: true,
-  },
-  {
-    icon: Calendar,
-    title: 'Predobjednávka',
-    description: 'Naplánujte objednávku vopred. Ideálne pre firemné obedy a skupiny.',
-    badge: 'Naplánuj',
-    type: 'prebook',
-  },
-];
+const WOLT_URL = 'https://wolt.com';
+const BOLT_URL = 'https://bolt.food';
 
 export default function OrderingCTA() {
   return (
     <section className="section-pad">
       <div className="container-malfi">
         <div className="text-center mb-12">
-          <div className="label-caps text-gold mb-3">Online objednávanie</div>
-          <h2 className="font-display text-4xl text-text-primary">Ako chcete objednať?</h2>
+          <div className="label-caps text-olive mb-3">Online objednávanie</div>
+          <h2 className="font-display text-4xl text-text-dark">Ako chcete objednať?</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {MODES.map((mode, idx) => {
-            const Icon = mode.icon;
-            return (
-              <motion.div
-                key={mode.type}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`card-dark p-8 relative ${mode.featured ? 'border-gold/40 ring-1 ring-gold/20' : ''}`}
-              >
-                {mode.featured && (
-                  <div className="absolute top-4 right-4 label-caps text-[10px] bg-gold text-bg-primary px-2.5 py-1 rounded-full">
-                    Populárne
-                  </div>
-                )}
-                <div className="w-12 h-12 rounded-2xl bg-bg-tertiary border border-[rgba(194,149,107,0.2)] flex items-center justify-center mb-6">
-                  <Icon className="w-5 h-5 text-gold" />
-                </div>
-                <h3 className="font-display text-xl text-text-primary mb-2">{mode.title}</h3>
-                <p className="text-text-muted text-sm leading-relaxed mb-6">{mode.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="label-caps text-gold">{mode.badge}</span>
-                  <Link
-                    to={`/Order?type=${mode.type}`}
-                    className="btn-gold px-5 py-2 text-xs"
-                  >
-                    Vybrať
-                  </Link>
-                </div>
-              </motion.div>
-            );
-          })}
+          {/* Osobný odber */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+            className="c-card relative border-olive/30 ring-1 ring-olive/15 p-8"
+          >
+            <div className="absolute top-4 right-4 label-caps text-[10px] bg-olive text-white px-2.5 py-1 rounded-full">
+              Populárne
+            </div>
+            <div className="w-12 h-12 rounded-2xl bg-olive/10 flex items-center justify-center mb-6">
+              <ShoppingBag className="w-5 h-5 text-olive" />
+            </div>
+            <h3 className="font-display text-xl text-text-dark mb-2">Osobný odber</h3>
+            <p className="text-text-light text-sm leading-relaxed mb-6">Objednajte online a vyzdvihnite si osobne. Bez čakania, hotové presne načas.</p>
+            <div className="flex items-center justify-between">
+              <span className="label-caps text-olive text-[10px]">Zadarmo</span>
+              <Link to="/Order?type=pickup" className="btn-primary px-5 py-2 text-xs">Objednať</Link>
+            </div>
+          </motion.div>
+
+          {/* Wolt */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="c-card p-8"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-[#009de0]/10 flex items-center justify-center mb-6">
+              <span className="font-bold text-[#009de0] text-sm">W</span>
+            </div>
+            <h3 className="font-display text-xl text-text-dark mb-2">Rozvoz cez Wolt</h3>
+            <p className="text-text-light text-sm leading-relaxed mb-6">Objednajte si doručenie priamo cez platformu Wolt. Rýchle a spoľahlivé doručenie.</p>
+            <div className="flex items-center justify-between">
+              <span className="label-caps text-text-light text-[10px]">Doručenie</span>
+              <a href={WOLT_URL} target="_blank" rel="noreferrer" className="btn-outline px-5 py-2 text-xs flex items-center gap-1">
+                Otvoriť <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Bolt */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="c-card p-8"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-[#34d186]/10 flex items-center justify-center mb-6">
+              <span className="font-bold text-[#34d186] text-sm">B</span>
+            </div>
+            <h3 className="font-display text-xl text-text-dark mb-2">Rozvoz cez Bolt</h3>
+            <p className="text-text-light text-sm leading-relaxed mb-6">Dostupné aj cez Bolt Food. Objednajte si jedlo z pohodlia domova.</p>
+            <div className="flex items-center justify-between">
+              <span className="label-caps text-text-light text-[10px]">Doručenie</span>
+              <a href={BOLT_URL} target="_blank" rel="noreferrer" className="btn-outline px-5 py-2 text-xs flex items-center gap-1">
+                Otvoriť <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
