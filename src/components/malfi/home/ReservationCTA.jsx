@@ -9,7 +9,7 @@ export default function ReservationCTA() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/MalfiReservation?guests=${guests}&date=${date}`);
+    navigate(`/Reservation?guests=${guests}&date=${date}`);
   };
 
   return (

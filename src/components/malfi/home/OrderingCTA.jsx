@@ -61,7 +61,7 @@ export default function OrderingCTA() {
                 <div className="flex items-center justify-between">
                   <span className="label-caps text-gold">{mode.badge}</span>
                   <Link
-                    to={`/MalfiOrder?type=${mode.type}`}
+                    to={`/Order?type=${mode.type}`}
                     className="btn-gold px-5 py-2 text-xs"
                   >
                     Vybrať
