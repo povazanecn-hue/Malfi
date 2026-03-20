@@ -20,24 +20,24 @@ export default function MalfiHome() {
 
   return (
     <PullToRefresh onRefresh={handleRefresh}>
-    <div className="bg-cream">
-      <HeroSection />
-      <ItalianTricolorStripe />
-      <FeaturedDishes />
-      <ItalianTricolorStripe />
-      <CategoryTiles />
-      <ItalianTricolorStripe />
-      <StorySection />
-      <ItalianQuote text="La dolce vita" />
-      <OrderingCTA />
-      <ItalianTricolorStripe />
-      <ReservationCTA />
-      <GallerySection />
-      <AppDownloadSection />
-      <ReviewsSection />
-      <LocationHours />
-      <InstagramStrip />
-    </div>
+      <div className="bg-cream">
+        <HeroSection />
+        <ItalianTricolorStripe />
+        <FeaturedDishes />
+        <ItalianTricolorStripe />
+        <CategoryTiles />
+        <ItalianTricolorStripe />
+        <StorySection />
+        <ItalianQuote text="La dolce vita" />
+        <OrderingCTA />
+        <ItalianTricolorStripe />
+        <ReservationCTA />
+        <GallerySection />
+        <AppDownloadSection />
+        <ReviewsSection />
+        <LocationHours />
+        <InstagramStrip />
+      </div>
     </PullToRefresh>
   );
 }
