@@ -123,17 +123,7 @@ export default function MalfiNavbar() {
         )}
       </nav>
 
-      {/* Mobile Bottom Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-[rgba(107,124,94,0.15)] shadow-lg">
-        <div className="grid grid-cols-2 divide-x divide-[rgba(107,124,94,0.15)]">
-          <Link to="/Reservation" className="flex items-center justify-center py-4 text-olive label-caps text-xs">
-            Rezervovať stôl
-          </Link>
-          <Link to="/Order" className="flex items-center justify-center py-4 btn-primary rounded-none text-sm font-bold">
-            Objednať online
-          </Link>
-        </div>
-      </div>
+
     </>
   );
 }
