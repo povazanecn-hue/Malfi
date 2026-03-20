@@ -20,8 +20,8 @@ export default function GallerySection() {
           <h2 className="font-display text-4xl text-text-primary">Atmosféra MALFI</h2>
         </div>
 
-        {/* Masonry-style grid */}
-        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+        {/* Gallery grid with aligned bottom row */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max">
           {GALLERY.map((img, idx) => (
             <motion.div
               key={idx}
@@ -29,13 +29,14 @@ export default function GallerySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06 }}
-              className="break-inside-avoid overflow-hidden rounded-2xl group cursor-pointer"
-              style={{ marginBottom: '16px' }}
+              className={`overflow-hidden rounded-2xl group cursor-pointer ${
+                idx >= 5 ? 'h-64' : 'auto'
+              }`}
             >
               <img
                 src={img.url}
                 alt={img.alt}
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
           ))}
