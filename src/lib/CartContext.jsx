@@ -59,6 +59,11 @@ export function CartProvider({ children }) {
   const subtotal = items.reduce((sum, item) => sum + getItemTotal(item), 0);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
+  // addToCart alias for backward compatibility
+  const addToCart = (item) => {
+    addItem(item, item.quantity || 1, item.addons || [], item.special_instructions || '');
+  };
+
   return (
     <CartContext.Provider value={{
       items,
@@ -67,6 +72,7 @@ export function CartProvider({ children }) {
       isCartOpen,
       setIsCartOpen,
       addItem,
+      addToCart,
       updateQuantity,
       removeItem,
       clearCart,
