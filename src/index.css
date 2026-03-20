@@ -69,6 +69,11 @@
     touch-action: manipulation;
   }
 
+  input, textarea, select {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
   html {
     scroll-behavior: smooth;
   }
