@@ -5,7 +5,7 @@ const CORRECT_PASSWORD = 'Malfi123456';
 
 export default function PasswordGate({ children }) {
   const [input, setInput] = useState('');
-  const [unlocked, setUnlocked] = useState(() => sessionStorage.getItem('malfi_unlocked') === '1');
+  const [unlocked, setUnlocked] = useState(() => localStorage.getItem('malfi_unlocked') === '1');
   const [error, setError] = useState(false);
 
   if (unlocked) return children;
@@ -13,7 +13,7 @@ export default function PasswordGate({ children }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input === CORRECT_PASSWORD) {
-      sessionStorage.setItem('malfi_unlocked', '1');
+      localStorage.setItem('malfi_unlocked', '1');
       setUnlocked(true);
     } else {
       setError(true);
