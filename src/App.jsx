@@ -62,16 +62,16 @@ const AuthenticatedApp = () => {
       {/* MALFI public routes */}
       <Route element={<MalfiLayout />}>
         <Route path="/MalfiHome" element={<MalfiHome />} />
-        <Route path="/MalfiMenu" element={<MalfiMenu />} />
-        <Route path="/MalfiOrder" element={<MalfiOrder />} />
-        <Route path="/MalfiCheckout" element={<MalfiCheckout />} />
-        <Route path="/MalfiOrderSuccess" element={<MalfiOrderSuccess />} />
-        <Route path="/MalfiReservation" element={<MalfiReservation />} />
-        <Route path="/MalfiAbout" element={<MalfiAbout />} />
-        <Route path="/MalfiContact" element={<MalfiContact />} />
+        <Route path="/Menu" element={<MalfiMenu />} />
+        <Route path="/Order" element={<MalfiOrder />} />
+        <Route path="/Checkout" element={<MalfiCheckout />} />
+        <Route path="/OrderSuccess" element={<MalfiOrderSuccess />} />
+        <Route path="/Reservation" element={<MalfiReservation />} />
+        <Route path="/About" element={<MalfiAbout />} />
+        <Route path="/Contact" element={<MalfiContact />} />
       </Route>
 
-      {/* MALFI Admin */}
+      {/* Admin */}
       <Route element={<MalfiAdminLayout />}>
         <Route path="/MalfiAdmin" element={<MalfiAdmin />} />
       </Route>
