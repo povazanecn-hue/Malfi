@@ -14,9 +14,9 @@ export default function InstagramStrip() {
   return (
     <section className="section-pad">
       <div className="container-malfi">
-        <div className="text-center mb-10">
-          <div className="label-caps text-gold mb-3">Sociálne siete</div>
-          <h2 className="font-display text-3xl text-text-primary mb-2">@malfi_bratislava</h2>
+        <div className="text-center mb-8 md:mb-10">
+          <div className="label-caps text-gold mb-2 md:mb-3">Sociálne siete</div>
+          <h2 className="font-display text-2xl md:text-3xl text-text-primary mb-2">@malfi_bratislava</h2>
           <a
             href="https://instagram.com"
             target="_blank"
@@ -39,7 +39,7 @@ export default function InstagramStrip() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06 }}
-              className="shrink-0 w-44 h-44 rounded-2xl overflow-hidden group relative"
+              className="shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-2xl overflow-hidden group relative"
             >
               <img src={url} alt="Instagram post" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all flex items-center justify-center">
