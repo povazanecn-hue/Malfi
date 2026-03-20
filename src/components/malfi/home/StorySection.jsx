@@ -29,17 +29,23 @@ export default function StorySection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
             </div>
-            {/* Badge */}
+            {/* Authenticity stamp */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, rotate: -12 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -8 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="absolute -bottom-6 -right-4 w-36 h-36 rounded-3xl bg-olive flex items-center justify-center shadow-xl shadow-olive/30"
+              transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
+              className="absolute -bottom-6 -right-4 w-32 h-32 sm:w-36 sm:h-36"
             >
-              <div className="text-center">
-                <div className="font-display text-4xl text-white font-bold">5+</div>
-                <div className="label-caps text-white/70 text-[9px] mt-1">ROKOV PRAXE</div>
+              <div className="w-full h-full rounded-full border-[3px] border-rosso/70 flex items-center justify-center relative" style={{ borderStyle: 'double', borderWidth: '4px' }}>
+                <div className="absolute inset-1 rounded-full border border-rosso/40" />
+                <div className="text-center px-2">
+                  <div className="font-display text-rosso font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-tight">Autentica</div>
+                  <div className="font-display text-rosso/90 font-bold text-lg sm:text-xl italic leading-none mt-0.5">Cucina</div>
+                  <div className="font-display text-rosso font-bold text-[10px] sm:text-xs uppercase tracking-widest leading-tight mt-0.5">Italiana</div>
+                  <div className="w-8 h-px bg-rosso/40 mx-auto mt-1.5 mb-1" />
+                  <div className="text-rosso/60 text-[7px] sm:text-[8px] font-semibold tracking-wider uppercase">Bratislava</div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
