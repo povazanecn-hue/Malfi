@@ -40,7 +40,7 @@ export default function FeaturedDishes() {
   return (
     <section className="py-20 md:py-28" style={{ background: 'var(--cream-dark)' }}>
       <div className="container-malfi">
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex flex-col items-center justify-center mb-12">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-rosso" />
