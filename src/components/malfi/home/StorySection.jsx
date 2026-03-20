@@ -39,7 +39,7 @@ export default function StorySection() {
             >
               <div className="text-center">
                 <div className="font-display text-4xl text-white font-bold">5+</div>
-                <div className="label-caps text-white/70 text-[9px] mt-1">rokov v BA</div>
+                <div className="label-caps text-white/70 text-[9px] mt-1">ROKOV PRAXE</div>
               </div>
             </motion.div>
           </motion.div>
