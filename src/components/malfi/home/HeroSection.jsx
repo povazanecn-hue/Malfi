@@ -20,15 +20,20 @@ export default function HeroSection() {
 
           {/* Left Content */}
           <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 bg-olive/10 border border-olive/20 rounded-full px-4 py-2"
+            <Link
+              to="/Contact"
+              className="inline-flex items-center gap-2 bg-olive/10 border border-olive/20 rounded-full px-4 py-2 hover:bg-olive/15 hover:border-olive/35 transition-all duration-300"
             >
-              <MapPin className="w-3.5 h-3.5 text-olive" />
-              <span className="label-caps text-olive text-[10px]">Hurbanovo námestie 1 · Bratislava</span>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-2"
+              >
+                <MapPin className="w-3.5 h-3.5 text-olive" />
+                <span className="label-caps text-olive text-[10px]">Hurbanovo námestie 1 · Bratislava</span>
+              </motion.div>
+            </Link>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
