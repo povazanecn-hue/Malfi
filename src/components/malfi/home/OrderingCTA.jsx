@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Package, ArrowUpRight } from 'lucide-react';
+import AuthenticityStamp from '@/components/malfi/decorative/AuthenticityStamp';
 
 const WOLT_URL = 'https://wolt.com';
 const BOLT_URL = 'https://bolt.food';
@@ -23,7 +24,10 @@ const BoltIcon = () => (
 
 export default function OrderingCTA() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-cream">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-cream relative">
+      <div className="absolute top-8 right-4 sm:right-8 md:right-16 z-10">
+        <AuthenticityStamp size="sm" />
+      </div>
       <div className="container-malfi">
          <motion.div
            initial={{ opacity: 0, y: 20 }}

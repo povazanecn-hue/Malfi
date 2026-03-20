@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Star, Leaf } from 'lucide-react';
+import AuthenticityStamp from '@/components/malfi/decorative/AuthenticityStamp';
 
 const HERO_IMG = 'https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png';
 
@@ -18,6 +19,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/85 to-cream/50 md:from-cream/90 md:via-cream/70 md:to-transparent" />
         {/* Bottom fade */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cream to-transparent" />
+      </div>
+
+      {/* Authenticity stamp — positioned absolutely on the right */}
+      <div className="absolute top-28 right-4 sm:top-32 sm:right-8 md:top-40 md:right-12 lg:right-20 z-20">
+        <AuthenticityStamp size="lg" />
       </div>
 
       <div className="container-malfi relative z-10 w-full">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import AuthenticityStamp from '@/components/malfi/decorative/AuthenticityStamp';
 
 export default function ReservationCTA() {
   const [guests, setGuests] = useState('2');
@@ -13,7 +14,10 @@ export default function ReservationCTA() {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-rosso-pale" style={{ borderTop: '1px solid rgba(192,57,43,0.1)', borderBottom: '1px solid rgba(192,57,43,0.1)' }}>
+    <section className="py-12 sm:py-16 md:py-24 bg-rosso-pale relative" style={{ borderTop: '1px solid rgba(192,57,43,0.1)', borderBottom: '1px solid rgba(192,57,43,0.1)' }}>
+      <div className="absolute top-6 left-4 sm:left-8 md:left-16 z-10">
+        <AuthenticityStamp size="sm" />
+      </div>
       <div className="container-malfi text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

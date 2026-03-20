@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import AuthenticityStamp from '@/components/malfi/decorative/AuthenticityStamp';
 
 const CATEGORIES = [
 { name: 'Pinsa', slug: 'pinsa', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80' },
@@ -12,11 +13,14 @@ const CATEGORIES = [
 
 export default function CategoryTiles() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-white">
+    <section className="py-12 sm:py-16 md:py-24 bg-white relative">
       <div className="container-malfi">
-        <div className="text-center mb-6 md:mb-12">
+        <div className="text-center mb-6 md:mb-12 relative">
           <div className="label-caps text-olive mb-2">Naše špeciality</div>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Prezrite si naše menu</h2>
+          <div className="absolute -top-4 -right-2 sm:right-0 md:right-8">
+            <AuthenticityStamp size="sm" />
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
