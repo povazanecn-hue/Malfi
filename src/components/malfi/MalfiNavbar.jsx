@@ -28,8 +28,8 @@ export default function MalfiNavbar() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md shadow-olive/10 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-[rgba(107,124,94,0.15)]'
-          : 'bg-white/80 backdrop-blur-sm border-b border-[rgba(107,124,94,0.1)]'
+          ? 'bg-white/70 backdrop-blur-lg border-b border-[rgba(107,124,94,0.2)]'
+          : 'bg-white/60 backdrop-blur-md border-b border-[rgba(107,124,94,0.1)]'
       }`}>
         <div className="container-malfi">
            <div className="flex items-center justify-between h-auto py-3 md:py-4">
