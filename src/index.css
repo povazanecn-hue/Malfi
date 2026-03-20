@@ -85,6 +85,7 @@
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5 {
@@ -108,11 +109,11 @@
 @layer components {
   /* ClientFirst Component Classes */
   .c-container {
-    @apply max-w-7xl mx-auto px-5 md:px-10;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12;
   }
 
   .c-section {
-    @apply py-16 md:py-24;
+    @apply py-10 sm:py-16 md:py-20 lg:py-28;
   }
 
   .c-card {
@@ -172,11 +173,11 @@
   }
 
   .c-heading.is-h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl;
   }
 
   .c-heading.is-h2 {
-    @apply text-4xl md:text-5xl;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   .c-heading.is-h3 {
@@ -231,6 +232,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
   }
   .btn-primary:hover {
     background-color: #A93226;
@@ -249,6 +251,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
   }
   .btn-olive:hover {
     background-color: var(--olive-dark);
@@ -268,6 +271,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
   }
   .btn-outline:hover {
     background: var(--olive);
@@ -323,7 +327,7 @@
   }
 
   .container-malfi {
-    @apply c-container;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12;
   }
 }
 
