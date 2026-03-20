@@ -25,24 +25,24 @@ export default function OrderingCTA() {
   return (
     <section className="py-20 md:py-28 bg-cream">
       <div className="container-malfi">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-14"
-        >
-          <div className="label-caps text-olive mb-3">Online objednávanie</div>
-          <h2 className="font-display text-4xl md:text-5xl text-text-dark">Ako chcete objednať?</h2>
-        </motion.div>
+         <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           className="text-center mb-10 md:mb-14"
+         >
+           <div className="label-caps text-olive mb-2 md:mb-3">Online objednávanie</div>
+           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-dark">Ako chcete objednať?</h2>
+         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {/* Osobný odber — featured */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0 }}
-            className="relative bg-olive rounded-3xl p-8 overflow-hidden group"
+            className="relative bg-olive rounded-3xl p-6 sm:p-8 overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-10"
               style={{ backgroundImage: `radial-gradient(circle at 80% 20%, white 0%, transparent 60%)` }} />
@@ -54,8 +54,8 @@ export default function OrderingCTA() {
             <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-7">
               <Package className="w-6 h-6 text-white" />
             </div>
-            <h3 className="font-display text-2xl text-white mb-2">Osobný odber</h3>
-            <p className="text-white/70 text-sm leading-relaxed mb-8">
+            <h3 className="font-display text-xl sm:text-2xl text-white mb-2">Osobný odber</h3>
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
               Objednajte online a vyzdvihnite si osobne. Bez čakania, hotové presne načas.
             </p>
             <div className="flex items-center justify-between">
@@ -73,13 +73,13 @@ export default function OrderingCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white border border-olive/10 rounded-3xl p-8 hover:shadow-lg hover:shadow-olive/6 transition-all duration-300 group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-[#009de0]/8 flex items-center justify-center mb-7">
+            className="bg-white border border-olive/10 rounded-3xl p-6 sm:p-8 hover:shadow-lg hover:shadow-olive/6 transition-all duration-300 group"
+            >
+            <div className="w-14 h-14 rounded-2xl bg-[#009de0]/8 flex items-center justify-center mb-6 sm:mb-7">
               <WoltIcon />
             </div>
-            <h3 className="font-display text-2xl text-text-dark mb-2">Rozvoz cez Wolt</h3>
-            <p className="text-text-light text-sm leading-relaxed mb-8">
+            <h3 className="font-display text-xl sm:text-2xl text-text-dark mb-2">Rozvoz cez Wolt</h3>
+            <p className="text-text-light text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
               Objednajte si doručenie priamo cez platformu Wolt. Rýchle a spoľahlivé doručenie.
             </p>
             <div className="flex items-center justify-between">
@@ -97,13 +97,13 @@ export default function OrderingCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white border border-olive/10 rounded-3xl p-8 hover:shadow-lg hover:shadow-olive/6 transition-all duration-300 group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-[#34d186]/8 flex items-center justify-center mb-7">
+            className="bg-white border border-olive/10 rounded-3xl p-6 sm:p-8 hover:shadow-lg hover:shadow-olive/6 transition-all duration-300 group"
+            >
+            <div className="w-14 h-14 rounded-2xl bg-[#34d186]/8 flex items-center justify-center mb-6 sm:mb-7">
               <BoltIcon />
             </div>
-            <h3 className="font-display text-2xl text-text-dark mb-2">Rozvoz cez Bolt</h3>
-            <p className="text-text-light text-sm leading-relaxed mb-8">
+            <h3 className="font-display text-xl sm:text-2xl text-text-dark mb-2">Rozvoz cez Bolt</h3>
+            <p className="text-text-light text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
               Dostupné aj cez Bolt Food. Objednajte si jedlo z pohodlia domova.
             </p>
             <div className="flex items-center justify-between">
