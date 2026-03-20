@@ -65,11 +65,11 @@ export default function MalfiNavbar() {
                   </span>
                 }
               </Link>
-              <Link to="/Reservation" className="btn-outline px-5 py-2.5 text-sm">
-                Rezervovať
+              <Link to="/Reservation" className="btn-outline px-5 py-2.5 text-sm">Rezervovať stôl
+
               </Link>
-              <Link to="/Order" className="btn-primary px-5 py-2.5 text-sm">
-                Objednať
+              <Link to="/Order" className="btn-primary px-5 py-2.5 text-sm">Objednať jedlo
+
               </Link>
             </div>
 
