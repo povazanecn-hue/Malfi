@@ -40,10 +40,10 @@ export default function FeaturedDishes() {
   return (
     <section className="py-20 md:py-28" style={{ background: 'var(--cream-dark)' }}>
       <div className="container-malfi">
-        <div className="flex flex-col items-center justify-center mb-12">
-          <div>
-            <div className="label-caps text-olive mb-3 text-center">Šéfkuchárove tipy</div>
-            <h2 className="font-display text-4xl md:text-5xl text-text-dark">Malfi bestsellery</h2>
+        <div className="flex flex-col items-center justify-center mb-10 md:mb-12">
+          <div className="text-center mb-6">
+            <div className="label-caps text-olive mb-2 md:mb-3 text-center">Šéfkuchárove tipy</div>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-dark">Malfi bestsellery</h2>
           </div>
           <div className="hidden md:flex items-center gap-2">
             <button onClick={() => scroll(-1)}
@@ -69,7 +69,7 @@ export default function FeaturedDishes() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.08 }}
-            className="snap-start shrink-0 w-[290px] bg-white rounded-3xl overflow-hidden group cursor-pointer shadow-sm border border-olive/8 hover:shadow-xl hover:shadow-olive/8 transition-all duration-300">
+            className="snap-start shrink-0 w-[260px] sm:w-[290px] bg-white rounded-3xl overflow-hidden group cursor-pointer shadow-sm border border-olive/8 hover:shadow-xl hover:shadow-olive/8 transition-all duration-300">
             
               <div className="aspect-[4/3] overflow-hidden relative">
                 <img
@@ -103,7 +103,7 @@ export default function FeaturedDishes() {
             </motion.div>
           )}
 
-          <div className="snap-start shrink-0 w-[290px] bg-gradient-to-br from-olive/8 to-cream border border-olive/15 rounded-3xl flex flex-col items-center justify-center p-10 text-center">
+          <div className="snap-start shrink-0 w-[260px] sm:w-[290px] bg-gradient-to-br from-olive/8 to-cream border border-olive/15 rounded-3xl flex flex-col items-center justify-center p-6 sm:p-10 text-center">
             <div className="w-14 h-14 rounded-full border border-olive/25 flex items-center justify-center mb-5">
               <ArrowRight className="w-5 h-5 text-olive" />
             </div>

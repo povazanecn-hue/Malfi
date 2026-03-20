@@ -14,12 +14,12 @@ export default function CategoryTiles() {
   return (
     <section className="section-pad bg-white">
       <div className="container-malfi">
-        <div className="text-center mb-12">
-          <div className="label-caps text-olive mb-3">Naše špeciality</div>
-          <h2 className="font-display text-4xl text-text-dark">Prezrite si naše menu</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <div className="label-caps text-olive mb-2 md:mb-3">Naše špeciality</div>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Prezrite si naše menu</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
           {CATEGORIES.map((cat, idx) =>
           <motion.div
             key={cat.slug}
@@ -38,9 +38,9 @@ export default function CategoryTiles() {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex items-end p-5">
-                  <h3 className="font-display text-white text-2xl font-bold">{cat.name}</h3>
-                </div>
+                <div className="absolute inset-0 flex items-end p-3 sm:p-4 md:p-5">
+                   <h3 className="font-display text-white text-lg sm:text-xl md:text-2xl font-bold">{cat.name}</h3>
+                 </div>
               </Link>
             </motion.div>
           )}
