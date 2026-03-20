@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const CORRECT_PASSWORD = 'Malfi123456';
+const CORRECT_PASSWORD = 'Malfi 123456';
 
 export default function PasswordGate({ children }) {
   const [input, setInput] = useState('');
