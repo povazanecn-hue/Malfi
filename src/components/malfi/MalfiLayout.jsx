@@ -7,7 +7,7 @@ export default function MalfiLayout() {
   return (
     <div className="min-h-screen bg-bg-primary">
       <MalfiNavbar />
-      <main style={{ paddingTop: 'env(safe-area-inset-top, 110px)' }}>
+      <main style={{ paddingTop: 'env(safe-area-inset-top, 75px)' }}>
         <Outlet />
       </main>
       <MalfiFooter />
