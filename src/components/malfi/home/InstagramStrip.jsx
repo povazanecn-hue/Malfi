@@ -12,11 +12,11 @@ const IG_POSTS = [
 
 export default function InstagramStrip() {
   return (
-    <section className="section-pad">
+    <section className="py-12 sm:py-16 md:py-24">
       <div className="container-malfi">
-        <div className="text-center mb-8 md:mb-10">
-          <div className="label-caps text-gold mb-2 md:mb-3">Sociálne siete</div>
-          <h2 className="font-display text-2xl md:text-3xl text-text-primary mb-2">@malfi_bratislava</h2>
+        <div className="text-center mb-6 md:mb-10">
+          <div className="label-caps text-olive mb-2">Sociálne siete</div>
+          <h2 className="font-display text-2xl md:text-3xl text-text-dark mb-2">@malfi_bratislava</h2>
           <a
             href="https://instagram.com"
             target="_blank"
@@ -28,7 +28,7 @@ export default function InstagramStrip() {
           </a>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
+        <div className="flex gap-3 md:gap-4 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
           {IG_POSTS.map((url, idx) => (
             <motion.a
               key={idx}

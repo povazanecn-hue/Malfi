@@ -10,15 +10,15 @@ const HOURS = [
 
 export default function LocationHours() {
   return (
-    <section className="py-20 md:py-28" style={{ background: 'var(--cream-dark)' }}>
+    <section className="py-12 sm:py-16 md:py-24 lg:py-28" style={{ background: 'var(--cream-dark)' }}>
       <div className="container-malfi">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
           {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden h-80 lg:h-full min-h-[380px] border border-olive/10 shadow-sm relative"
+            className="rounded-2xl md:rounded-3xl overflow-hidden h-64 sm:h-80 lg:h-full min-h-[280px] sm:min-h-[380px] border border-olive/10 shadow-sm relative"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.0!2d17.1057!3d48.1441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c89530cb0b1f7%3A0x1b1b1b1b1b1b1b1b!2sHurbanovo+n%C3%A1mestie+1%2C+Bratislava!5e0!3m2!1ssk!2ssk!4v1000000000000"
@@ -40,8 +40,8 @@ export default function LocationHours() {
             className="space-y-7"
           >
             <div>
-              <div className="label-caps text-olive mb-3">Kde nás nájdete</div>
-              <h2 className="font-display text-3xl md:text-4xl text-text-dark">Adresa & hodiny</h2>
+              <div className="label-caps text-olive mb-2">Kde nás nájdete</div>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Adresa & hodiny</h2>
             </div>
 
             {/* Contact details */}
@@ -92,7 +92,7 @@ export default function LocationHours() {
               href="https://maps.google.com"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 btn-olive px-6 py-3 text-sm"
+              className="inline-flex items-center gap-2 btn-olive px-6 py-3 text-sm min-h-[48px]"
             >
               <Navigation className="w-4 h-4" />
               Navigovať sem

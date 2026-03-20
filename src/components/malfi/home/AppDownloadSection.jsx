@@ -14,13 +14,13 @@ const FEATURES = [
 
 export default function AppDownloadSection() {
   return (
-    <section className="section-pad bg-olive-dark relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 bg-olive-dark relative overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/5 pointer-events-none" />
       <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-white/4 pointer-events-none" />
 
       <div className="container-malfi relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
 
           {/* Left: Text */}
           <motion.div
@@ -34,7 +34,7 @@ export default function AppDownloadSection() {
               <span className="label-caps text-white/70 text-[10px]">Mobilná aplikácia</span>
             </div>
 
-            <h2 className="font-display text-4xl md:text-5xl text-white leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
               Objednajte MALFI<br />
               <span className="italic text-rosso-light">priamo z telefónu</span>
             </h2>
@@ -73,7 +73,7 @@ export default function AppDownloadSection() {
               href={APP_URL}
               target="_blank"
               rel="noreferrer"
-              className="btn-primary inline-flex items-center gap-2 px-7 py-4"
+              className="btn-primary inline-flex items-center gap-2 px-7 py-4 min-h-[48px]"
             >
               <Download className="w-4 h-4" />
               Otvoriť appku

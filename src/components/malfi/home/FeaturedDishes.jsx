@@ -38,11 +38,11 @@ export default function FeaturedDishes() {
   };
 
   return (
-    <section className="py-20 md:py-28" style={{ background: 'var(--cream-dark)' }}>
+    <section className="py-12 sm:py-16 md:py-24 lg:py-28" style={{ background: 'var(--cream-dark)' }}>
       <div className="container-malfi">
-        <div className="flex flex-col items-center justify-center mb-10 md:mb-12">
-          <div className="text-center mb-6">
-            <div className="label-caps text-olive mb-2 md:mb-3 text-center">Šéfkuchárove tipy</div>
+        <div className="flex flex-col items-center justify-center mb-8 md:mb-12">
+          <div className="text-center mb-4 md:mb-6">
+            <div className="label-caps text-olive mb-2 text-center">Šéfkuchárove tipy</div>
             <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-dark">Malfi bestsellery</h2>
           </div>
           <div className="hidden md:flex items-center gap-2">
@@ -94,7 +94,7 @@ export default function FeaturedDishes() {
                   <span className="text-text-dark font-bold text-2xl font-display">€{dish.price.toFixed(2)}</span>
                   <button
                   onClick={() => addToCart({ ...dish, quantity: 1, unit_price: dish.price, item_name: dish.name })}
-                  className="w-10 h-10 rounded-full bg-rosso text-white flex items-center justify-center hover:bg-[#A93226] transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-rosso/30 hover:shadow-md">
+                  className="w-11 h-11 rounded-full bg-rosso text-white flex items-center justify-center hover:bg-[#A93226] transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-rosso/30 hover:shadow-md">
                   
                     <Plus className="w-4 h-4" />
                   </button>

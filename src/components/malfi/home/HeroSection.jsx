@@ -5,7 +5,7 @@ import { ItalianCornerDecor } from '@/components/malfi/decorative/ItalianDivider
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden bg-cream">
+    <section className="min-h-[100svh] flex items-center relative overflow-hidden bg-cream">
       {/* Subtle background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-40" style={{
@@ -17,7 +17,7 @@ export default function HeroSection() {
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-8 md:py-20 lg:py-24 pt-20 md:pt-36 lg:pt-40">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-6 md:py-20 lg:py-24 pt-24 md:pt-36 lg:pt-40">
 
           {/* Left Content */}
           <div className="space-y-8 relative z-10">
@@ -64,10 +64,10 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <Link to="/Reservation" className="btn-primary px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base text-center">
+              <Link to="/Reservation" className="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-sm sm:text-base text-center min-h-[48px] flex items-center justify-center">
                 Rezervovať stôl
               </Link>
-              <Link to="/Order" className="btn-outline px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base text-center">
+              <Link to="/Order" className="btn-outline px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-sm sm:text-base text-center min-h-[48px] flex items-center justify-center">
                 Objednať online
               </Link>
             </motion.div>
@@ -107,12 +107,12 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
 
-            {/* Rating badge */}
+            {/* Rating badge — hidden on small mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)]"
+              className="hidden sm:block absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)]"
             >
               <div className="flex items-center gap-1.5 mb-1">
                 {[1,2,3,4,5].map(i => (
@@ -123,12 +123,12 @@ export default function HeroSection() {
               <div className="text-text-light text-xs">z 340 hodnotení</div>
             </motion.div>
 
-            {/* Bestseller badge */}
+            {/* Bestseller badge — hidden on small mobile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 1.0 }}
-              className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)] max-w-[160px]"
+              className="hidden sm:block absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)] max-w-[160px]"
             >
               <div className="label-caps text-rosso text-[9px] mb-1">Bestseller</div>
               <div className="text-text-dark font-semibold text-sm font-display">Pinsa Classica</div>

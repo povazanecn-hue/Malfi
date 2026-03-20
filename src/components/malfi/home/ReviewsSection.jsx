@@ -15,13 +15,13 @@ export default function ReviewsSection() {
 
   if (loading) {
     return (
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="container-malfi">
-          <div className="text-center mb-14">
-            <div className="label-caps text-olive mb-3">Recenzie</div>
-            <h2 className="font-display text-4xl text-text-dark">Čo hovoria naši hostia</h2>
+          <div className="text-center mb-8 md:mb-14">
+            <div className="label-caps text-olive mb-2">Recenzie</div>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Čo hovoria naši hostia</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {[1, 2, 3].map(i => (
               <div key={i} className="bg-white border border-olive/8 rounded-3xl p-6">
                 <Skeleton className="h-4 w-20 mb-4" />
@@ -38,19 +38,19 @@ export default function ReviewsSection() {
   if (reviews.length === 0) return null;
 
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="container-malfi">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-8 md:mb-14"
         >
-          <div className="label-caps text-olive mb-3">Recenzie</div>
-          <h2 className="font-display text-4xl md:text-5xl text-text-dark">Čo hovoria naši hostia</h2>
+          <div className="label-caps text-olive mb-2">Recenzie</div>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-dark">Čo hovoria naši hostia</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {reviews.map((review, idx) => (
             <motion.div
               key={review.id}
@@ -58,7 +58,7 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="bg-cream rounded-3xl border border-olive/8 p-7 flex flex-col hover:shadow-md hover:shadow-olive/8 transition-all duration-300 relative overflow-hidden"
+              className="bg-cream rounded-2xl md:rounded-3xl border border-olive/8 p-5 md:p-7 flex flex-col hover:shadow-md hover:shadow-olive/8 transition-all duration-300 relative overflow-hidden"
             >
               {/* Quote icon */}
               <div className="absolute top-5 right-5 opacity-8">

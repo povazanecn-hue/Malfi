@@ -26,7 +26,7 @@ export default function MobileBottomNav() {
             <Link
               key={path}
               to={path}
-              className="flex flex-col items-center justify-center py-2.5 gap-1 select-none"
+              className="flex flex-col items-center justify-center py-3 gap-1 select-none min-h-[52px]"
               style={{ WebkitTapHighlightColor: 'transparent' }}
             >
               <div className={`relative flex items-center justify-center w-10 h-8 rounded-2xl transition-all duration-200 ${

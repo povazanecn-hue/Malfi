@@ -9,9 +9,9 @@ const TikTokIcon = () => (
 
 export default function MalfiFooter() {
   return (
-    <footer className="bg-olive-dark text-white">
-      <div className="container-malfi py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
+    <footer className="bg-olive-dark text-white pb-20 md:pb-0">
+      <div className="container-malfi py-8 md:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-start">
 
           {/* Brand */}
           <div className="space-y-4">
@@ -27,15 +27,15 @@ export default function MalfiFooter() {
             </p>
             <div className="flex items-center gap-2">
               <a href="https://instagram.com" target="_blank" rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
                 <Facebook className="w-4 h-4" />
               </a>
               <a href="https://tiktok.com" target="_blank" rel="noreferrer"
-                className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 transition-all">
                 <TikTokIcon />
               </a>
             </div>

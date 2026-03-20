@@ -13,15 +13,15 @@ const GALLERY = [
 
 export default function GallerySection() {
   return (
-    <section className="section-pad bg-bg-secondary">
+    <section className="py-12 sm:py-16 md:py-24 bg-cream-dark">
       <div className="container-malfi">
-        <div className="text-center mb-12">
-          <div className="label-caps text-gold mb-3">Galéria</div>
-          <h2 className="font-display text-4xl text-text-primary">Atmosféra MALFI</h2>
+        <div className="text-center mb-8 md:mb-12">
+          <div className="label-caps text-olive mb-2">Galéria</div>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Atmosféra MALFI</h2>
         </div>
 
         {/* Gallery grid with aligned bottom row */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-max">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-max">
           {GALLERY.map((img, idx) => (
             <motion.div
               key={idx}

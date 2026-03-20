@@ -12,14 +12,14 @@ const CATEGORIES = [
 
 export default function CategoryTiles() {
   return (
-    <section className="section-pad bg-white">
+    <section className="py-12 sm:py-16 md:py-24 bg-white">
       <div className="container-malfi">
-        <div className="text-center mb-8 md:mb-12">
-          <div className="label-caps text-olive mb-2 md:mb-3">Naše špeciality</div>
+        <div className="text-center mb-6 md:mb-12">
+          <div className="label-caps text-olive mb-2">Naše špeciality</div>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-text-dark">Prezrite si naše menu</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {CATEGORIES.map((cat, idx) =>
           <motion.div
             key={cat.slug}

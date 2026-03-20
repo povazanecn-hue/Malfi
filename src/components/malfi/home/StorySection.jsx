@@ -10,9 +10,9 @@ const PILLARS = [
 
 export default function StorySection() {
   return (
-    <section className="py-20 md:py-28 bg-cream overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-cream overflow-hidden">
       <div className="container-malfi">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -98,7 +98,7 @@ export default function StorySection() {
               })}
             </div>
 
-            <Link to="/About" className="btn-outline px-7 py-3 inline-flex items-center gap-2 mt-2">
+            <Link to="/About" className="btn-outline px-7 py-3 inline-flex items-center gap-2 mt-2 min-h-[48px]">
               Zistiť viac
             </Link>
           </motion.div>

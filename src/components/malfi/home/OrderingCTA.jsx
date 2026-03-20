@@ -23,7 +23,7 @@ const BoltIcon = () => (
 
 export default function OrderingCTA() {
   return (
-    <section className="py-20 md:py-28 bg-cream">
+    <section className="py-12 sm:py-16 md:py-24 lg:py-28 bg-cream">
       <div className="container-malfi">
          <motion.div
            initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function OrderingCTA() {
            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-text-dark">Ako chcete objednať?</h2>
          </motion.div>
 
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 pb-2">
           {/* Osobný odber — featured */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -61,7 +61,7 @@ export default function OrderingCTA() {
             <div className="flex items-center justify-between">
               <span className="label-caps text-white/60 text-[10px]">Zadarmo</span>
               <Link to="/Order?type=pickup"
-                className="flex items-center gap-1.5 bg-white text-olive font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-cream transition-all duration-200 hover:scale-105">
+                className="flex items-center gap-1.5 bg-white text-olive font-semibold text-sm px-5 py-3 rounded-full hover:bg-cream transition-all duration-200 hover:scale-105 min-h-[44px]">
                 Objednať <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -85,7 +85,7 @@ export default function OrderingCTA() {
             <div className="flex items-center justify-between">
               <span className="label-caps text-text-light text-[10px]">Doručenie</span>
               <a href={WOLT_URL} target="_blank" rel="noreferrer"
-               className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-2.5 rounded-full hover:border-olive hover:text-olive transition-all duration-200">
+               className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-3 rounded-full hover:border-olive hover:text-olive transition-all duration-200 min-h-[44px]">
                Objednať cez WOLT <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -109,7 +109,7 @@ export default function OrderingCTA() {
             <div className="flex items-center justify-between">
               <span className="label-caps text-text-light text-[10px]">Doručenie</span>
               <a href={BOLT_URL} target="_blank" rel="noreferrer"
-               className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-2.5 rounded-full hover:border-olive hover:text-olive transition-all duration-200">
+               className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-3 rounded-full hover:border-olive hover:text-olive transition-all duration-200 min-h-[44px]">
                Objednať cez BOLT <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
