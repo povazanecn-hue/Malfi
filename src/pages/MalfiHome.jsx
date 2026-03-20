@@ -38,5 +38,6 @@ export default function MalfiHome() {
       <LocationHours />
       <InstagramStrip />
     </div>
+    </PullToRefresh>
   );
 }
