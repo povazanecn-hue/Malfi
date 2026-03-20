@@ -33,8 +33,8 @@ export default function MalfiNavbar() {
             <Link to="/MalfiHome" className="flex items-center group">
              <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
-                alt="Malfi Logo"
-                className="h-14 md:h-20 lg:h-28 w-auto object-cover" />
+                alt="Malfi Logo" className="rounded h-14 md:h-20 lg:h-28 w-auto object-cover" />
+              
               
             </Link>
 
