@@ -111,10 +111,10 @@ export default function MalfiNavbar() {
                 </Link>
               ))}
               <div className="flex gap-3 mt-2">
-                <Link to="/MalfiReservation" className="btn-outline flex-1 py-3 text-center text-sm">
+                <Link to="/Reservation" className="btn-outline flex-1 py-3 text-center text-sm">
                   Rezervovať
                 </Link>
-                <Link to="/MalfiOrder" className="btn-primary flex-1 py-3 text-center text-sm">
+                <Link to="/Order" className="btn-primary flex-1 py-3 text-center text-sm">
                   Objednať
                 </Link>
               </div>
