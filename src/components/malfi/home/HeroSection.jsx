@@ -1,29 +1,33 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, Star, Leaf } from 'lucide-react';
-import { ItalianCornerDecor } from '@/components/malfi/decorative/ItalianDividers';
+
+const HERO_IMG = 'https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[100svh] flex items-center relative overflow-hidden bg-cream">
-      {/* Subtle background pattern */}
+    <section className="min-h-[100svh] flex items-center relative overflow-hidden">
+      {/* Full-width background image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-40" style={{
-          backgroundImage: `radial-gradient(ellipse at 80% 20%, rgba(107,124,94,0.1) 0%, transparent 50%),
-                            radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.06) 0%, transparent 50%)`
-        }} />
+        <img
+          src={HERO_IMG}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        {/* Overlay — stronger on mobile for readability, softer on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/85 to-cream/50 md:from-cream/90 md:via-cream/70 md:to-transparent" />
+        {/* Bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-cream to-transparent" />
       </div>
 
-      <ItalianCornerDecor />
-
       <div className="container-malfi relative z-10 w-full">
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-6 md:py-20 lg:py-24 pt-24 md:pt-36 lg:pt-40">
+        <div className="py-6 md:py-20 lg:py-24 pt-24 md:pt-36 lg:pt-40 max-w-xl lg:max-w-2xl">
 
-          {/* Left Content */}
-          <div className="space-y-8 relative z-10">
+          {/* Content */}
+          <div className="space-y-7 sm:space-y-8">
             <Link
               to="/Contact"
-              className="inline-flex items-center gap-2 bg-olive/10 border border-olive/20 rounded-full px-4 py-2 hover:bg-olive/15 hover:border-olive/35 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-olive/20 rounded-full px-4 py-2 hover:bg-white/90 hover:border-olive/35 transition-all duration-300"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -67,7 +71,7 @@ export default function HeroSection() {
               <Link to="/Reservation" className="btn-primary px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-sm sm:text-base text-center min-h-[48px] flex items-center justify-center">
                 Rezervovať stôl
               </Link>
-              <Link to="/Order" className="btn-outline px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-sm sm:text-base text-center min-h-[48px] flex items-center justify-center">
+              <Link to="/Order" className="btn-outline px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-sm sm:text-base text-center min-h-[48px] flex items-center justify-center bg-white/60 backdrop-blur-sm">
                 Objednať online
               </Link>
             </motion.div>
@@ -79,62 +83,41 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-5 pt-2"
             >
-              <div className="flex items-center gap-2 text-text-light text-sm">
+              <div className="flex items-center gap-2 text-text-medium text-sm">
                 <Clock className="w-4 h-4 text-olive" />
                 <span>Po–Pi 11:00–22:00</span>
               </div>
-              <div className="flex items-center gap-2 text-text-light text-sm">
+              <div className="flex items-center gap-2 text-text-medium text-sm">
                 <Leaf className="w-4 h-4 text-olive" />
                 <span>Čerstvé suroviny denne</span>
               </div>
             </motion.div>
-          </div>
 
-          {/* Right: Image composition */}
-          <motion.div
-           initial={{ opacity: 0, x: 40 }}
-           animate={{ opacity: 1, x: 0 }}
-           transition={{ duration: 0.8, delay: 0.2 }}
-           className="relative col-span-1"
-          >
-            {/* Main hero image */}
-            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-2xl">
-              <img
-                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
-                alt="MALFI Talianska Reštaurácia"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-
-            {/* Rating badge — hidden on small mobile */}
+            {/* Floating badges — desktop only */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="hidden sm:block absolute -bottom-5 -left-5 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="hidden md:flex items-center gap-4 pt-4"
             >
-              <div className="flex items-center gap-1.5 mb-1">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
-                ))}
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-lg border border-olive/10 flex items-center gap-3">
+                <div className="flex items-center gap-1">
+                  {[1,2,3,4,5].map(i => (
+                    <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+                  ))}
+                </div>
+                <div>
+                  <div className="text-text-dark font-bold text-lg font-display leading-none">4.8</div>
+                  <div className="text-text-light text-[10px]">z 340 hodnotení</div>
+                </div>
               </div>
-              <div className="text-text-dark font-bold text-2xl font-display">4.8</div>
-              <div className="text-text-light text-xs">z 340 hodnotení</div>
-            </motion.div>
 
-            {/* Bestseller badge — hidden on small mobile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="hidden sm:block absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl border border-[rgba(107,124,94,0.15)] max-w-[160px]"
-            >
-              <div className="label-caps text-rosso text-[9px] mb-1">Bestseller</div>
-              <div className="text-text-dark font-semibold text-sm font-display">Pinsa Classica</div>
-              <div className="text-olive font-bold text-sm mt-1">€12.90</div>
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-lg border border-olive/10">
+                <div className="label-caps text-rosso text-[9px] mb-0.5">Bestseller</div>
+                <div className="text-text-dark font-semibold text-sm font-display">Pinsa Classica · <span className="text-olive">€12.90</span></div>
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
