@@ -39,7 +39,7 @@ export default function MalfiContact() {
     e.preventDefault();
     setSending(true);
     await base44.integrations.Core.SendEmail({
-      to: 'info@malfi.sk',
+      to: 'malfi@malfi.sk',
       subject: `Kontakt: ${form.subject} — od ${form.name}`,
       body: `Od: ${form.name} (${form.email})\n\n${form.message}`,
     });
@@ -65,7 +65,7 @@ export default function MalfiContact() {
               {[
                 { icon: MapPin, label: 'Adresa', value: 'Hurbanovo námestie 1\n811 03 Bratislava, Staré Mesto', href: 'https://maps.google.com' },
                 { icon: Phone, label: 'Telefón', value: '+421 900 000 000', href: 'tel:+421900000000' },
-                { icon: Mail, label: 'Email', value: 'info@malfi.sk', href: 'mailto:info@malfi.sk' },
+                { icon: Mail, label: 'Email', value: 'malfi@malfi.sk', href: 'mailto:malfi@malfi.sk' },
               ].map(item => {
                 const Icon = item.icon;
                 return (
