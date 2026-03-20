@@ -13,9 +13,13 @@ import {
   ItalianQuote,
 } from '@/components/malfi/decorative/ItalianDividers';
 import { ItalianTricolorStripe } from '@/components/malfi/decorative/ItalianTricolorStripe';
+import PullToRefresh from '@/components/malfi/PullToRefresh';
 
 export default function MalfiHome() {
+  const handleRefresh = () => new Promise(resolve => setTimeout(() => { window.location.reload(); resolve(); }, 500));
+
   return (
+    <PullToRefresh onRefresh={handleRefresh}>
     <div className="bg-cream">
       <HeroSection />
       <ItalianTricolorStripe />
