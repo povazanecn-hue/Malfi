@@ -20,6 +20,8 @@ export default function MalfiOrder() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [cartOpen, setCartOpen] = useState(false);
   const { cart, cartCount, cartTotal } = useCart();
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const navigate = useNavigate();
 
   const { data: categories = [], isLoading: loadingCats } = useQuery({
