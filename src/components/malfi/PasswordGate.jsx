@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Eye, EyeOff } from 'lucide-react';
 
-const SITE_PASSWORD = 'Malfi 123456';
+const SITE_PASSWORD = 'Malfi123456';
 const STORAGE_KEY = 'malfi_site_unlocked';
 
 export default function PasswordGate({ children }) {
