@@ -85,8 +85,8 @@ export default function OrderingCTA() {
             <div className="flex items-center justify-between">
               <span className="label-caps text-text-light text-[10px]">Doručenie</span>
               <a href={WOLT_URL} target="_blank" rel="noreferrer"
-                className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-2.5 rounded-full hover:border-olive hover:text-olive transition-all duration-200">
-                Otvoriť <ArrowUpRight className="w-3.5 h-3.5" />
+               className="flex items-center gap-1.5 border border-olive/25 text-text-dark font-semibold text-sm px-5 py-2.5 rounded-full hover:border-olive hover:text-olive transition-all duration-200">
+               Objednať cez WOLT <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </motion.div>
