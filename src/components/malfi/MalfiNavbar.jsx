@@ -4,7 +4,7 @@ import { Menu, X, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/lib/CartContext';
 
 const navLinks = [
-  { label: 'Menu', path: '/MalfiMenu' },
+  { label: 'Menu', path: '/Menu' },
   { label: 'Rezervácia', path: '/MalfiReservation' },
   { label: 'O nás', path: '/MalfiAbout' },
   { label: 'Kontakt', path: '/MalfiContact' },

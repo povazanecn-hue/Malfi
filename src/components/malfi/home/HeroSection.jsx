@@ -58,10 +58,10 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Link to="/MalfiReservation" className="btn-primary px-8 py-4 font-semibold text-base">
+              <Link to="/Reservation" className="btn-primary px-8 py-4 font-semibold text-base">
                 Rezervovať stôl
               </Link>
-              <Link to="/MalfiOrder" className="btn-outline px-8 py-4 font-semibold text-base">
+              <Link to="/Order" className="btn-outline px-8 py-4 font-semibold text-base">
                 Objednať online
               </Link>
             </motion.div>
