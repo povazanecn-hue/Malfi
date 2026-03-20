@@ -94,7 +94,7 @@ export default function HeroSection() {
             {/* Main hero image */}
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/65173d7f6_generated_image.png"
+                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/dc5257448_generated_image.png"
                 alt="MALFI Talianska Reštaurácia"
                 className="w-full h-full object-cover"
               />
