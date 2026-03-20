@@ -103,7 +103,7 @@ function App() {
               <AuthenticatedApp />
             </PasswordGate>
           </Router>
-          <Toaster />
+            <Toaster />
         </CartProvider>
       </QueryClientProvider>
     </AuthProvider>
