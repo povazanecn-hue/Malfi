@@ -29,7 +29,7 @@ export default function CategoryTiles() {
               transition={{ delay: idx * 0.08 }}
             >
               <Link
-                to={`/MalfiMenu`}
+                to={`/Menu`}
                 className="relative aspect-[4/3] rounded-3xl overflow-hidden block group"
               >
                 <img

@@ -5,9 +5,9 @@ import { useCart } from '@/lib/CartContext';
 
 const navLinks = [
   { label: 'Menu', path: '/Menu' },
-  { label: 'Rezervácia', path: '/MalfiReservation' },
-  { label: 'O nás', path: '/MalfiAbout' },
-  { label: 'Kontakt', path: '/MalfiContact' },
+  { label: 'Rezervácia', path: '/Reservation' },
+  { label: 'O nás', path: '/About' },
+  { label: 'Kontakt', path: '/Contact' },
 ];
 
 export default function MalfiNavbar() {

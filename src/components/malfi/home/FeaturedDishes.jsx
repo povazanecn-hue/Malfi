@@ -101,7 +101,7 @@ export default function FeaturedDishes() {
           <div className="snap-start shrink-0 w-[280px] bg-olive/8 border border-olive/20 rounded-2xl flex flex-col items-center justify-center p-8 text-center">
             <div className="label-caps text-olive mb-3 text-[9px]">Celé menu</div>
             <h3 className="font-display text-lg text-text-dark mb-4">Objaviť viac</h3>
-            <Link to="/MalfiMenu" className="btn-outline px-6 py-2.5 text-sm">
+            <Link to="/Menu" className="btn-outline px-6 py-2.5 text-sm">
               Pozrieť menu
             </Link>
           </div>
