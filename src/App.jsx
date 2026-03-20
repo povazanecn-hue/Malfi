@@ -70,20 +70,17 @@ const AuthenticatedApp = () => {
 
 
 function App() {
-
   return (
-    <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <CartProvider>
-          <Router>
-            <PasswordGate>
-              <AuthenticatedApp />
-            </PasswordGate>
-          </Router>
-            <Toaster />
-        </CartProvider>
-      </QueryClientProvider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClientInstance}>
+      <CartProvider>
+        <Router>
+          <PasswordGate>
+            <AuthenticatedApp />
+          </PasswordGate>
+        </Router>
+        <Toaster />
+      </CartProvider>
+    </QueryClientProvider>
   )
 }
 
