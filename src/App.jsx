@@ -29,6 +29,7 @@ import MalfiReservation from '@/pages/MalfiReservation';
 import MalfiAbout from '@/pages/MalfiAbout';
 import MalfiContact from '@/pages/MalfiContact';
 import MalfiAdmin from '@/pages/MalfiAdmin';
+import PasswordGate from '@/components/malfi/PasswordGate';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
