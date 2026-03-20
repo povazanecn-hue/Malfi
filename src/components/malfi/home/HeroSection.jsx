@@ -51,7 +51,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-text-medium text-base sm:text-lg leading-relaxed max-w-md"
+              className="text-text-medium text-sm sm:text-base md:text-lg leading-relaxed max-w-md"
             >
               Autentické talianske recepty, lokálne suroviny a vášeň pre každý tanier.
               Vitajte v MALFI.
@@ -61,12 +61,12 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <Link to="/Reservation" className="btn-primary px-8 py-4 font-semibold text-base">
+              <Link to="/Reservation" className="btn-primary px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base text-center">
                 Rezervovať stôl
               </Link>
-              <Link to="/Order" className="btn-outline px-8 py-4 font-semibold text-base">
+              <Link to="/Order" className="btn-outline px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base text-center">
                 Objednať online
               </Link>
             </motion.div>
