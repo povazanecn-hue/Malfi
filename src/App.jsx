@@ -99,7 +99,9 @@ function App() {
       <QueryClientProvider client={queryClientInstance}>
         <CartProvider>
           <Router>
-            <AuthenticatedApp />
+            <PasswordGate>
+              <AuthenticatedApp />
+            </PasswordGate>
           </Router>
           <Toaster />
         </CartProvider>
