@@ -8,20 +8,11 @@ import { CartProvider } from '@/lib/CartContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 
 // Layout imports
-import MainLayout from '@/components/layout/MainLayout';
 import AdminLayout from '@/components/layout/AdminLayout';
 import MalfiLayout from '@/components/malfi/MalfiLayout';
 import MalfiAdminLayout from '@/components/malfi/admin/MalfiAdminLayout';
 
-// Page imports
-import Home from '@/pages/Home';
-import Menu from '@/pages/Menu';
-import Order from '@/pages/Order';
-import Checkout from '@/pages/Checkout';
-import OrderSuccess from '@/pages/OrderSuccess';
-import Reservations from '@/pages/Reservations';
-import About from '@/pages/About';
-import Contact from '@/pages/Contact';
+// Admin pages
 import Admin from '@/pages/Admin';
 import AdminOrders from '@/pages/AdminOrders';
 import AdminReservations from '@/pages/AdminReservations';
