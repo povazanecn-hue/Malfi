@@ -16,7 +16,7 @@ export default function HeroSection() {
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center py-12 md:py-20 lg:py-24 pt-20 md:pt-28 lg:pt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center py-12 md:py-20 lg:py-24 pt-28 md:pt-36 lg:pt-40">
 
           {/* Left Content */}
           <div className="space-y-8">
