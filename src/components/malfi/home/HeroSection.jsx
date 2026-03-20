@@ -16,7 +16,7 @@ export default function HeroSection() {
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center py-12 md:py-20 lg:py-24 pt-28 md:pt-36 lg:pt-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-8 md:py-20 lg:py-24 pt-20 md:pt-36 lg:pt-40">
 
           {/* Left Content */}
           <div className="space-y-8">
@@ -94,10 +94,10 @@ export default function HeroSection() {
            initial={{ opacity: 0, x: 40 }}
            animate={{ opacity: 1, x: 0 }}
            transition={{ duration: 0.8, delay: 0.2 }}
-           className="relative hidden lg:block"
+           className="relative col-span-1"
           >
             {/* Main hero image */}
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl md:rounded-3xl overflow-hidden shadow-lg md:shadow-2xl">
               <img
                 src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
                 alt="MALFI Talianska Reštaurácia"
