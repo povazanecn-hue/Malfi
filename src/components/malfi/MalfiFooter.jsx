@@ -10,8 +10,8 @@ const TikTokIcon = () => (
 export default function MalfiFooter() {
   return (
     <footer className="bg-olive-dark text-white pb-20 md:pb-0">
-      <div className="container-malfi py-8 md:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-start">
+      <div className="container-malfi py-8 sm:py-10 lg:py-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
 
           {/* Brand */}
           <div className="space-y-4">

@@ -20,7 +20,7 @@ export default function AppDownloadSection() {
       <div className="absolute -bottom-16 -left-16 w-56 h-56 rounded-full bg-white/4 pointer-events-none" />
 
       <div className="container-malfi relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center">
 
           {/* Left: Text */}
           <motion.div
@@ -89,7 +89,7 @@ export default function AppDownloadSection() {
             className="flex flex-col items-center gap-6"
           >
             {/* QR Card */}
-            <div className="bg-cream rounded-3xl p-8 shadow-2xl text-center max-w-xs w-full">
+            <div className="bg-cream rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl text-center max-w-xs w-full">
               <p className="label-caps text-olive mb-4 text-[10px]">Naskenuj QR kód</p>
               <div className="rounded-2xl overflow-hidden border border-olive/20 inline-block">
                 <img
@@ -110,7 +110,7 @@ export default function AppDownloadSection() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-4">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {[
                 { value: '4.8★', label: 'Hodnotenie' },
                 { value: '500+', label: 'Zákazníkov' },

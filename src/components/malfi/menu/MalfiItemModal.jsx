@@ -38,21 +38,21 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
 
   return (
     <Dialog open={open} onOpenChange={() => onClose()}>
-      <DialogContent className="bg-white border border-olive/15 rounded-3xl p-0 max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto">
-        {/* Image */}
-        {item.image_url && (
-          <div className="aspect-[16/9] overflow-hidden">
-            <img src={item.image_url} alt={item.name} className="w-full h-full object-cover" />
-          </div>
-        )}
+      <DialogContent className="bg-white border border-olive/15 rounded-t-2xl sm:rounded-3xl p-0 max-w-lg overflow-hidden max-h-[90vh] overflow-y-auto">
+       {/* Image */}
+       {item.image_url && (
+         <div className="aspect-video sm:aspect-[4/3] overflow-hidden">
+           <img src={item.image_url} alt={item.name} className="w-full h-full object-cover" />
+         </div>
+       )}
 
-        <div className="p-6 space-y-5">
-          <div>
-            <h2 className="font-display text-2xl text-text-dark">{item.name}</h2>
-            {item.description && (
-              <p className="text-text-medium text-sm mt-2 leading-relaxed">{item.description}</p>
-            )}
-          </div>
+       <div className="p-4 sm:p-6 space-y-5">
+         <div>
+           <h2 className="font-display text-xl sm:text-2xl font-bold text-text-dark">{item.name}</h2>
+           {item.description && (
+             <p className="text-text-medium text-sm sm:text-base mt-2 leading-relaxed">{item.description}</p>
+           )}
+         </div>
 
           {/* Addons */}
           {addons.length > 0 && (
@@ -101,21 +101,21 @@ export default function MalfiItemModal({ item, addons, open, onClose }) {
           </div>
 
           {/* Qty + Add */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <div className="flex items-center gap-3 border border-olive/20 rounded-full px-2 py-1 bg-cream">
               <button onClick={() => setQty(Math.max(1, qty - 1))}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
+                className="w-9 h-9 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
                 <Minus className="w-3.5 h-3.5" />
               </button>
               <span className="text-text-dark font-semibold w-6 text-center">{qty}</span>
               <button onClick={() => setQty(qty + 1)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
+                className="w-9 h-9 rounded-full flex items-center justify-center text-text-light hover:text-olive transition-colors">
                 <Plus className="w-3.5 h-3.5" />
               </button>
             </div>
-            <button onClick={handleAdd} className="btn-primary flex-1 py-3 flex items-center justify-center gap-2 font-semibold">
+            <button onClick={handleAdd} className="btn-primary flex-1 py-3 min-h-[48px] flex items-center justify-center gap-2 font-semibold">
               <ShoppingBag className="w-4 h-4" />
-              Pridať do košíka · €{total.toFixed(2)}
+              Pridať · €{total.toFixed(2)}
             </button>
           </div>
         </div>

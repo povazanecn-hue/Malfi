@@ -30,11 +30,12 @@ export default function MalfiMenuItemCard({ item, onClick }) {
       className="c-card group cursor-pointer hover:border-olive/30 hover:shadow-lg hover:shadow-olive/20"
     >
       {/* Image */}
-      <div className="aspect-[4/3] overflow-hidden relative -m-5 mb-5">
+      <div className="aspect-square sm:aspect-[4/3] overflow-hidden relative -m-4 sm:-m-5 mb-4 sm:mb-5">
         {item.image_url ? (
           <img
             src={item.image_url}
             alt={item.name}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -65,16 +66,16 @@ export default function MalfiMenuItemCard({ item, onClick }) {
 
       {/* Content */}
       <div>
-        <h3 className="c-heading is-h3 text-text-dark mb-1">{item.name}</h3>
+        <h3 className="font-display text-base sm:text-lg font-bold text-text-dark mb-1">{item.name}</h3>
         {item.description && (
-          <p className="text-text-light text-sm line-clamp-2 mb-4">{item.description}</p>
+          <p className="text-text-light text-xs sm:text-sm line-clamp-2 mb-3 sm:mb-4">{item.description}</p>
         )}
         <div className="flex items-center justify-between">
-          <span className="font-display text-xl text-text-dark font-bold">€{item.price?.toFixed(2)}</span>
+          <span className="font-display text-sm sm:text-base font-bold text-olive">€{item.price?.toFixed(2)}</span>
           <button
             onClick={handleAdd}
             disabled={!item.is_available}
-            className="w-10 h-10 rounded-full bg-gradient-to-br from-rosso to-[#A93226] text-white flex items-center justify-center hover:shadow-lg hover:shadow-rosso/40 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed transform hover:scale-110"
+            className="w-11 h-11 rounded-full bg-gradient-to-br from-rosso to-[#A93226] text-white flex items-center justify-center hover:shadow-lg hover:shadow-rosso/40 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed transform hover:scale-110"
           >
             <Plus className="w-5 h-5 font-bold" />
           </button>

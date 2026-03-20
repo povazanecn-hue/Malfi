@@ -52,18 +52,18 @@ export default function MalfiCartDrawer({ open, onClose, orderMode }) {
           <motion.div
             initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 28, stiffness: 300 }}
-            className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white border-l border-olive/10 z-50 flex flex-col shadow-2xl"
+            className="fixed right-0 top-0 bottom-0 w-[85vw] sm:w-full sm:max-w-md bg-white border-l border-olive/10 z-50 flex flex-col shadow-2xl"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-olive/10">
-              <h2 className="font-display text-xl text-text-dark">Váš košík</h2>
-              <button onClick={onClose} className="w-8 h-8 flex items-center justify-center text-text-light hover:text-text-dark transition-colors">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-olive/10">
+              <h2 className="font-display text-lg sm:text-xl text-text-dark">Váš košík</h2>
+              <button onClick={onClose} className="w-11 h-11 flex items-center justify-center text-text-light hover:text-text-dark transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {/* Items */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-3">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3">
               {cart.length === 0 ? (
                 <div className="text-center py-16 text-text-light">
                   <div className="font-display text-3xl mb-2">🛒</div>
@@ -73,7 +73,7 @@ export default function MalfiCartDrawer({ open, onClose, orderMode }) {
                 cart.map(item => (
                   <div key={item.cartId || item.id} className="flex gap-4 p-4 bg-cream rounded-2xl border border-olive/8">
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-text-dark text-sm truncate">{item.item_name}</div>
+                      <div className="font-semibold text-text-dark text-sm sm:text-base truncate">{item.item_name}</div>
                       {item.addons?.length > 0 && (
                         <div className="text-text-light text-xs mt-0.5">{item.addons.map(a => a.name).join(', ')}</div>
                       )}
@@ -97,7 +97,7 @@ export default function MalfiCartDrawer({ open, onClose, orderMode }) {
 
             {/* Promo + Summary */}
             {cart.length > 0 && (
-              <div className="p-6 border-t border-olive/10 space-y-4">
+              <div className="p-4 sm:p-6 border-t border-olive/10 space-y-4" style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}>
                 {/* Promo code */}
                 <div className="flex gap-2">
                   <div className="relative flex-1">
@@ -150,7 +150,7 @@ export default function MalfiCartDrawer({ open, onClose, orderMode }) {
                   </div>
                 </div>
 
-                <button onClick={handleCheckout} className="btn-primary w-full py-4 flex items-center justify-center gap-2 font-semibold">
+                <button onClick={handleCheckout} className="btn-primary w-full py-4 min-h-[48px] flex items-center justify-center gap-2 font-semibold">
                   Pokračovať k platbe <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

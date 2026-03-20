@@ -117,7 +117,7 @@
   }
 
   .c-card {
-    @apply bg-white border border-olive/10 rounded-2xl p-5 md:p-6;
+    @apply bg-white border border-olive/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6;
   }
 
   .c-card.is-bordered {
@@ -149,7 +149,7 @@
   }
 
   .c-grid {
-    @apply grid gap-4;
+    @apply grid gap-4 sm:gap-5 lg:gap-6;
   }
 
   .c-grid.is-cols-2 {
@@ -181,7 +181,7 @@
   }
 
   .c-heading.is-h3 {
-    @apply text-lg md:text-xl;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl;
   }
 }
 
@@ -290,6 +290,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
   }
   .btn-gold:hover {
     background-color: #A93226;
@@ -308,6 +310,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
   }
   .btn-outline-gold:hover {
     background: var(--olive);

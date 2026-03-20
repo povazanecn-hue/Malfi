@@ -12,13 +12,13 @@ export default function LocationHours() {
   return (
     <section className="py-12 sm:py-16 md:py-24 lg:py-28" style={{ background: 'var(--cream-dark)' }}>
       <div className="container-malfi">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           {/* Map */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-2xl md:rounded-3xl overflow-hidden h-64 sm:h-80 lg:h-full min-h-[280px] sm:min-h-[380px] border border-olive/10 shadow-sm relative"
+            className="rounded-xl sm:rounded-2xl overflow-hidden aspect-video sm:aspect-[4/3] border border-olive/10 shadow-sm relative"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.0!2d17.1057!3d48.1441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c89530cb0b1f7%3A0x1b1b1b1b1b1b1b1b!2sHurbanovo+n%C3%A1mestie+1%2C+Bratislava!5e0!3m2!1ssk!2ssk!4v1000000000000"
@@ -81,8 +81,8 @@ export default function LocationHours() {
               <div className="space-y-2">
                 {HOURS.map(h => (
                   <div key={h.day} className="flex items-center justify-between py-2 border-b border-olive/8 last:border-0">
-                    <span className="text-text-light text-sm">{h.day}</span>
-                    <span className="text-text-dark text-sm font-semibold">{h.time}</span>
+                    <span className="text-text-light text-sm sm:text-base">{h.day}</span>
+                    <span className="text-text-dark text-sm sm:text-base font-semibold">{h.time}</span>
                   </div>
                 ))}
               </div>
