@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, ArrowUpRight } from 'lucide-react';
+import { Package, ArrowUpRight } from 'lucide-react';
 
 const WOLT_URL = 'https://wolt.com';
 const BOLT_URL = 'https://bolt.food';
@@ -52,7 +52,7 @@ export default function OrderingCTA() {
               </span>
             </div>
             <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center mb-7">
-              <ShoppingBag className="w-6 h-6 text-white" />
+              <Package className="w-6 h-6 text-white" />
             </div>
             <h3 className="font-display text-2xl text-white mb-2">Osobný odber</h3>
             <p className="text-white/70 text-sm leading-relaxed mb-8">
