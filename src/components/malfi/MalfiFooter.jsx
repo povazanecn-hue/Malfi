@@ -79,7 +79,7 @@ export default function MalfiFooter() {
               </li>
               <li className="flex items-center gap-2 text-white/60 text-xs">
                 <Mail className="w-3.5 h-3.5 text-rosso-light shrink-0" />
-                <a href="mailto:info@malfi.sk" className="hover:text-white transition-colors">info@malfi.sk</a>
+                <a href="mailto:malfi@malfi.sk" className="hover:text-white transition-colors">malfi@malfi.sk</a>
               </li>
               <li className="flex items-start gap-2 text-white/60 text-xs">
                 <Clock className="w-3.5 h-3.5 text-rosso-light mt-0.5 shrink-0" />
