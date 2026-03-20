@@ -56,29 +56,10 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Main site routes */}
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Navigate to="/MalfiHome" replace />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Menu" element={<Menu />} />
-        <Route path="/Order" element={<Order />} />
-        <Route path="/Checkout" element={<Checkout />} />
-        <Route path="/OrderSuccess" element={<OrderSuccess />} />
-        <Route path="/Reservations" element={<Reservations />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-      </Route>
+      {/* Redirect root to MALFI home */}
+      <Route path="/" element={<Navigate to="/MalfiHome" replace />} />
 
-      {/* Admin routes */}
-      <Route element={<AdminLayout />}>
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/AdminOrders" element={<AdminOrders />} />
-        <Route path="/AdminReservations" element={<AdminReservations />} />
-        <Route path="/AdminMenu" element={<AdminMenu />} />
-        <Route path="/AdminProducts" element={<AdminProducts />} />
-      </Route>
-
-      {/* MALFI routes */}
+      {/* MALFI public routes */}
       <Route element={<MalfiLayout />}>
         <Route path="/MalfiHome" element={<MalfiHome />} />
         <Route path="/MalfiMenu" element={<MalfiMenu />} />
@@ -90,9 +71,18 @@ const AuthenticatedApp = () => {
         <Route path="/MalfiContact" element={<MalfiContact />} />
       </Route>
 
-      {/* MALFI Admin routes */}
+      {/* MALFI Admin */}
       <Route element={<MalfiAdminLayout />}>
         <Route path="/MalfiAdmin" element={<MalfiAdmin />} />
+      </Route>
+
+      {/* Legacy Admin routes */}
+      <Route element={<AdminLayout />}>
+        <Route path="/Admin" element={<Admin />} />
+        <Route path="/AdminOrders" element={<AdminOrders />} />
+        <Route path="/AdminReservations" element={<AdminReservations />} />
+        <Route path="/AdminMenu" element={<AdminMenu />} />
+        <Route path="/AdminProducts" element={<AdminProducts />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />
