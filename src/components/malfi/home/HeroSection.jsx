@@ -13,18 +13,20 @@ export default function HeroSection() {
                             radial-gradient(ellipse at 20% 80%, rgba(192,57,43,0.06) 0%, transparent 50%)`
         }} />
       </div>
+
+      {/* Mobile full-width background */}
+      <div className="absolute inset-0 md:hidden opacity-20 -z-10">
+        <img
+          src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
+          alt="Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       <ItalianCornerDecor />
 
       <div className="container-malfi relative z-10 w-full">
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-20 items-center py-8 md:py-20 lg:py-24 pt-20 md:pt-36 lg:pt-40">
-          {/* Mobile background image */}
-          <div className="absolute inset-0 md:hidden opacity-20 rounded-2xl overflow-hidden -z-10">
-            <img
-              src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/e1c974915_generated_image.png"
-              alt="Background"
-              className="w-full h-full object-cover"
-            />
-          </div>
 
           {/* Left Content */}
           <div className="space-y-8 relative z-10">
