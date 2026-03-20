@@ -26,10 +26,10 @@ export default function MalfiNavbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md shadow-olive/10 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-[rgba(107,124,94,0.15)] shadow-sm'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-b border-[rgba(107,124,94,0.15)]'
+          : 'bg-white/80 backdrop-blur-sm border-b border-[rgba(107,124,94,0.1)]'
       }`}>
         <div className="container-malfi">
            <div className="flex items-center justify-between h-auto py-3 md:py-4">
@@ -38,7 +38,7 @@ export default function MalfiNavbar() {
              <img
                src="https://media.base44.com/images/public/69b9c086f46636a7bdaa61f8/f1cd6fa78_malfi-logo.png"
                alt="Malfi Logo"
-               className="h-12 md:h-16 lg:h-28 w-auto object-contain"
+               className="h-16 md:h-20 lg:h-28 w-auto object-contain"
              />
             </Link>
 
